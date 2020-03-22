@@ -1,4 +1,4 @@
-framework module Pods_CoronaCases {
+module Pods_CoronaCases {
   umbrella header "Pods-CoronaCases-umbrella.h"
 
   export *

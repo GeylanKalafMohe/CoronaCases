@@ -12,8 +12,8 @@ Try it out!
 
 ## Supported Devices
 
-- All **iPhones** & **iPads**
-- All **Macs** that supports **MacOS 10.15**
+- **iPhones** & **iPads**
+- **Macs** that supports **MacOS 10.15**
 
 ## Screenshots
 | Home Screen             |  Detail Screen               |  Home Screen Refreshing | Home Screen Searching |

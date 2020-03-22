@@ -22,12 +22,10 @@ class CoronaStatisticsCell: UITableViewCell {
         layoutMargins = UIEdgeInsets.zero
     }
     
-    
     func configure(country: Country) {
         self.countryLbl.text = country.country
         self.confirmedCasesStatisticLbl.text = country.cases.thousandSeparator()
         self.totalDeathsStatisticLbl.text = country.deaths.thousandSeparator()
         self.totalRecoveredStatisticLbl.text = country.recovered.thousandSeparator()
     }
-
 }

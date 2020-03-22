@@ -3,23 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		099EB0E9F5543DEB13055054DBC77F90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		20361391B18108E444C89AD5E723120A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
-		3045125744014703602E03534B143525 /* IHKeyboardAvoiding-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 115F461B0B9424953EC72CC7690A7539 /* IHKeyboardAvoiding-dummy.m */; };
-		39E1088140C5A385956BF8358CB73068 /* Pods-CoronaCases-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDE8E9E786AF5BE7E500146D64921E63 /* Pods-CoronaCases-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		539DCF40B7F4F6F6206B29CB0CBB227F /* IHKeyboardAvoiding-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 818278B1E2663F09AFD68F6C6727E5E9 /* IHKeyboardAvoiding-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6783D3CC415F39415E837E86D95A70B0 /* KeyboardAvoiding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF62AA3FFC0DE033E052DE4D4E2972A /* KeyboardAvoiding.swift */; };
-		82A0BE95CCF791118BEA149220979246 /* KeyboardDismissingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0EF99AEF4F16DCB2776270ADB3773 /* KeyboardDismissingView.swift */; };
-		DED9172E49400CF4873B0AD34C2397E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		ECA597EA12B63D433B91A393E35BAD2D /* Pods-CoronaCases-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 052238691D413BF5228A929124E1B5A1 /* Pods-CoronaCases-dummy.m */; };
+		0C2FCEFEDA1FC438BFD977C4415C334C /* IHKeyboardAvoiding-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E993F418CCE23EBEE4E77E085C33D3B8 /* IHKeyboardAvoiding-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		35D9E1EF69633888E056E4628352BA6B /* IHKeyboardAvoiding-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F10BF8E7B301C8F0AB4CCDE05772E3E /* IHKeyboardAvoiding-dummy.m */; };
+		3AC8F12858C9622164DE4A817AB6B9B1 /* KeyboardAvoiding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF62AA3FFC0DE033E052DE4D4E2972A /* KeyboardAvoiding.swift */; };
+		8E2B125E88B8705733327F54B80277EC /* KeyboardDismissingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B0EF99AEF4F16DCB2776270ADB3773 /* KeyboardDismissingView.swift */; };
+		BB5C4CFE7CC59425FCC9AB2C05A944BF /* Pods-CoronaCases-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C24B232CEF5CE2A9E2839C23235342A5 /* Pods-CoronaCases-dummy.m */; };
+		F65E4B0DF9E85E599DDF7F0B578B7673 /* Pods-CoronaCases-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8292BF44E2430E217FB96203F2894259 /* Pods-CoronaCases-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E318DDCF73BD89F8B4763FF15A321105 /* PBXContainerItemProxy */ = {
+		DBED149F20230A8FDBE2BC0EE12CB015 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -29,97 +26,50 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		052238691D413BF5228A929124E1B5A1 /* Pods-CoronaCases-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoronaCases-dummy.m"; sourceTree = "<group>"; };
-		09B66C2E0BFEC36D58AF5D3B3F45789D /* IHKeyboardAvoiding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IHKeyboardAvoiding.framework; path = IHKeyboardAvoiding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		115F461B0B9424953EC72CC7690A7539 /* IHKeyboardAvoiding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IHKeyboardAvoiding-dummy.m"; sourceTree = "<group>"; };
-		1DE597B29562BF4F42DBAFB5CFE373C7 /* Pods-CoronaCases-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoronaCases-Info.plist"; sourceTree = "<group>"; };
-		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		3268878944BD3F1B1E3BA4C2303536D6 /* Pods-CoronaCases-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoronaCases-frameworks.sh"; sourceTree = "<group>"; };
-		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		48098B6A5C0E208D92809F54F4734263 /* Pods_CoronaCases.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CoronaCases.framework; path = "Pods-CoronaCases.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7171D2E7BE4DB4ABDFA8855D94CDE8DA /* Pods-CoronaCases-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoronaCases-acknowledgements.plist"; sourceTree = "<group>"; };
-		818278B1E2663F09AFD68F6C6727E5E9 /* IHKeyboardAvoiding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IHKeyboardAvoiding-umbrella.h"; sourceTree = "<group>"; };
-		9367021E3C2B31B663D9137869DEF09E /* Pods-CoronaCases.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoronaCases.debug.xcconfig"; sourceTree = "<group>"; };
-		9AE7204ABB8B647B9380475564C022E0 /* IHKeyboardAvoiding-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "IHKeyboardAvoiding-Info.plist"; sourceTree = "<group>"; };
+		09B66C2E0BFEC36D58AF5D3B3F45789D /* libIHKeyboardAvoiding.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libIHKeyboardAvoiding.a; path = libIHKeyboardAvoiding.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		11683ACAF5A5268E2AE488311CED476D /* Pods-CoronaCases.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoronaCases.release.xcconfig"; sourceTree = "<group>"; };
+		13159DCD115ED4F815F53D78D78BE585 /* IHKeyboardAvoiding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IHKeyboardAvoiding-prefix.pch"; sourceTree = "<group>"; };
+		15237D267EF881C05D0D058CA5F223AF /* IHKeyboardAvoiding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IHKeyboardAvoiding.debug.xcconfig; sourceTree = "<group>"; };
+		1F10BF8E7B301C8F0AB4CCDE05772E3E /* IHKeyboardAvoiding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IHKeyboardAvoiding-dummy.m"; sourceTree = "<group>"; };
+		48098B6A5C0E208D92809F54F4734263 /* libPods-CoronaCases.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CoronaCases.a"; path = "libPods-CoronaCases.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51B67BC496CF80CE4BA9FA0585B84B69 /* IHKeyboardAvoiding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IHKeyboardAvoiding.release.xcconfig; sourceTree = "<group>"; };
+		6ADA91B6BAB7578363F08846B7EEE62A /* IHKeyboardAvoiding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IHKeyboardAvoiding.modulemap; sourceTree = "<group>"; };
+		8292BF44E2430E217FB96203F2894259 /* Pods-CoronaCases-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoronaCases-umbrella.h"; sourceTree = "<group>"; };
+		9398BA928038CA7CD18D29BA5AB02F19 /* Pods-CoronaCases-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoronaCases-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A3E85472E61D064B4ADC7110B3E39E61 /* Pods-CoronaCases.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CoronaCases.modulemap"; sourceTree = "<group>"; };
-		B8077A1D3DFB6910B3C587BAD4CB6983 /* IHKeyboardAvoiding.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IHKeyboardAvoiding.xcconfig; sourceTree = "<group>"; };
-		BE6CB018E4296A7341CFD457164E693A /* Pods-CoronaCases-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoronaCases-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A6091E17C7FD385975729900F37836C2 /* Pods-CoronaCases-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoronaCases-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C24B232CEF5CE2A9E2839C23235342A5 /* Pods-CoronaCases-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoronaCases-dummy.m"; sourceTree = "<group>"; };
 		CFF62AA3FFC0DE033E052DE4D4E2972A /* KeyboardAvoiding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAvoiding.swift; path = Sources/KeyboardAvoiding.swift; sourceTree = "<group>"; };
-		D3EB89AAA73C5EB5878AB680BAE6B44F /* IHKeyboardAvoiding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IHKeyboardAvoiding.modulemap; sourceTree = "<group>"; };
 		D5B0EF99AEF4F16DCB2776270ADB3773 /* KeyboardDismissingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardDismissingView.swift; path = Sources/KeyboardDismissingView.swift; sourceTree = "<group>"; };
-		EDE8E9E786AF5BE7E500146D64921E63 /* Pods-CoronaCases-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoronaCases-umbrella.h"; sourceTree = "<group>"; };
-		F55736F74835296A11FCE79D778B16A2 /* Pods-CoronaCases.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoronaCases.release.xcconfig"; sourceTree = "<group>"; };
-		F8671AFE6D5F28AF16FE16E9BB168F41 /* IHKeyboardAvoiding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IHKeyboardAvoiding-prefix.pch"; sourceTree = "<group>"; };
+		E24DB1DB7A30945ACDC706A88C098DEF /* Pods-CoronaCases.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CoronaCases.modulemap"; sourceTree = "<group>"; };
+		E993F418CCE23EBEE4E77E085C33D3B8 /* IHKeyboardAvoiding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IHKeyboardAvoiding-umbrella.h"; sourceTree = "<group>"; };
+		FB202230A64BDE7EB607E18D0D2CBFB6 /* Pods-CoronaCases.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoronaCases.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7B8F521963D3A08E207B621B39679C03 /* Frameworks */ = {
+		3914B4E0BAB50EA7A165AE358E8F98E9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DED9172E49400CF4873B0AD34C2397E1 /* Foundation.framework in Frameworks */,
-				20361391B18108E444C89AD5E723120A /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B48706148A31597E72E4D727014B6ED /* Frameworks */ = {
+		B3D6E1784557AD70200A3169279572B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				099EB0E9F5543DEB13055054DBC77F90 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09F411045E989A64866940CA9163FA6B /* Products */ = {
+		46352465876473AD70C42E92988146E9 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				09B66C2E0BFEC36D58AF5D3B3F45789D /* IHKeyboardAvoiding.framework */,
-				48098B6A5C0E208D92809F54F4734263 /* Pods_CoronaCases.framework */,
+				FD2FA714DD2B4D1D5ED6170318F011E2 /* Pods-CoronaCases */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E2983683FD097A93297E2F5D4E382B36 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4974CB15AB3BCA3C05486F0C2899652D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D3EB89AAA73C5EB5878AB680BAE6B44F /* IHKeyboardAvoiding.modulemap */,
-				B8077A1D3DFB6910B3C587BAD4CB6983 /* IHKeyboardAvoiding.xcconfig */,
-				115F461B0B9424953EC72CC7690A7539 /* IHKeyboardAvoiding-dummy.m */,
-				9AE7204ABB8B647B9380475564C022E0 /* IHKeyboardAvoiding-Info.plist */,
-				F8671AFE6D5F28AF16FE16E9BB168F41 /* IHKeyboardAvoiding-prefix.pch */,
-				818278B1E2663F09AFD68F6C6727E5E9 /* IHKeyboardAvoiding-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/IHKeyboardAvoiding";
-			sourceTree = "<group>";
-		};
-		710BD67D9CB6EB0190661A8E07DD3127 /* Pods-CoronaCases */ = {
-			isa = PBXGroup;
-			children = (
-				A3E85472E61D064B4ADC7110B3E39E61 /* Pods-CoronaCases.modulemap */,
-				BE6CB018E4296A7341CFD457164E693A /* Pods-CoronaCases-acknowledgements.markdown */,
-				7171D2E7BE4DB4ABDFA8855D94CDE8DA /* Pods-CoronaCases-acknowledgements.plist */,
-				052238691D413BF5228A929124E1B5A1 /* Pods-CoronaCases-dummy.m */,
-				3268878944BD3F1B1E3BA4C2303536D6 /* Pods-CoronaCases-frameworks.sh */,
-				1DE597B29562BF4F42DBAFB5CFE373C7 /* Pods-CoronaCases-Info.plist */,
-				EDE8E9E786AF5BE7E500146D64921E63 /* Pods-CoronaCases-umbrella.h */,
-				9367021E3C2B31B663D9137869DEF09E /* Pods-CoronaCases.debug.xcconfig */,
-				F55736F74835296A11FCE79D778B16A2 /* Pods-CoronaCases.release.xcconfig */,
-			);
-			name = "Pods-CoronaCases";
-			path = "Target Support Files/Pods-CoronaCases";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		74D82DAEF39F543322ED2D00AB5A964F /* IHKeyboardAvoiding */ = {
@@ -127,20 +77,29 @@
 			children = (
 				CFF62AA3FFC0DE033E052DE4D4E2972A /* KeyboardAvoiding.swift */,
 				D5B0EF99AEF4F16DCB2776270ADB3773 /* KeyboardDismissingView.swift */,
-				4974CB15AB3BCA3C05486F0C2899652D /* Support Files */,
+				DE2243C9428EB31262306E207B2116CE /* Support Files */,
 			);
 			name = IHKeyboardAvoiding;
 			path = IHKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		77265940872CF046D6D2DB1BB68D3AED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09B66C2E0BFEC36D58AF5D3B3F45789D /* libIHKeyboardAvoiding.a */,
+				48098B6A5C0E208D92809F54F4734263 /* libPods-CoronaCases.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
 				D53A7D1001028CACF59C4435A40A2027 /* Pods */,
-				09F411045E989A64866940CA9163FA6B /* Products */,
-				D7BDF6DA66A872C1429F5C7A509465F9 /* Targets Support Files */,
+				77265940872CF046D6D2DB1BB68D3AED /* Products */,
+				46352465876473AD70C42E92988146E9 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,39 +111,58 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D7BDF6DA66A872C1429F5C7A509465F9 /* Targets Support Files */ = {
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				710BD67D9CB6EB0190661A8E07DD3127 /* Pods-CoronaCases */,
 			);
-			name = "Targets Support Files";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
+		DE2243C9428EB31262306E207B2116CE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */,
-				312B988EF117AE4DE76A268D970131FE /* UIKit.framework */,
+				6ADA91B6BAB7578363F08846B7EEE62A /* IHKeyboardAvoiding.modulemap */,
+				1F10BF8E7B301C8F0AB4CCDE05772E3E /* IHKeyboardAvoiding-dummy.m */,
+				13159DCD115ED4F815F53D78D78BE585 /* IHKeyboardAvoiding-prefix.pch */,
+				E993F418CCE23EBEE4E77E085C33D3B8 /* IHKeyboardAvoiding-umbrella.h */,
+				15237D267EF881C05D0D058CA5F223AF /* IHKeyboardAvoiding.debug.xcconfig */,
+				51B67BC496CF80CE4BA9FA0585B84B69 /* IHKeyboardAvoiding.release.xcconfig */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/IHKeyboardAvoiding";
+			sourceTree = "<group>";
+		};
+		FD2FA714DD2B4D1D5ED6170318F011E2 /* Pods-CoronaCases */ = {
+			isa = PBXGroup;
+			children = (
+				E24DB1DB7A30945ACDC706A88C098DEF /* Pods-CoronaCases.modulemap */,
+				A6091E17C7FD385975729900F37836C2 /* Pods-CoronaCases-acknowledgements.markdown */,
+				9398BA928038CA7CD18D29BA5AB02F19 /* Pods-CoronaCases-acknowledgements.plist */,
+				C24B232CEF5CE2A9E2839C23235342A5 /* Pods-CoronaCases-dummy.m */,
+				8292BF44E2430E217FB96203F2894259 /* Pods-CoronaCases-umbrella.h */,
+				FB202230A64BDE7EB607E18D0D2CBFB6 /* Pods-CoronaCases.debug.xcconfig */,
+				11683ACAF5A5268E2AE488311CED476D /* Pods-CoronaCases.release.xcconfig */,
+			);
+			name = "Pods-CoronaCases";
+			path = "Target Support Files/Pods-CoronaCases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		416FB3D0E01501E8237962175ECAA69A /* Headers */ = {
+		7D8AC5EC69CC2D6A368AFAB8CF34A440 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				539DCF40B7F4F6F6206B29CB0CBB227F /* IHKeyboardAvoiding-umbrella.h in Headers */,
+				F65E4B0DF9E85E599DDF7F0B578B7673 /* Pods-CoronaCases-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D96BAAD634067E72F6CF9471E79350DC /* Headers */ = {
+		AC250FE5F02E708F67C59306A38C2D0C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39E1088140C5A385956BF8358CB73068 /* Pods-CoronaCases-umbrella.h in Headers */,
+				0C2FCEFEDA1FC438BFD977C4415C334C /* IHKeyboardAvoiding-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,31 +171,30 @@
 /* Begin PBXNativeTarget section */
 		1114EDB13DCFA2FB46B4E465AE8EDDD0 /* Pods-CoronaCases */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D77EDCCE25044E98B22D484212A15849 /* Build configuration list for PBXNativeTarget "Pods-CoronaCases" */;
+			buildConfigurationList = 095353B092FE1B8492B8041B8DCB359D /* Build configuration list for PBXNativeTarget "Pods-CoronaCases" */;
 			buildPhases = (
-				D96BAAD634067E72F6CF9471E79350DC /* Headers */,
-				85F725F7CE8F9B4D7391ED8120EB348C /* Sources */,
-				8B48706148A31597E72E4D727014B6ED /* Frameworks */,
-				37799110857D33378B3B96B2ED9C15F0 /* Resources */,
+				7D8AC5EC69CC2D6A368AFAB8CF34A440 /* Headers */,
+				AC57B88E58198489D7B5193E854A2CA2 /* Sources */,
+				B3D6E1784557AD70200A3169279572B6 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9015E00BE99F0A04BDBE4D117B341B69 /* PBXTargetDependency */,
+				C502DE003A26CC3F782B54F2A3764F8E /* PBXTargetDependency */,
 			);
 			name = "Pods-CoronaCases";
 			productName = "Pods-CoronaCases";
-			productReference = 48098B6A5C0E208D92809F54F4734263 /* Pods_CoronaCases.framework */;
-			productType = "com.apple.product-type.framework";
+			productReference = 48098B6A5C0E208D92809F54F4734263 /* libPods-CoronaCases.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		E078D0497EB06B70930AA116C544BC4F /* IHKeyboardAvoiding */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8ED5325A5545E52EEF12048EBD36F45A /* Build configuration list for PBXNativeTarget "IHKeyboardAvoiding" */;
+			buildConfigurationList = 9AFAC6BBBA03241E554E3AC580EE1272 /* Build configuration list for PBXNativeTarget "IHKeyboardAvoiding" */;
 			buildPhases = (
-				416FB3D0E01501E8237962175ECAA69A /* Headers */,
-				05E285AADF1A170F9F6D14301B00D6A2 /* Sources */,
-				7B8F521963D3A08E207B621B39679C03 /* Frameworks */,
-				50E514856F35936142591AEDBDCBB809 /* Resources */,
+				AC250FE5F02E708F67C59306A38C2D0C /* Headers */,
+				F17EAC0D439FA18BEB17D8D6BCAB2E9B /* Sources */,
+				3914B4E0BAB50EA7A165AE358E8F98E9 /* Frameworks */,
+				EF4E22FB353CFF6FEA126F49A4178F70 /* Copy generated compatibility header */,
 			);
 			buildRules = (
 			);
@@ -225,8 +202,8 @@
 			);
 			name = IHKeyboardAvoiding;
 			productName = IHKeyboardAvoiding;
-			productReference = 09B66C2E0BFEC36D58AF5D3B3F45789D /* IHKeyboardAvoiding.framework */;
-			productType = "com.apple.product-type.framework";
+			productReference = 09B66C2E0BFEC36D58AF5D3B3F45789D /* libIHKeyboardAvoiding.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -238,7 +215,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -246,7 +223,7 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 09F411045E989A64866940CA9163FA6B /* Products */;
+			productRefGroup = 77265940872CF046D6D2DB1BB68D3AED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -256,92 +233,138 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		37799110857D33378B3B96B2ED9C15F0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* Begin PBXShellScriptBuildPhase section */
+		EF4E22FB353CFF6FEA126F49A4178F70 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50E514856F35936142591AEDBDCBB809 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/IHKeyboardAvoiding/IHKeyboardAvoiding.modulemap",
+				"${PODS_ROOT}/Headers/Public/IHKeyboardAvoiding/IHKeyboardAvoiding-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/IHKeyboardAvoiding-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/IHKeyboardAvoiding/IHKeyboardAvoiding.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/IHKeyboardAvoiding/IHKeyboardAvoiding-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		05E285AADF1A170F9F6D14301B00D6A2 /* Sources */ = {
+		AC57B88E58198489D7B5193E854A2CA2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3045125744014703602E03534B143525 /* IHKeyboardAvoiding-dummy.m in Sources */,
-				6783D3CC415F39415E837E86D95A70B0 /* KeyboardAvoiding.swift in Sources */,
-				82A0BE95CCF791118BEA149220979246 /* KeyboardDismissingView.swift in Sources */,
+				BB5C4CFE7CC59425FCC9AB2C05A944BF /* Pods-CoronaCases-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85F725F7CE8F9B4D7391ED8120EB348C /* Sources */ = {
+		F17EAC0D439FA18BEB17D8D6BCAB2E9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECA597EA12B63D433B91A393E35BAD2D /* Pods-CoronaCases-dummy.m in Sources */,
+				35D9E1EF69633888E056E4628352BA6B /* IHKeyboardAvoiding-dummy.m in Sources */,
+				3AC8F12858C9622164DE4A817AB6B9B1 /* KeyboardAvoiding.swift in Sources */,
+				8E2B125E88B8705733327F54B80277EC /* KeyboardDismissingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9015E00BE99F0A04BDBE4D117B341B69 /* PBXTargetDependency */ = {
+		C502DE003A26CC3F782B54F2A3764F8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = IHKeyboardAvoiding;
 			target = E078D0497EB06B70930AA116C544BC4F /* IHKeyboardAvoiding */;
-			targetProxy = E318DDCF73BD89F8B4763FF15A321105 /* PBXContainerItemProxy */;
+			targetProxy = DBED149F20230A8FDBE2BC0EE12CB015 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1172544230233ACF85B85440A1B98BDF /* Release */ = {
+		104407022EC9DC33878ADEAECF363E8B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F55736F74835296A11FCE79D778B16A2 /* Pods-CoronaCases.release.xcconfig */;
+			baseConfigurationReference = 51B67BC496CF80CE4BA9FA0585B84B69 /* IHKeyboardAvoiding.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CoronaCases/Pods-CoronaCases-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				GCC_PREFIX_HEADER = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MODULEMAP_FILE = Headers/Public/IHKeyboardAvoiding/IHKeyboardAvoiding.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = IHKeyboardAvoiding;
+				PRODUCT_NAME = IHKeyboardAvoiding;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3357C794123612D21C07099800AC0FD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11683ACAF5A5268E2AE488311CED476D /* Pods-CoronaCases.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CoronaCases/Pods-CoronaCases.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		66EBFC0AF2D5BA0F5B83BF7997961015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15237D267EF881C05D0D058CA5F223AF /* IHKeyboardAvoiding.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MODULEMAP_FILE = Headers/Public/IHKeyboardAvoiding/IHKeyboardAvoiding.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = IHKeyboardAvoiding;
+				PRODUCT_NAME = IHKeyboardAvoiding;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		939F1A8F6BCEB7F9F64D9EEE50CAE014 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -407,76 +430,28 @@
 			};
 			name = Debug;
 		};
-		99E59C743B0D25B2EDB6CC0CFA91FF15 /* Debug */ = {
+		C32BF045D6FF5BEED39A3D4A3435E181 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8077A1D3DFB6910B3C587BAD4CB6983 /* IHKeyboardAvoiding.xcconfig */;
+			baseConfigurationReference = FB202230A64BDE7EB607E18D0D2CBFB6 /* Pods-CoronaCases.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding.modulemap";
-				PRODUCT_MODULE_NAME = IHKeyboardAvoiding;
-				PRODUCT_NAME = IHKeyboardAvoiding;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoronaCases/Pods-CoronaCases.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		CA4F28F19C06AC147F271EF47B7D577F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8077A1D3DFB6910B3C587BAD4CB6983 /* IHKeyboardAvoiding.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding.modulemap";
-				PRODUCT_MODULE_NAME = IHKeyboardAvoiding;
-				PRODUCT_NAME = IHKeyboardAvoiding;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		ECB437504DF805BD96CAABF97400B526 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -538,47 +513,18 @@
 			};
 			name = Release;
 		};
-		F398CDB476CE727D78C78D26C58FE081 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9367021E3C2B31B663D9137869DEF09E /* Pods-CoronaCases.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CoronaCases/Pods-CoronaCases-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CoronaCases/Pods-CoronaCases.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		095353B092FE1B8492B8041B8DCB359D /* Build configuration list for PBXNativeTarget "Pods-CoronaCases" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C32BF045D6FF5BEED39A3D4A3435E181 /* Debug */,
+				3357C794123612D21C07099800AC0FD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -588,20 +534,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8ED5325A5545E52EEF12048EBD36F45A /* Build configuration list for PBXNativeTarget "IHKeyboardAvoiding" */ = {
+		9AFAC6BBBA03241E554E3AC580EE1272 /* Build configuration list for PBXNativeTarget "IHKeyboardAvoiding" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99E59C743B0D25B2EDB6CC0CFA91FF15 /* Debug */,
-				CA4F28F19C06AC147F271EF47B7D577F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D77EDCCE25044E98B22D484212A15849 /* Build configuration list for PBXNativeTarget "Pods-CoronaCases" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F398CDB476CE727D78C78D26C58FE081 /* Debug */,
-				1172544230233ACF85B85440A1B98BDF /* Release */,
+				66EBFC0AF2D5BA0F5B83BF7997961015 /* Debug */,
+				104407022EC9DC33878ADEAECF363E8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
