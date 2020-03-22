@@ -19,7 +19,6 @@
 		0D45C81324252F2D000B9E09 /* CoronaStatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C80924252F2D000B9E09 /* CoronaStatisticsCell.swift */; };
 		0D45C81424252F2D000B9E09 /* CoronaCasesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C80B24252F2D000B9E09 /* CoronaCasesVC.swift */; };
 		0D45C81524252F2D000B9E09 /* CoronaCountryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C80C24252F2D000B9E09 /* CoronaCountryDetailVC.swift */; };
-		0D45C81624252F2D000B9E09 /* CoronaTabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C80D24252F2D000B9E09 /* CoronaTabsController.swift */; };
 		0D45C81724252F2D000B9E09 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C80F24252F2D000B9E09 /* Country.swift */; };
 		0D45C81924252F33000B9E09 /* country-codes.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D45C81824252F33000B9E09 /* country-codes.json */; };
 		0D45C81B24252F41000B9E09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D45C81A24252F40000B9E09 /* Assets.xcassets */; };
@@ -45,7 +44,6 @@
 		0D45C80924252F2D000B9E09 /* CoronaStatisticsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoronaStatisticsCell.swift; sourceTree = "<group>"; };
 		0D45C80B24252F2D000B9E09 /* CoronaCasesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoronaCasesVC.swift; sourceTree = "<group>"; };
 		0D45C80C24252F2D000B9E09 /* CoronaCountryDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoronaCountryDetailVC.swift; sourceTree = "<group>"; };
-		0D45C80D24252F2D000B9E09 /* CoronaTabsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoronaTabsController.swift; sourceTree = "<group>"; };
 		0D45C80F24252F2D000B9E09 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		0D45C81824252F33000B9E09 /* country-codes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "country-codes.json"; sourceTree = "<group>"; };
 		0D45C81A24252F40000B9E09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 		0D45C80A24252F2D000B9E09 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0D45C80D24252F2D000B9E09 /* CoronaTabsController.swift */,
 				0D45C80B24252F2D000B9E09 /* CoronaCasesVC.swift */,
 				0D45C80C24252F2D000B9E09 /* CoronaCountryDetailVC.swift */,
 				0D45C8422426CBB3000B9E09 /* SettingsVC.swift */,
@@ -315,7 +312,6 @@
 				0D45C80024252F1D000B9E09 /* Locale+Ext.swift in Sources */,
 				0D45C81424252F2D000B9E09 /* CoronaCasesVC.swift in Sources */,
 				0D90BA862426E7A6009E5740 /* CoronaStatisticsDetailCell.swift in Sources */,
-				0D45C81624252F2D000B9E09 /* CoronaTabsController.swift in Sources */,
 				0D45C81324252F2D000B9E09 /* CoronaStatisticsCell.swift in Sources */,
 				0D45C80224252F1D000B9E09 /* UIView+Ext.swift in Sources */,
 				0D45C7E924252ED9000B9E09 /* SceneDelegate.swift in Sources */,
@@ -468,7 +464,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.geylankalafmohe.CoronaCasesApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftiSwift.CoronaCasesApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -490,7 +486,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.geylankalafmohe.CoronaCasesApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftiSwift.CoronaCasesApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;

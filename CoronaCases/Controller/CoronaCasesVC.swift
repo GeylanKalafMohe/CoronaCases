@@ -157,8 +157,6 @@ extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
         cell.configure(country: currentCountry)
 
         return cell
-        
-//        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
