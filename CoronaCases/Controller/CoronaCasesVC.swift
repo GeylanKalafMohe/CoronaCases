@@ -53,13 +53,12 @@ class CoronaCasesVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.refreshControl = refreshControl
-
+        tabBarController?.delegate = self
         addSearchBar()
         NotificationCenter.default.addObserver(self, selector: #selector(makeBecomeActiveNotif), name: UIApplication.didEnterBackgroundNotification, object: nil)
         KeyboardAvoiding.avoidingView = self.tableView
     }
 
-    
     @objc
     func makeBecomeActiveNotif() {
         NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -181,17 +180,28 @@ extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
 
         guard (indexPath.section == 0 && countrySections.count == 1) || (indexPath.section == 1 && countrySections.count > 1) || searchedCountry != nil else { return }
+        
         let selectedCountry = searchedCountry == nil ? countrySections[indexPath.section][indexPath.row] : searchedCountry![indexPath.row]
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "CoronaCountryDetailVC") as? CoronaCountryDetailVC else { return }
+        let vcID = String(describing: CoronaCountryDetailVC.self)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: vcID) as? CoronaCountryDetailVC else { return }
         
         vc.country = selectedCountry
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
+extension CoronaCasesVC: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        guard tableView.visibleCells.count > 0 else { return }
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+}
+
 extension CoronaCasesVC {
+    
     @objc
     func getAllCountries() {
         print("REQUEST")
