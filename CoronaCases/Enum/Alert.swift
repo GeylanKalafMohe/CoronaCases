@@ -36,7 +36,7 @@ enum Alert {
     
     static func showUpdate(hasUpdate: Bool, onVC vc: UIViewController) {
         let title = hasUpdate ? "New Update is available!" : "You're up to date"
-        let message = hasUpdate ? "A new update for CoronaCases has been released.\nCheck GitHub now." : nil
+        let message = hasUpdate ? "A new update for CoronaCases have been released!\nCheck GitHub now!" : nil
         
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let updateAct = UIAlertAction(title: "Update", style: .default) { (_) in
