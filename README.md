@@ -1,4 +1,6 @@
 # CoronaCases
+![Platform](https://img.shields.io/static/v1?label=platforms&message=iOS%20|%20iPadOS%20|%20macOS&color=orange.png)
+
 Watch the latest Corona Virus cases in your country and in the world!
 
 Don't waste your time searching in the internet for the latest cases.

@@ -15,6 +15,9 @@ struct URLs {
     static func GET_COUNTRY(forName name: String) -> String {
         Self.BASE_URL + "countries/" + name
     }
+    
+    static let GITHUB_RELEASES = "https://github.com/SwiftiSwift/CoronaCases/releases/"
+    static let GITHUB_MAIN = "https://github.com/SwiftiSwift/CoronaCases/"
 }
 
 struct DeviceInfo {

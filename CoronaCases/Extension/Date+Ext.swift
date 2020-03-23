@@ -9,10 +9,15 @@
 import Foundation
 
 extension Date {
-    func getDateAndHour() -> String {
+    func getFormattedToString() -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy HH:mm"
-
-        return formatter.string(from: self)
+        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.locale = .current
+        
+        let dateString = formatter.string(from: self)
+        formatter.dateFormat = "HH:mm:ss"
+        let timeString = formatter.string(from: self)
+        
+        return dateString + " at " + timeString
     }
 }

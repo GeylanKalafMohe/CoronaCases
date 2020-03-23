@@ -9,6 +9,8 @@
 import UIKit
 
 class CoronaCountryDetailVC: UIViewController {
+    
+    // MARK: - Outlets
     @IBOutlet weak var countryLbl: UILabel!
     @IBOutlet weak var confirmedCasesStatisticsLbl: UILabel!
     @IBOutlet weak var totalDeathStatisticslbl: UILabel!
@@ -17,8 +19,10 @@ class CoronaCountryDetailVC: UIViewController {
     @IBOutlet weak var todayDeathsStatisticsLbl: UILabel!
     @IBOutlet weak var criticalCasesStatisticsLbl: UILabel!
 
+    // MARK: - Variables
     var country: Country!
     
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +43,7 @@ class CoronaCountryDetailVC: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
+    // MARK: - Configuring
     func configureLbls() {
         self.countryLbl.text = country.country
         self.confirmedCasesStatisticsLbl.text = country.cases.thousandSeparator()
@@ -50,10 +55,12 @@ class CoronaCountryDetailVC: UIViewController {
     }
 }
 
+// MARK: - API Requests
 extension CoronaCountryDetailVC {
     
     @objc
     func getCountryData() {
+        print("REQUEST GetCountry")
         APIService.instance.getCountry(forName: country.country) { [weak self] (result) in
             guard let self = self else { return }
             
