@@ -26,7 +26,21 @@
 		0D45C8432426CBB3000B9E09 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C8422426CBB3000B9E09 /* SettingsVC.swift */; };
 		0D45C8452426DA47000B9E09 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C8442426DA47000B9E09 /* Date+Ext.swift */; };
 		0D90BA862426E7A6009E5740 /* CoronaStatisticsDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90BA852426E7A6009E5740 /* CoronaStatisticsDetailCell.swift */; };
-		0DBB729224293620002C8D76 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 0DBB729124293620002C8D76 /* SwiftSoup */; };
+		0DB828E7242AE94E0033FB35 /* UDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB828E6242AE94E0033FB35 /* UDKeys.swift */; };
+		0DB828EB242AEB070033FB35 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB828EA242AEB070033FB35 /* UIDevice+Ext.swift */; };
+		0DE587D6242ADF4800C57716 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE587D5242ADF4800C57716 /* Notification.Name.swift */; };
+		0DE6CB08242C072E00EEC063 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 0DE6CB07242C072E00EEC063 /* SwiftSoup */; };
+		0DE6CB0C242C544300EEC063 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6CB0B242C544300EEC063 /* AppIcon.swift */; };
+		0DE6CB0E242C581800EEC063 /* JSONDecoder+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6CB0D242C581800EEC063 /* JSONDecoder+Ext.swift */; };
+		0DE6CB13242C5BA200EEC063 /* AppIcon3rd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6CB10242C5BA200EEC063 /* AppIcon3rd@2x.png */; };
+		0DE6CB14242C5BA200EEC063 /* AppIcon3rd@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6CB11242C5BA200EEC063 /* AppIcon3rd@1x.png */; };
+		0DE6CB15242C5BA200EEC063 /* AppIcon3rd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6CB12242C5BA200EEC063 /* AppIcon3rd@3x.png */; };
+		0DE6CB19242C5BD600EEC063 /* AppIcon2nd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6CB16242C5BD600EEC063 /* AppIcon2nd@2x.png */; };
+		0DE6CB1B242C5BD600EEC063 /* AppIcon2nd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6CB18242C5BD600EEC063 /* AppIcon2nd@3x.png */; };
+		0DE6CB1D242C5C1D00EEC063 /* AppIcon2nd@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6CB1C242C5C1D00EEC063 /* AppIcon2nd@1x.png */; };
+		0DE6CB21242C5C6500EEC063 /* AppIcon1st@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6CB1E242C5C6500EEC063 /* AppIcon1st@2x.png */; };
+		0DE6CB22242C5C6500EEC063 /* AppIcon1st@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6CB1F242C5C6500EEC063 /* AppIcon1st@1x.png */; };
+		0DE6CB23242C5C6500EEC063 /* AppIcon1st@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE6CB20242C5C6500EEC063 /* AppIcon1st@3x.png */; };
 		27A1B626DA477381038E57D4 /* libPods-CoronaCases.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC7C2CDA82595119FF214EA /* libPods-CoronaCases.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +68,20 @@
 		0D45C8442426DA47000B9E09 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		0D90BA852426E7A6009E5740 /* CoronaStatisticsDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatisticsDetailCell.swift; sourceTree = "<group>"; };
 		0DA81D98242810D00026765E /* IHKeyboardAvoiding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IHKeyboardAvoiding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DB828E6242AE94E0033FB35 /* UDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDKeys.swift; sourceTree = "<group>"; };
+		0DB828EA242AEB070033FB35 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
+		0DE587D5242ADF4800C57716 /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
+		0DE6CB0B242C544300EEC063 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		0DE6CB0D242C581800EEC063 /* JSONDecoder+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Ext.swift"; sourceTree = "<group>"; };
+		0DE6CB10242C5BA200EEC063 /* AppIcon3rd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon3rd@2x.png"; sourceTree = "<group>"; };
+		0DE6CB11242C5BA200EEC063 /* AppIcon3rd@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon3rd@1x.png"; sourceTree = "<group>"; };
+		0DE6CB12242C5BA200EEC063 /* AppIcon3rd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon3rd@3x.png"; sourceTree = "<group>"; };
+		0DE6CB16242C5BD600EEC063 /* AppIcon2nd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon2nd@2x.png"; sourceTree = "<group>"; };
+		0DE6CB18242C5BD600EEC063 /* AppIcon2nd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon2nd@3x.png"; sourceTree = "<group>"; };
+		0DE6CB1C242C5C1D00EEC063 /* AppIcon2nd@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon2nd@1x.png"; sourceTree = "<group>"; };
+		0DE6CB1E242C5C6500EEC063 /* AppIcon1st@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon1st@2x.png"; sourceTree = "<group>"; };
+		0DE6CB1F242C5C6500EEC063 /* AppIcon1st@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon1st@1x.png"; sourceTree = "<group>"; };
+		0DE6CB20242C5C6500EEC063 /* AppIcon1st@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon1st@3x.png"; sourceTree = "<group>"; };
 		3B6979A4EC2E7B47554D2FF4 /* Pods-CoronaCases.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaCases.debug.xcconfig"; path = "Target Support Files/Pods-CoronaCases/Pods-CoronaCases.debug.xcconfig"; sourceTree = "<group>"; };
 		8AC7C2CDA82595119FF214EA /* libPods-CoronaCases.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoronaCases.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8A8FC4A55B64BFD53DC74F /* Pods-CoronaCases.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaCases.release.xcconfig"; path = "Target Support Files/Pods-CoronaCases/Pods-CoronaCases.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,7 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27A1B626DA477381038E57D4 /* libPods-CoronaCases.a in Frameworks */,
-				0DBB729224293620002C8D76 /* SwiftSoup in Frameworks */,
+				0DE6CB08242C072E00EEC063 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +136,7 @@
 				0D45C81A24252F40000B9E09 /* Assets.xcassets */,
 				0D45C7F124252EDB000B9E09 /* LaunchScreen.storyboard */,
 				0D45C7F424252EDB000B9E09 /* Info.plist */,
+				0DE6CB0F242C5B5A00EEC063 /* AppIcons */,
 			);
 			path = CoronaCases;
 			sourceTree = "<group>";
@@ -119,6 +148,8 @@
 				0D45C7FD24252F1D000B9E09 /* Int+Ext.swift */,
 				0D45C7FE24252F1D000B9E09 /* UIView+Ext.swift */,
 				0D45C8442426DA47000B9E09 /* Date+Ext.swift */,
+				0DB828EA242AEB070033FB35 /* UIDevice+Ext.swift */,
+				0DE6CB0D242C581800EEC063 /* JSONDecoder+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -170,8 +201,27 @@
 			isa = PBXGroup;
 			children = (
 				0D14C5552427168B00034ED2 /* Alert.swift */,
+				0DE587D5242ADF4800C57716 /* Notification.Name.swift */,
+				0DB828E6242AE94E0033FB35 /* UDKeys.swift */,
+				0DE6CB0B242C544300EEC063 /* AppIcon.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		0DE6CB0F242C5B5A00EEC063 /* AppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				0DE6CB1F242C5C6500EEC063 /* AppIcon1st@1x.png */,
+				0DE6CB1E242C5C6500EEC063 /* AppIcon1st@2x.png */,
+				0DE6CB20242C5C6500EEC063 /* AppIcon1st@3x.png */,
+				0DE6CB1C242C5C1D00EEC063 /* AppIcon2nd@1x.png */,
+				0DE6CB16242C5BD600EEC063 /* AppIcon2nd@2x.png */,
+				0DE6CB18242C5BD600EEC063 /* AppIcon2nd@3x.png */,
+				0DE6CB11242C5BA200EEC063 /* AppIcon3rd@1x.png */,
+				0DE6CB10242C5BA200EEC063 /* AppIcon3rd@2x.png */,
+				0DE6CB12242C5BA200EEC063 /* AppIcon3rd@3x.png */,
+			);
+			path = AppIcons;
 			sourceTree = "<group>";
 		};
 		80DD1CBF73C959BA30CB03DA /* Frameworks */ = {
@@ -210,7 +260,7 @@
 			);
 			name = CoronaCases;
 			packageProductDependencies = (
-				0DBB729124293620002C8D76 /* SwiftSoup */,
+				0DE6CB07242C072E00EEC063 /* SwiftSoup */,
 			);
 			productName = CoronaCases;
 			productReference = 0D45C7E324252ED9000B9E09 /* CoronaCases.app */;
@@ -241,7 +291,7 @@
 			);
 			mainGroup = 0D45C7DA24252ED9000B9E09;
 			packageReferences = (
-				0DBB729024293620002C8D76 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				0DE6CB06242C072E00EEC063 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 0D45C7E424252ED9000B9E09 /* Products */;
 			projectDirPath = "";
@@ -257,10 +307,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE6CB23242C5C6500EEC063 /* AppIcon1st@3x.png in Resources */,
 				0D45C7F324252EDB000B9E09 /* LaunchScreen.storyboard in Resources */,
 				0D45C81924252F33000B9E09 /* country-codes.json in Resources */,
+				0DE6CB19242C5BD600EEC063 /* AppIcon2nd@2x.png in Resources */,
 				0D45C81B24252F41000B9E09 /* Assets.xcassets in Resources */,
+				0DE6CB13242C5BA200EEC063 /* AppIcon3rd@2x.png in Resources */,
+				0DE6CB14242C5BA200EEC063 /* AppIcon3rd@1x.png in Resources */,
+				0DE6CB15242C5BA200EEC063 /* AppIcon3rd@3x.png in Resources */,
 				0D45C81D24252FB2000B9E09 /* Main.storyboard in Resources */,
+				0DE6CB21242C5C6500EEC063 /* AppIcon1st@2x.png in Resources */,
+				0DE6CB22242C5C6500EEC063 /* AppIcon1st@1x.png in Resources */,
+				0DE6CB1B242C5BD600EEC063 /* AppIcon2nd@3x.png in Resources */,
+				0DE6CB1D242C5C1D00EEC063 /* AppIcon2nd@1x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,20 +355,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE6CB0E242C581800EEC063 /* JSONDecoder+Ext.swift in Sources */,
 				0D45C81724252F2D000B9E09 /* Country.swift in Sources */,
+				0DB828EB242AEB070033FB35 /* UIDevice+Ext.swift in Sources */,
 				0D45C81524252F2D000B9E09 /* CoronaCountryDetailVC.swift in Sources */,
 				0D45C7E724252ED9000B9E09 /* AppDelegate.swift in Sources */,
+				0DE6CB0C242C544300EEC063 /* AppIcon.swift in Sources */,
 				0D14C5562427168B00034ED2 /* Alert.swift in Sources */,
 				0D45C8452426DA47000B9E09 /* Date+Ext.swift in Sources */,
 				0D45C80024252F1D000B9E09 /* Locale+Ext.swift in Sources */,
 				0D45C81424252F2D000B9E09 /* CoronaCasesVC.swift in Sources */,
 				0D90BA862426E7A6009E5740 /* CoronaStatisticsDetailCell.swift in Sources */,
+				0DE587D6242ADF4800C57716 /* Notification.Name.swift in Sources */,
 				0D45C81324252F2D000B9E09 /* CoronaStatisticsCell.swift in Sources */,
 				0D45C80224252F1D000B9E09 /* UIView+Ext.swift in Sources */,
 				0D45C7E924252ED9000B9E09 /* SceneDelegate.swift in Sources */,
 				0D45C80124252F1D000B9E09 /* Int+Ext.swift in Sources */,
 				0D45C81124252F2D000B9E09 /* APIService.swift in Sources */,
 				0D45C81024252F2D000B9E09 /* Constants.swift in Sources */,
+				0DB828E7242AE94E0033FB35 /* UDKeys.swift in Sources */,
 				0D45C8432426CBB3000B9E09 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,10 +510,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B6979A4EC2E7B47554D2FF4 /* Pods-CoronaCases.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1st";
 				CODE_SIGN_ENTITLEMENTS = CoronaCases/CoronaCases.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SGY87CDCW8;
 				INFOPLIST_FILE = CoronaCases/Info.plist;
@@ -457,7 +521,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftiSwift.CoronaCases;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -470,10 +534,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC8A8FC4A55B64BFD53DC74F /* Pods-CoronaCases.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1st";
 				CODE_SIGN_ENTITLEMENTS = CoronaCases/CoronaCases.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SGY87CDCW8;
 				INFOPLIST_FILE = CoronaCases/Info.plist;
@@ -481,7 +545,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftiSwift.CoronaCases;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -514,20 +578,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0DBB729024293620002C8D76 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+		0DE6CB06242C072E00EEC063 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.0;
+				minimumVersion = 2.3.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0DBB729124293620002C8D76 /* SwiftSoup */ = {
+		0DE6CB07242C072E00EEC063 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0DBB729024293620002C8D76 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			package = 0DE6CB06242C072E00EEC063 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
 		};
 /* End XCSwiftPackageProductDependency section */

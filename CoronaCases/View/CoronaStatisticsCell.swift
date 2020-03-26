@@ -24,8 +24,8 @@ class CoronaStatisticsCell: UITableViewCell {
     
     func configure(country: Country) {
         self.countryLbl.text = country.country
-        self.confirmedCasesStatisticLbl.text = country.cases.thousandSeparator()
-        self.totalDeathsStatisticLbl.text = country.deaths.thousandSeparator()
-        self.totalRecoveredStatisticLbl.text = country.recovered.thousandSeparator()
+        self.confirmedCasesStatisticLbl.text = country.cases?.thousandSeparator() ?? "No Data"
+        self.totalDeathsStatisticLbl.text = country.deaths?.thousandSeparator() ?? "No Data"
+        self.totalRecoveredStatisticLbl.text = country.recovered?.thousandSeparator() ?? "No Data"
     }
 }

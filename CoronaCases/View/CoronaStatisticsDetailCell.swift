@@ -28,11 +28,11 @@ class CoronaStatisticsDetailCell: UITableViewCell {
     
     func configure(country: Country) {
         self.countryLbl.text = country.country
-        self.confirmedCasesStatisticLbl.text = country.cases.thousandSeparator()
-        self.totalDeathsStatisticLbl.text = country.deaths.thousandSeparator()
-        self.totalRecoveredStatisticLbl.text = country.recovered.thousandSeparator()
-        self.todayCasesStatisticLbl.text = country.todayCases.thousandSeparator()
-        self.todayDeathsStatisticLbl.text = country.todayDeaths.thousandSeparator()
-        self.criticalCasesStatisticLbl.text = country.critical.thousandSeparator()
+        self.confirmedCasesStatisticLbl.text = country.cases?.thousandSeparator() ?? "No Data"
+        self.totalDeathsStatisticLbl.text = country.deaths?.thousandSeparator() ?? "No Data"
+        self.totalRecoveredStatisticLbl.text = country.recovered?.thousandSeparator() ?? "No Data"
+        self.todayCasesStatisticLbl.text = country.todayCases?.thousandSeparator() ?? "No Data"
+        self.todayDeathsStatisticLbl.text = country.todayDeaths?.thousandSeparator() ?? "No Data"
+        self.criticalCasesStatisticLbl.text = country.critical?.thousandSeparator() ?? "No Data"
     }
 }

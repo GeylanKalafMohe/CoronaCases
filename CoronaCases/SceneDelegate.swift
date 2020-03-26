@@ -12,12 +12,48 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        checkForUpdate(showPopupWhenUpToDate: false)
+    }
+    
+    func checkForUpdate(showPopupWhenUpToDate: Bool) {
+        guard let tabBarController = window?.rootViewController as? UITabBarController else { return }
+        
+        APIService.instance.checkForUpdate { [weak self] (result) in
+            print("Checking for update")
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+
+                switch result {
+                case .success(let hasUpdate):
+                    NotificationCenter.default.post(name: NSNotification.Name.SUCCESS_SEARCHING_FOR_UPDATE, object: nil)
+
+                    if (hasUpdate || showPopupWhenUpToDate) && tabBarController.presentedViewController == nil {
+                        Alert.showUpdate(hasUpdate: hasUpdate, onVC: tabBarController)
+                    }
+                    
+                    guard hasUpdate else { return }
+                    NotificationCenter.default.post(name: NSNotification.Name.NEW_UPDATE, object: hasUpdate)
+                    tabBarController.viewControllers?.last?.tabBarItem.badgeValue = "1"
+
+                case .failure(let error):
+                    guard tabBarController.presentedViewController == nil else { return }
+                    NotificationCenter.default.post(name: NSNotification.Name.ERROR_SEARCHING_UPDATE, object: nil)
+                    Alert.showReload(
+                        forError: error,
+                        title: "Error searching for an update",
+                        onVC: tabBarController,
+                        function: {
+                            NotificationCenter.default.post(name: NSNotification.Name.ERROR_SEARCHING_UPDATE_RELOAD_TAPPED, object: nil)
+                            self.checkForUpdate(showPopupWhenUpToDate: showPopupWhenUpToDate)
+                        })
+                }
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

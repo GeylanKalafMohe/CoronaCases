@@ -1,5 +1,6 @@
-# CoronaCases
-![Platform](https://img.shields.io/static/v1?label=platforms&message=iOS%20|%20iPadOS%20|%20macOS&color=orange.png)
+# CoronaCases(COVID-19)
+![Platform](https://img.shields.io/badge/platforms-iOS%20%7C%20iPadOS%20%7C%20macOS-orange)
+![Version](https://img.shields.io/badge/version-1.0.3-blue)
 
 Watch the latest Corona Virus cases in your country and in the world!
 
@@ -17,17 +18,21 @@ Try it out!
 - **iPhones** & **iPads**
 - **Macs** that supports **MacOS 10.15**
 
+Do you use a **Windows computer** or does **not have Xcode** installed?<br />
+**No problem!** Visit the releases tab and download the `.ipa` file for **iOS** or **iPadOS** devices or the `.dmg`file for **macOS**
+https://github.com/SwiftiSwift/CoronaCases/releases
+
 ## Screenshots
 
 Dark Mode:
-| Home Screen             |  Detail Screen               |  Home Screen Refreshing | Home Screen Searching |
+| Home Screen             |  Detail Screen               |  Home Screen Refreshing | Settings |
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Dark-HomeScreen.PNG" width="300"> | <img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Dark-DetailScreen.PNG" width="300"> | <img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Dark-HomeScreen-Refreshing.PNG" width="300"> | <img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Dark-HomeScreen-Searching.PNG" width="300">
+<img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Dark-HomeScreen.PNG" width="300"> | <img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Dark-DetailScreen.PNG" width="300"> | <img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Dark-HomeScreen-Searching.PNG" width="300"> | <img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Dark-Settings.PNG" width="300"> 
 
 Light Mode:
-| Home Screen             |  Detail Screen               |  Home Screen Refreshing | Home Screen Searching |
+| Home Screen             |  Detail Screen               |  Home Screen Refreshing | Settings |
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Light-HomeScreen.PNG" width="300"> | <img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Light-DetailScreen.PNG" width="300"> | <img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Light-HomeScreen-Refreshing.PNG" width="300"> |<img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Light-HomeScreen-Searching.PNG" width="300">
+<img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Light-HomeScreen.PNG" width="300"> | <img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Light-DetailScreen.PNG" width="300"> | <img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Light-HomeScreen-Searching.PNG" width="300"> |<img src="https://github.com/SwiftiSwift/CoronaCases/blob/master/Screenshot-Images/Light-Settings.PNG" width="300">
 
 ## Support
 <img src="https://pluspng.com/img-png/twitter-png-file-twitter-icon-png-256.png" width="50"> https://twitter.com/brownleemarq
