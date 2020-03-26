@@ -8,6 +8,8 @@
 
 import UIKit
 
+var updateIsAvailable = false
+
 struct URLs {
     private static let BASE_URL = "https://corona.lmao.ninja/"
     static let GET_ALL_COUNTRIES = Self.BASE_URL + "countries"

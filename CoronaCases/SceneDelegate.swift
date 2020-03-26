@@ -30,12 +30,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
                 switch result {
                 case .success(let hasUpdate):
+                    updateIsAvailable = hasUpdate
+
                     NotificationCenter.default.post(name: NSNotification.Name.SUCCESS_SEARCHING_FOR_UPDATE, object: nil)
 
                     if (hasUpdate || showPopupWhenUpToDate) && tabBarController.presentedViewController == nil {
                         Alert.showUpdate(hasUpdate: hasUpdate, onVC: tabBarController)
                     }
-                    
                     guard hasUpdate else { return }
                     NotificationCenter.default.post(name: NSNotification.Name.NEW_UPDATE, object: hasUpdate)
                     tabBarController.viewControllers?.last?.tabBarItem.badgeValue = "1"

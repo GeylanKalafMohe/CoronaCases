@@ -26,7 +26,10 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
         segmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: UDKeys.appIcon)
         loadingIndicator.hidesWhenStopped = true
         newUpdateIndicator.isHidden = true
-        if tabBarItem.badgeValue == "1" { addBadge() }
+
+        if updateIsAvailable {
+            addBadge()
+        }
         appNameLbl.text = DeviceInfo.appName
         versionNumberLbl.text = DeviceInfo.appVersion
     }
