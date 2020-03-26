@@ -20,6 +20,9 @@ struct URLs {
     static let GITHUB_MAIN = "https://github.com/SwiftiSwift/CoronaCases/"
 }
 
+let developerEmail = "unnotige.sachen@web.de"
+let developerTwitterURL = "https://twitter.com/brownleeMarq"
+
 struct DeviceInfo {
     static var appVersion: String {
         let appVersion: Any? = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
@@ -35,7 +38,8 @@ struct DeviceInfo {
     
     static var osVersion = UIDevice.current.systemVersion
     static var osName = UIDevice.current.systemName
-    
+    static var deviceModel = UIDevice.modelName
+
     static var deviceModelIdentifier: String {
         var sysinfo = utsname()
         uname(&sysinfo) // ignore return value

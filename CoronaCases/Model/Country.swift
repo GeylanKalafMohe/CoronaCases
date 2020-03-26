@@ -10,14 +10,13 @@ import Foundation
 
 struct Country: Codable {
     private(set) public var country: String
-    private(set) public var cases: Int
-    private(set) public var todayCases: Int
-    private(set) public var deaths: Int
-    private(set) public var todayDeaths: Int
-    private(set) public var recovered: Int
-    private(set) public var active: Int
-    private(set) public var critical: Int
-    private(set) public var casesPerOneMillion: Int
+    private(set) public var cases: Int?
+    private(set) public var todayCases: Int?
+    private(set) public var deaths: Int?
+    private(set) public var todayDeaths: Int?
+    private(set) public var recovered: Int?
+    private(set) public var active: Int?
+    private(set) public var critical: Int?
     
     static func testAllCountries() -> [Country] {
         guard let url = Bundle.main.url(forResource: "country-codes.json", withExtension: nil) else {

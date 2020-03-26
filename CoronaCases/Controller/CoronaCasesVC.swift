@@ -54,24 +54,22 @@ class CoronaCasesVC: UIViewController {
         
         tabBarController?.delegate = self
         addSearchBar()
-        NotificationCenter.default.addObserver(self, selector: #selector(makeBecomeActiveNotif), name: UIApplication.didEnterBackgroundNotification, object: nil)
         KeyboardAvoiding.avoidingView = self.tableView
-        
-        checkForUpdate()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        refreshControl.beginRefreshing()
+        NotificationCenter.default.addObserver(self, selector: #selector(makeBecomeActiveNotif), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getAllCountries), name: Notification.Name.ERROR_SEARCHING_UPDATE_RELOAD_TAPPED, object: nil)
+        
         getAllCountries()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.removeObserver(self)
+        self.refreshControl.endRefreshing()
     }
 
     @objc
@@ -92,23 +90,6 @@ class CoronaCasesVC: UIViewController {
     func setLastUpdatedDateLbl() {
         let lastUpdate = "Last Update: " + self.lastRefresh!.getFormattedToString()
         navigationItem.searchController?.searchBar.placeholder = lastUpdate
-    }
-    
-    func checkForUpdate() {
-        APIService.instance.checkForUpdate { (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let hasUpdate):
-                    guard hasUpdate else { return }
-                    Alert.showUpdate(hasUpdate: hasUpdate, onVC: self)
-                case .failure(let error):
-                    Alert.showReload(forError: error, title: "Error searching for an update", onVC: self, function: {
-                        self.checkForUpdate()
-                        self.getAllCountries()
-                    })
-                }
-            }
-        }
     }
 }
 
@@ -184,6 +165,7 @@ extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
         guard let vc = storyboard.instantiateViewController(withIdentifier: vcID) as? CoronaCountryDetailVC else { return }
         
         vc.country = selectedCountry
+        vc.lastRefresh = lastRefresh
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -256,6 +238,7 @@ extension CoronaCasesVC {
     @objc
     func getAllCountries() {
         print("REQUEST GetAllCountries")
+        self.refreshControl.beginRefreshing()
         APIService.instance.getAllCountries { [weak self] (result) in
             guard let self = self else { return }
             
@@ -266,7 +249,13 @@ extension CoronaCasesVC {
                 case .success(let countries):
                     self.countries = countries
                     self.lastRefresh = Date()
+                    print("GOT RESULT")
                 case .failure(let error):
+                    guard self.presentedViewController == nil else { return }
+                    if error == .unkown {
+                        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+                        sceneDelegate.checkForUpdate(showPopupWhenUpToDate: false)
+                    }
                     Alert.showReload(forError: error, onVC: self, function: self.getAllCountries)
                 }
             }

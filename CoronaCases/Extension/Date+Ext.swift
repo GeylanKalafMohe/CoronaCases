@@ -9,9 +9,9 @@
 import Foundation
 
 extension Date {
-    func getFormattedToString() -> String {
+    func getFormattedToString(monthInText: Bool = false) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.dateFormat = monthInText ? "dd.MMMM.yyyy" : "dd.MM.yyyy"
         formatter.locale = .current
         
         let dateString = formatter.string(from: self)

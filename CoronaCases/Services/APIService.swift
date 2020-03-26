@@ -32,19 +32,27 @@ class APIService {
 
             guard let data = data else { print("Could'nt get Data"); completion(.failure(.unkown)); return }
             
-            do {
-                let countries = try JSONDecoder().decode([Country].self, from: data)
-                completion(.success(countries))
-            } catch {
-                print(error.localizedDescription)
+            guard let countries = JSONDecoder().safeDecode([Country].self, from: data) else {
                 completion(.failure(APIError.unkown))
+                return
             }
+            completion(.success(countries))
         }
         .resume()
     }
     
     func getCountry(forName name: String, completion: @escaping (_ country: Result<Country, APIError>) -> ()) {
-        guard let requestURL = URL(string: URLs.GET_COUNTRY(forName: name)) else { print("Wrong URL", #file, #function, #line); return }
+        guard let countryName = name.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
+            print("No url percentage", #file, #function, #line)
+            completion(.failure(.unkown))
+            return
+        }
+        
+        guard let requestURL = URL(string: URLs.GET_COUNTRY(forName: countryName)) else {
+            print("Wrong URL", #file, #function, #line)
+            completion(.failure(.unkown))
+            return
+        }
         
         URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
             if let error = self.checkErrors(error, andResponse: response) {
@@ -54,13 +62,11 @@ class APIService {
             
             guard let data = data else { completion(.failure(.unkown)); return }
 
-            do {
-                let country = try JSONDecoder().decode(Country.self, from: data)
-                completion(.success(country))
-            } catch {
-                print(error.localizedDescription)
+            guard let country = JSONDecoder().safeDecode(Country.self, from: data) else {
                 completion(.failure(APIError.unkown))
+                return
             }
+            completion(.success(country))
         }
         .resume()
     }
@@ -83,7 +89,8 @@ class APIService {
     }
     
     private func checkForInternet(forError error: Error?) -> APIError? {
-        if let urlError = error as? URLError, urlError.errorCode == -1009 {
+        // No internet errorCode: -1009
+        if let urlError = error as? URLError, urlError.code == .notConnectedToInternet {
             print("no internet")
             return APIError.noInternet
         }
@@ -94,7 +101,9 @@ class APIService {
     private func checkForBadStatusCode(forResponse response: URLResponse?) -> APIError? {
         if let httpResponse = response as? HTTPURLResponse {
             let statusCode = httpResponse.statusCode
-            if statusCode != 200 {
+            switch statusCode {
+            case 200...201: break
+            default:
                 print("API is not available! StatusCode:", statusCode)
                 return APIError.apiNotAvailable
             }

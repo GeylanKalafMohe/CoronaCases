@@ -18,10 +18,12 @@ class CoronaCountryDetailVC: UIViewController {
     @IBOutlet weak var todayCasesStatisticsLbl: UILabel!
     @IBOutlet weak var todayDeathsStatisticsLbl: UILabel!
     @IBOutlet weak var criticalCasesStatisticsLbl: UILabel!
-
+    @IBOutlet weak var lastUpdateLbl: UILabel!
+    
     // MARK: - Variables
     var country: Country!
-    
+    var lastRefresh: Date!
+
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +48,13 @@ class CoronaCountryDetailVC: UIViewController {
     // MARK: - Configuring
     func configureLbls() {
         self.countryLbl.text = country.country
-        self.confirmedCasesStatisticsLbl.text = country.cases.thousandSeparator()
-        self.totalDeathStatisticslbl.text = country.deaths.thousandSeparator()
-        self.totalRecoveredStatisticsLbl.text = country.recovered.thousandSeparator()
-        self.todayCasesStatisticsLbl.text = country.todayCases.thousandSeparator()
-        self.todayDeathsStatisticsLbl.text = country.todayDeaths.thousandSeparator()
-        self.criticalCasesStatisticsLbl.text = country.critical.thousandSeparator()
+        self.confirmedCasesStatisticsLbl.text = country.cases?.thousandSeparator() ?? "No Data"
+        self.totalDeathStatisticslbl.text = country.deaths?.thousandSeparator() ?? "No Data"
+        self.totalRecoveredStatisticsLbl.text = country.recovered?.thousandSeparator() ?? "No Data"
+        self.todayCasesStatisticsLbl.text = country.todayCases?.thousandSeparator() ?? "No Data"
+        self.todayDeathsStatisticsLbl.text = country.todayDeaths?.thousandSeparator() ?? "No Data"
+        self.criticalCasesStatisticsLbl.text = country.critical?.thousandSeparator() ?? "No Data"
+        self.lastUpdateLbl.text = "Last Update: " + self.lastRefresh.getFormattedToString(monthInText: true)
     }
 }
 
@@ -68,6 +71,7 @@ extension CoronaCountryDetailVC {
                 switch result {
                 case .success(let country):
                     self.country = country
+                    self.lastRefresh = Date()
                     self.configureLbls()
                 case .failure(let error):
                     Alert.showReload(forError: error, onVC: self, function: self.getCountryData)

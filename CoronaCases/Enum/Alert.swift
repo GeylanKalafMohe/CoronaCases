@@ -35,7 +35,7 @@ enum Alert {
     }
     
     static func showUpdate(hasUpdate: Bool, onVC vc: UIViewController) {
-        let title = hasUpdate ? "New Update is available!" : "You're up to date"
+        let title = hasUpdate ? "New Update is available!" : "You are up to date ✌️"
         let message = hasUpdate ? "A new update for CoronaCases have been released!\nCheck GitHub now!" : nil
         
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -46,7 +46,7 @@ enum Alert {
                 })
             }
             
-            guard let url = URL(string: URLs.GITHUB_MAIN) else {
+            guard let url = URL(string: URLs.GITHUB_RELEASES) else {
                 show()
                 return
             }
@@ -69,4 +69,21 @@ enum Alert {
         
         vc.present(controller, animated: true, completion: nil)
     }
+    
+    static func basicAlert(title: String?, message: String?, onVC vc: UIViewController) {        
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAct = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        controller.addAction(okAct)
+        
+        vc.present(controller, animated: true, completion: nil)
+    }
+    
+    static func cantUpdateAppIcon(onVC vc: UIViewController) {
+        let title = "Unable to change Icon"
+        let message = "An error occured. Could not change App Icon.\nPlease try again."
+        
+        Self.basicAlert(title: title, message: message, onVC: vc)
+    }
+
 }
