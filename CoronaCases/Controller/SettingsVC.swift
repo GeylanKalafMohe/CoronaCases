@@ -64,8 +64,8 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
     }
     
     func shareBtnTapped() {
-        let text = "Hey! Check out CoronaCases on GitHub.\nIt is a Coronavirus Tracker for iOS, iPadOS & macOS:\n\n" + URLs.GITHUB_MAIN
-        let shareSheet = UIActivityViewController(activityItems: [text, UIImage(named: "Light-HomeScreen")!], applicationActivities: nil)
+        let text = "Hey! Check out CoronaCases on GitHub.\nIt is a Coronavirus Tracker for iOS, iPadOS & macOS:\n\n" + URLs.GITHUB_README
+        let shareSheet = UIActivityViewController(activityItems: [text, UIImage(named: "Light-HomeScreen")], applicationActivities: nil)
         self.present(shareSheet, animated: true, completion: nil)
     }
     

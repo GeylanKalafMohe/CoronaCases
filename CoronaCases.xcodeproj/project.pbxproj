@@ -513,7 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1st";
 				CODE_SIGN_ENTITLEMENTS = CoronaCases/CoronaCases.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SGY87CDCW8;
 				INFOPLIST_FILE = CoronaCases/Info.plist;
@@ -521,7 +521,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftiSwift.CoronaCases;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -537,7 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1st";
 				CODE_SIGN_ENTITLEMENTS = CoronaCases/CoronaCases.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SGY87CDCW8;
 				INFOPLIST_FILE = CoronaCases/Info.plist;
@@ -545,7 +545,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftiSwift.CoronaCases;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

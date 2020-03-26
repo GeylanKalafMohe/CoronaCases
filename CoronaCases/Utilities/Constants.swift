@@ -18,6 +18,7 @@ struct URLs {
     
     static let GITHUB_RELEASES = "https://github.com/SwiftiSwift/CoronaCases/releases/"
     static let GITHUB_MAIN = "https://github.com/SwiftiSwift/CoronaCases/"
+    static let GITHUB_README = "https://github.com/SwiftiSwift/CoronaCases/blob/master/README.md"
 }
 
 let developerEmail = "unnotige.sachen@web.de"

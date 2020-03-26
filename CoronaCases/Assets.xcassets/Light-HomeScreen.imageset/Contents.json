@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "Light-HomeScreen.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
