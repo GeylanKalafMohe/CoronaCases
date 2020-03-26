@@ -11,7 +11,7 @@ import UIKit
 var updateIsAvailable = false
 
 struct URLs {
-    private static let BASE_URL = "https://corona.lmao.ninja/"
+    private static let BASE_URL = "https://api.caw.sh/"
     static let GET_ALL_COUNTRIES = Self.BASE_URL + "countries"
     
     static func GET_COUNTRY(forName name: String) -> String {

@@ -30,7 +30,7 @@ class APIService {
                 return
             }
 
-            guard let data = data else { print("Could'nt get Data"); completion(.failure(.unkown)); return }
+            guard let data = data, !data.isEmpty else { print("Could'nt get Data"); completion(.failure(.apiNotAvailable)); return }
             
             guard let countries = JSONDecoder().safeDecode([Country].self, from: data) else {
                 completion(.failure(APIError.unkown))
@@ -60,7 +60,7 @@ class APIService {
                 return
             }
             
-            guard let data = data else { completion(.failure(.unkown)); return }
+            guard let data = data, !data.isEmpty else { print("Could'nt get Data"); completion(.failure(.apiNotAvailable)); return }
 
             guard let country = JSONDecoder().safeDecode(Country.self, from: data) else {
                 completion(.failure(APIError.unkown))
