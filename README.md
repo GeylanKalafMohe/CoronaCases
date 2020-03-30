@@ -19,7 +19,7 @@ Try it out!
 - **Macs** that supports **MacOS 10.15**
 
 Do you use a **Windows computer** or does **not have Xcode** installed?<br />
-**No problem!** Visit the releases tab and download the `.ipa` file for **iOS** or **iPadOS** devices or the `.dmg`file for **macOS**
+**No problem!** Visit the releases tab and download the `.ipa` file for **iOS** or **iPadOS** devices or the `.dmg` file for **macOS**
 https://github.com/SwiftiSwift/CoronaCases/releases
 
 ## Screenshots

@@ -19,6 +19,9 @@ class CoronaCasesVC: UIViewController {
     let coronaCellID = String(describing: CoronaStatisticsCell.self)
     var refreshControl: UIRefreshControl!
     
+    var countriesSortedBy: SortType = .confirmedCases
+    lazy var searchedCountry: SectionData? = nil
+
     var countries: [Country] = [] {
         didSet {
             self.tableView.reloadData()
@@ -32,7 +35,7 @@ class CoronaCasesVC: UIViewController {
     }
         
     var countrySections: [SectionData] {
-        let sec2 = SectionData(title: "Current infections by countries", data: self.countries)
+        let sec2 = SectionData(title: "Current infections by countries", data: self.countries.sort(by: countriesSortedBy))
 
         guard let currentCountryName = Locale.current.countryNameInEnglish else { return [sec2] }
         guard let localCountryData = self.countries.first(where: { $0.country == currentCountryName }) else { return [sec2] }
@@ -42,7 +45,6 @@ class CoronaCasesVC: UIViewController {
         return [sec1, sec2]
     }
     
-    lazy var searchedCountry: SectionData? = nil
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -95,7 +97,6 @@ class CoronaCasesVC: UIViewController {
 
 // MARK: - TableView
 extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
-    
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -249,7 +250,7 @@ extension CoronaCasesVC {
                 case .success(let countries):
                     self.countries = countries
                     self.lastRefresh = Date()
-                    print("GOT RESULT")
+                    print("GOT Countries")
                 case .failure(let error):
                     guard self.presentedViewController == nil else { return }
                     if error == .unkown {
@@ -260,5 +261,38 @@ extension CoronaCasesVC {
                 }
             }
         }
+    }
+}
+
+extension CoronaCasesVC {
+    @IBAction func sortByButtonTapped(_ sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: "SortByVC") as? SortByVC else { return }
+        vc.countriesSortBy = self.countriesSortedBy
+        vc.countriesSortByDelegate = self
+
+        // If is macOS
+        #if targetEnvironment(macCatalyst)
+            vc.preferredContentSize = .init(width: 350, height: 260)
+            vc.modalPresentationStyle = .popover
+            let presentationController = vc.popoverPresentationController
+            presentationController?.barButtonItem = self.navigationItem.leftBarButtonItem
+            presentationController?.sourceView = self.view
+            presentationController?.sourceRect = self.view.bounds
+        #else
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+        #endif
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+}
+
+extension CoronaCasesVC: CountriesSortByDelegate {
+    func selectedNewSorting(_ sortType: SortType) {
+        guard countriesSortedBy != sortType else { return }
+        self.countriesSortedBy = sortType
+        
+        UIView.transition(with: tableView, duration: 0.5, options: .transitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: nil)
     }
 }

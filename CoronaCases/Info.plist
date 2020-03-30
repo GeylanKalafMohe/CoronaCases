@@ -10,21 +10,14 @@
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-			<key>AppIcon-1st</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>AppIcon1st</string>
-				</array>
-			</dict>
-			<key>AppIcon-2nd</key>
+			<key>AppIcon2nd</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>AppIcon2nd</string>
 				</array>
 			</dict>
-			<key>AppIcon-3rd</key>
+			<key>AppIcon3rd</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
@@ -44,21 +37,14 @@
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-			<key>AppIcon-1st</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>AppIcon1st</string>
-				</array>
-			</dict>
-			<key>AppIcon-2nd</key>
+			<key>AppIcon2nd</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>AppIcon2nd</string>
 				</array>
 			</dict>
-			<key>AppIcon-3rd</key>
+			<key>AppIcon3rd</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>

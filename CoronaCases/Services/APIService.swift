@@ -129,7 +129,7 @@ class APIService {
             guard let htmlString = String(data: data, encoding: .ascii) else { completion(.failure(.unkown)); return }
             
             do {
-                // parses the version out of html
+                // parses the version out of the html
                 let doc: Document = try SwiftSoup.parse(htmlString)
                 guard var version = try doc.select("body").first()?
                                             .select("div").array()

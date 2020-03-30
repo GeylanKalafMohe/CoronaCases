@@ -9,7 +9,7 @@
 import Foundation
 
 enum AppIcon: String {
-    case primary = "AppIcon-1st"
-    case second = "AppIcon-2nd"
-    case third = "AppIcon-3rd"
+    case primary = "AppIcon1st"
+    case second = "AppIcon2nd"
+    case third = "AppIcon3rd"
 }

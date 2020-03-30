@@ -32,11 +32,11 @@ class CoronaCountryDetailVC: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         
         configureLbls()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.getCountryData), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         getCountryData()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.getCountryData), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,6 +73,7 @@ extension CoronaCountryDetailVC {
                     self.country = country
                     self.lastRefresh = Date()
                     self.configureLbls()
+                    print("GOT GetCountry")
                 case .failure(let error):
                     Alert.showReload(forError: error, onVC: self, function: self.getCountryData)
                 }

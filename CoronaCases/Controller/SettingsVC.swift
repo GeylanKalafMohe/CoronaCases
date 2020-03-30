@@ -21,9 +21,7 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
 
-        segmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: UDKeys.appIcon)
         loadingIndicator.hidesWhenStopped = true
         newUpdateIndicator.isHidden = true
 
@@ -41,6 +39,8 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(stopLoading), name: NSNotification.Name.ERROR_SEARCHING_UPDATE, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(errorSearchingUpdate_reloadTapped), name: NSNotification.Name.ERROR_SEARCHING_UPDATE_RELOAD_TAPPED, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLoading), name: NSNotification.Name.SUCCESS_SEARCHING_FOR_UPDATE, object: nil)
+        
+        setSavedAppIcon()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -109,39 +109,54 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
         }
     }
     
-    func setAlternateIconName(_ alternateIconName: AppIcon) {        
-        guard UIApplication.shared.supportsAlternateIcons else {
+    func setSavedAppIcon() {
+        switch UIApplication.shared.alternateIconName {
+        case nil:
+            segmentedControl.selectedSegmentIndex = 0
+        case AppIcon.second.rawValue:
+            segmentedControl.selectedSegmentIndex = 1
+        case AppIcon.third.rawValue:
+            segmentedControl.selectedSegmentIndex = 2
+        default:
+            print("Error finding error")
+            segmentedControl.selectedSegmentIndex = 0
+        }
+    }
+    
+    func setAlternateIconName(_ alternateIconName: AppIcon) {
+        #if targetEnvironment(macCatalyst)
             Alert.basicAlert(title: "macOS not supported", message: "Changing the App Icon is currently not supported on macOS", onVC: self)
-
+            setSavedAppIcon()
+            return
+        #endif
+        
+        guard UIApplication.shared.supportsAlternateIcons else {
+            Alert.basicAlert(title: "Your platform is not supported", message: "Changing the App Icon is currently not available. Please inform the developer.", onVC: self)
+            setSavedAppIcon()
             print("not supporting alternative app icons")
             return
         }
+        
         if alternateIconName == AppIcon.primary {
             print("Icon back to Primary")
             UIApplication.shared.setAlternateIconName(nil)
-            UserDefaults.standard.set(0, forKey: UDKeys.appIcon)
         } else {
             print("Changing Icon to: ", alternateIconName.rawValue)
 
-            UIApplication.shared.setAlternateIconName(alternateIconName.rawValue) { error in
-                if let error = error {
-                    Alert.cantUpdateAppIcon(onVC: self)
-                    print(error.localizedDescription)
-                    return
-                }
-                
-                switch alternateIconName {
-                case AppIcon.second:
-                    UserDefaults.standard.set(1, forKey: UDKeys.appIcon)
-                case AppIcon.third:
-                    UserDefaults.standard.set(2, forKey: UDKeys.appIcon)
-                default:
-                    break
+            DispatchQueue.main.async {
+                UIApplication.shared.setAlternateIconName(alternateIconName.rawValue) { error in
+                    DispatchQueue.main.async {
+                        if let error = error {
+                            Alert.cantUpdateAppIcon(onVC: self)
+                            print(error.localizedDescription)
+                            self.setSavedAppIcon()
+                            return
+                        }
+                    }
                 }
             }
         }
     }
-    
 }
 
 // MARK: - MailComposer
