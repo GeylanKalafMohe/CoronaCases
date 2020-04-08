@@ -9,5 +9,6 @@
 import Foundation
 
 enum UDKeys {
-    static let appIcon = "appIcon"
+    static let darkModeSwitch = "darkModeSwitch"
+    static let useDeviceUIStyleSwitch = "useDeviceUIStyleSwitch"
 }

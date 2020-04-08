@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  CoronaCases
+
+  Created by SwiftiSwift on 31.03.20.
+  Copyright © 2020 SwiftiSwift. All rights reserved.
+*/
+
+// MARK: - Alert file
+"newUpdateAvailable_title" = "New Update is available!";
+"newUpdateAvailable_message" = "A new update for CoronaCases have been released!\nCheck GitHub now!";
+
+"upToDate_title" = "You are up to date ✌️";
+"later_btn" = "Later";
+
+"unableToChangeIcon_title" = "Unable to change Icon";
+"unableToChangeIcon_message" = "An error occured. Could not change App Icon.\nPlease try again.";
+
+"errorSearchingForUpdate" = "Error sesarching for an update";
+"update" = "Update";
+"noInternet_message" = "You're Offline.\nTurn off Airplane Mode or connect to Wi-Fi or Cellular Data.";
+"unkownError_message" = "An unkown error occured.\nPlease try again later.";
+"serversNotAvailable_message" = "The servers are currently not available!\nPlease try again later.";
+"reload_btn" = "Reload";
+"cancel_btn" = "Cancel";
+"whoops_title" = "Whoops";
+
+// MARK: - SortType file
+"confirmedCases" = "Confirmed cases";
+"totalDeaths" = "Total deaths";
+"totalRecovered" = "Total recovered";
+
+// MARK: - Date+Ext file
+"at" = "at";
+
+// MARK: - CoronaStatisticsDetailCell & CoronaStatisticsCell file
+"noData" = "No Data";
+
+// MARK: - CoronaCasesVC file
+"current_infections_by_countries" = "Current infections by countries";
+"yourCountry" = "Your country";
+"covid_19_cases" = "COVID-19 Cases";
+"lastUpdate" = "As of: ";
+"searchResults" = "Search Results";
+"covid_19_statistics_for" = "COVID-19 statistics for";
+"world_name" = "Worldwide";
+"search" = "Search";
+
+// MARK: - SettingsVC file
+"share_text" = "Hey! Check out CoronaCases on GitHub.\nIt is a Coronavirus Tracker for iOS, iPadOS & macOS:\n\n";
+"macOS_not_supported_title" = "macOS not supported";
+"macOS_not_supported_message" = "Changing the App Icon is currently not supported on macOS";
+"platform_not_supported_title" = "Your platform is not supported";
+"platform_not_supported_message" = "Changing the App Icon is currently not available. Please inform the developer.";
+    // E-Mail
+"about" = "über";
+"developer" = "Developer";
+"device" = "Device";

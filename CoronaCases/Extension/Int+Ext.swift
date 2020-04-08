@@ -16,7 +16,8 @@ extension Int {
     func thousandSeparator() -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
-
+        formatter.locale = Locale.current
+        
         return formatter.string(for: self) ?? asString()
     }
 }

@@ -36,7 +36,7 @@ class SortByVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         let currentType = SortType.allCases[indexPath.row]
         cell.textLabel?.font = UIFont(name: "AvenirNext-DemiBold", size: 16)
-        cell.textLabel?.text = currentType.rawValue
+        cell.textLabel?.text = currentType.localizedString
         cell.layer.cornerRadius = 20
         cell.layer.masksToBounds = true
         

@@ -20,27 +20,24 @@ class CoronaCasesVC: UIViewController {
     var refreshControl: UIRefreshControl!
     
     var countriesSortedBy: SortType = .confirmedCases
-    lazy var searchedCountry: SectionData? = nil
-
+    lazy var searchedCountries: SectionData? = nil
+    var expandedCountry: Country? = nil
+    
     var countries: [Country] = [] {
         didSet {
             self.tableView.reloadData()
         }
     }
-    
-    var lastRefresh: Date? {
-        didSet {
-            self.setLastUpdatedDateLbl()
-        }
-    }
         
     var countrySections: [SectionData] {
-        let sec2 = SectionData(title: "Current infections by countries", data: self.countries.sort(by: countriesSortedBy))
+        let sec2 = SectionData(title: loc(.current_infections_by_countries),
+                               data: self.countries.sort(by: countriesSortedBy))
 
-        guard let currentCountryName = Locale.current.countryNameInEnglish else { return [sec2] }
-        guard let localCountryData = self.countries.first(where: { $0.country == currentCountryName }) else { return [sec2] }
+        guard let countryCode = Locale.current.countryCode else { return [sec2] }
+
+        guard let localCountryData = self.countries.first(where: { $0.countryInfo?.iso2 == countryCode }) else { return [sec2] }
         
-        let sec1 = SectionData(title: "Your country", data: [localCountryData])
+        let sec1 = SectionData(title: loc(.yourCountry), data: [localCountryData])
         
         return [sec1, sec2]
     }
@@ -49,14 +46,18 @@ class CoronaCasesVC: UIViewController {
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "COVID-19 Cases"
+        title = loc(.covid_19_cases)
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController?.searchBar.placeholder = loc(.search)
+
         addRefresh()
         setupTableView()
         
         tabBarController?.delegate = self
         addSearchBar()
         KeyboardAvoiding.avoidingView = self.tableView
+        tableView.estimatedRowHeight = 150
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -88,11 +89,6 @@ class CoronaCasesVC: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false;
         navigationItem.searchController = searchController
     }
-    
-    func setLastUpdatedDateLbl() {
-        let lastUpdate = "Last Update: " + self.lastRefresh!.getFormattedToString()
-        navigationItem.searchController?.searchBar.placeholder = lastUpdate
-    }
 }
 
 // MARK: - TableView
@@ -109,19 +105,19 @@ extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        searchedCountry == nil ? countrySections[section].numberOfItems : searchedCountry!.numberOfItems
+        searchedCountries == nil ? countrySections[section].numberOfItems : searchedCountries!.numberOfItems
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        searchedCountry == nil ? countrySections.count : 1
+        searchedCountries == nil ? countrySections.count : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if !((indexPath.section == 0 && countrySections.count == 1) || (indexPath.section == 1 && countrySections.count > 1) || searchedCountry != nil) {
+        if !((indexPath.section == 0 && countrySections.count == 1) || (indexPath.section == 1 && countrySections.count > 1) || searchedCountries != nil) {
             
             if let detailCell = tableView.dequeueReusableCell(withIdentifier: coronaDetailCellID, for: indexPath) as? CoronaStatisticsDetailCell {
                 
-                let currentCountry = searchedCountry == nil ? countrySections[indexPath.section][indexPath.row] : searchedCountry![indexPath.row]
+                let currentCountry = searchedCountries == nil ? countrySections[indexPath.section][indexPath.row] : searchedCountries![indexPath.row]
                 detailCell.configure(country: currentCountry)
                 detailCell.isUserInteractionEnabled = false
                 return detailCell
@@ -130,44 +126,46 @@ extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: coronaCellID, for: indexPath) as? CoronaStatisticsCell else { return UITableViewCell() }
 
-        let currentCountry = searchedCountry == nil ? countrySections[indexPath.section][indexPath.row] : searchedCountry![indexPath.row]
+        let currentCountry = searchedCountries == nil ? countrySections[indexPath.section][indexPath.row] : searchedCountries![indexPath.row]
         cell.configure(country: currentCountry)
 
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard (indexPath.section == 0 && countrySections.count == 1) || (indexPath.section == 1 && countrySections.count > 1) || searchedCountry != nil else { return 270 }
-        return 150
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return searchedCountry == nil ? countrySections[section].title : searchedCountry!.title
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let lbl = UILabel()
-        lbl.text = searchedCountry == nil ? countrySections[section].title : searchedCountry!.title
-        lbl.font = UIFont(name: "Menlo-Regular", size: 15)
-        lbl.textAlignment = .left
-        lbl.textColor = .systemGray
-        return lbl
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        guard (indexPath.section == 0 && countrySections.count == 1) || (indexPath.section == 1 && countrySections.count > 1) || searchedCountry != nil else { return }
+        guard (indexPath.section == 0 && countrySections.count == 1) || (indexPath.section == 1 && countrySections.count > 1) || searchedCountries != nil else { return }
         
-        let selectedCountry = searchedCountry == nil ? countrySections[indexPath.section][indexPath.row] : searchedCountry![indexPath.row]
+        let selectedCountry = searchedCountries == nil ? countrySections[indexPath.section][indexPath.row] : searchedCountries![indexPath.row]
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vcID = String(describing: CoronaCountryDetailVC.self)
         guard let vc = storyboard.instantiateViewController(withIdentifier: vcID) as? CoronaCountryDetailVC else { return }
         
         vc.country = selectedCountry
-        vc.lastRefresh = lastRefresh
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard (indexPath.section == 0 && countrySections.count == 1) || (indexPath.section == 1 && countrySections.count > 1) || searchedCountries != nil else { return 270 }
+        return 150
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return searchedCountries == nil ? countrySections[section].title : searchedCountries!.title
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        countries.first?.getUpdatedDate?.getFormattedToString()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textAlignment = NSTextAlignment.right
+        
+        let lastUpdate = self.countries.first?.getUpdatedDate?.getFormattedToString() ?? Date().getFormattedToString()
+        header.textLabel?.text = loc(.lastUpdate) + lastUpdate
     }
 }
 
@@ -199,9 +197,9 @@ extension CoronaCasesVC: UISearchBarDelegate {
         guard searchText != "" else { endSearch(); return }
         let searchTextLowercased = searchText.lowercased()
         
-        let searchedCountryData = self.countries.filter { $0.country.lowercased().hasPrefix(searchTextLowercased) }
+        let searchedCountryData = self.countries.filter { $0.getLocalizedCountryName.lowercased().hasPrefix(searchTextLowercased) }
         
-        self.searchedCountry = SectionData(title: "Search Results", data: searchedCountryData)
+        self.searchedCountries = SectionData(title: loc(.searchResults), data: searchedCountryData)
         
         tableView.reloadData()
         scrollToTop()
@@ -212,14 +210,14 @@ extension CoronaCasesVC: UISearchBarDelegate {
     }
     
     func scrollToTop() {
-        guard (searchedCountry?.data.count ?? 0) > 0, tableView.isDragging else { return }
+        guard (searchedCountries?.data.count ?? 0) > 0, tableView.isDragging else { return }
         let firstIndex = IndexPath(row: 0, section: 0)
         tableView.scrollToRow(at: firstIndex, at: .top, animated: true)
     }
     
     func endSearch() {
         scrollToTop()
-        searchedCountry = nil
+        searchedCountries = nil
         tableView.reloadData();
     }
 }
@@ -249,7 +247,7 @@ extension CoronaCasesVC {
                 switch result {
                 case .success(let countries):
                     self.countries = countries
-                    self.lastRefresh = Date()
+
                     print("GOT Countries")
                 case .failure(let error):
                     guard self.presentedViewController == nil else { return }
@@ -267,7 +265,7 @@ extension CoronaCasesVC {
 extension CoronaCasesVC {
     @IBAction func sortByButtonTapped(_ sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: "SortByVC") as? SortByVC else { return }
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SortByVC") as? SortByVC else { return }
         vc.countriesSortBy = self.countriesSortedBy
         vc.countriesSortByDelegate = self
 
@@ -292,7 +290,10 @@ extension CoronaCasesVC: CountriesSortByDelegate {
     func selectedNewSorting(_ sortType: SortType) {
         guard countriesSortedBy != sortType else { return }
         self.countriesSortedBy = sortType
-        
-        UIView.transition(with: tableView, duration: 0.5, options: .transitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: nil)
+        animateTableViewReload(completion: nil)
+    }
+    
+    func animateTableViewReload(duration: TimeInterval = 0.5, options: UIView.AnimationOptions = .transitionCrossDissolve, completion: ((Bool) -> ())?) {
+        UIView.transition(with: tableView, duration: duration, options: options, animations: {self.tableView.reloadData()}, completion: completion)
     }
 }

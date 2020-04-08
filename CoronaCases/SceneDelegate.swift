@@ -17,7 +17,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        changeUIStyleToSettings()
         checkForUpdate(showPopupWhenUpToDate: false)
+    }
+    
+    func changeUIStyle(to style: UIUserInterfaceStyle) {
+        self.window?.overrideUserInterfaceStyle = style
+    }
+    
+    func changeUIStyleToSettings() {
+        let userDefaults = UDService.instance
+
+        if !userDefaults.setDarkMode {
+            userDefaults.useDeviceUIStyleSwitch = true
+            userDefaults.darkModeSwitch = window?.traitCollection.userInterfaceStyle == .dark ? true : false
+        } else {
+            changeUIStyle(to: userDefaults.useDeviceUIStyleSwitch ? .unspecified :
+                (userDefaults.darkModeSwitch ? .dark : .light)
+            )
+        }
     }
     
     func checkForUpdate(showPopupWhenUpToDate: Bool) {
@@ -46,7 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     NotificationCenter.default.post(name: NSNotification.Name.ERROR_SEARCHING_UPDATE, object: nil)
                     Alert.showReload(
                         forError: error,
-                        title: "Error searching for an update",
+                        title: loc(.errorSearchingForUpdate),
                         onVC: tabBarController,
                         function: {
                             NotificationCenter.default.post(name: NSNotification.Name.ERROR_SEARCHING_UPDATE_RELOAD_TAPPED, object: nil)

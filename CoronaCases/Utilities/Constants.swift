@@ -35,7 +35,7 @@ struct DeviceInfo {
     
     static var appName: String {
         let appName = Bundle.main.infoDictionary![kCFBundleNameKey as String]
-        guard let appNameString = appName as? String else { return "Unit Converter" }
+        guard let appNameString = appName as? String else { return "CoronaCases" }
         return appNameString
     }
     
@@ -48,4 +48,8 @@ struct DeviceInfo {
         uname(&sysinfo) // ignore return value
         return String(bytes: Data(bytes: &sysinfo.machine, count: Int(_SYS_NAMELEN)), encoding: .ascii)!.trimmingCharacters(in: .controlCharacters)
     }
+}
+
+func loc(_ stringKey: LocalizedStringKey) -> String {
+    NSLocalizedString(stringKey.rawValue, comment: "")
 }

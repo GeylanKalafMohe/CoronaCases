@@ -18,7 +18,9 @@ class CoronaStatisticsDetailCell: UITableViewCell {
     @IBOutlet weak var todayCasesStatisticLbl: UILabel!
     @IBOutlet weak var todayDeathsStatisticLbl: UILabel!
     @IBOutlet weak var criticalCasesStatisticLbl: UILabel!
-    
+    @IBOutlet weak var topSV: UIStackView!
+    @IBOutlet weak var bottomSV: UIStackView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         preservesSuperviewLayoutMargins = false
@@ -27,12 +29,13 @@ class CoronaStatisticsDetailCell: UITableViewCell {
     }
     
     func configure(country: Country) {
-        self.countryLbl.text = country.country
-        self.confirmedCasesStatisticLbl.text = country.cases?.thousandSeparator() ?? "No Data"
-        self.totalDeathsStatisticLbl.text = country.deaths?.thousandSeparator() ?? "No Data"
-        self.totalRecoveredStatisticLbl.text = country.recovered?.thousandSeparator() ?? "No Data"
-        self.todayCasesStatisticLbl.text = country.todayCases?.thousandSeparator() ?? "No Data"
-        self.todayDeathsStatisticLbl.text = country.todayDeaths?.thousandSeparator() ?? "No Data"
-        self.criticalCasesStatisticLbl.text = country.critical?.thousandSeparator() ?? "No Data"
+        let localizedCountryName = country.getLocalizedCountryName
+        self.countryLbl.text = localizedCountryName.lowercased() == "world" ? loc(.world_name) : localizedCountryName
+        self.confirmedCasesStatisticLbl.text = country.cases?.thousandSeparator() ?? loc(.noData)
+        self.totalDeathsStatisticLbl.text = country.deaths?.thousandSeparator() ?? loc(.noData)
+        self.totalRecoveredStatisticLbl.text = country.recovered?.thousandSeparator() ?? loc(.noData)
+        self.todayCasesStatisticLbl.text = country.todayCases?.thousandSeparator() ?? loc(.noData)
+        self.todayDeathsStatisticLbl.text = country.todayDeaths?.thousandSeparator() ?? loc(.noData)
+        self.criticalCasesStatisticLbl.text = country.critical?.thousandSeparator() ?? loc(.noData)
     }
 }

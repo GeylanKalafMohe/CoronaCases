@@ -8,8 +8,19 @@
 
 import Foundation
 
-enum SortType: String, CaseIterable {
-    case confirmedCases = "Confirmed cases"
-    case totalDeaths = "Total deaths"
-    case totalRecovered = "Total recovered"
+enum SortType: CaseIterable {
+    case confirmedCases
+    case totalDeaths
+    case totalRecovered
+    
+    var localizedString: String {
+        switch self {
+        case .confirmedCases:
+            return loc(.confirmedCases)
+        case .totalDeaths:
+            return loc(.totalDeaths)
+        case .totalRecovered:
+            return loc(.totalRecovered)
+        }
+    }
 }

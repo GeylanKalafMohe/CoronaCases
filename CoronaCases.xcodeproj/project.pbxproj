@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D14C5562427168B00034ED2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14C5552427168B00034ED2 /* Alert.swift */; };
+		0D303649243E3E250091BE04 /* UDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D303648243E3E250091BE04 /* UDService.swift */; };
+		0D30364D243E68030091BE04 /* VerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30364C243E68030091BE04 /* VerticalAlignLabel.swift */; };
 		0D45C7E724252ED9000B9E09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C7E624252ED9000B9E09 /* AppDelegate.swift */; };
 		0D45C7E924252ED9000B9E09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C7E824252ED9000B9E09 /* SceneDelegate.swift */; };
 		0D45C7F324252EDB000B9E09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D45C7F124252EDB000B9E09 /* LaunchScreen.storyboard */; };
@@ -22,7 +24,6 @@
 		0D45C81724252F2D000B9E09 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C80F24252F2D000B9E09 /* Country.swift */; };
 		0D45C81924252F33000B9E09 /* country-codes.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D45C81824252F33000B9E09 /* country-codes.json */; };
 		0D45C81B24252F41000B9E09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D45C81A24252F40000B9E09 /* Assets.xcassets */; };
-		0D45C81D24252FB2000B9E09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D45C81C24252FB2000B9E09 /* Main.storyboard */; };
 		0D45C8432426CBB3000B9E09 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C8422426CBB3000B9E09 /* SettingsVC.swift */; };
 		0D45C8452426DA47000B9E09 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C8442426DA47000B9E09 /* Date+Ext.swift */; };
 		0D662203242E892100521BAB /* SortByVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D662202242E892100521BAB /* SortByVC.swift */; };
@@ -32,6 +33,9 @@
 		0DCF8CA9242E2E0C00DC9AAC /* CountriesArray+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF8CA8242E2E0C00DC9AAC /* CountriesArray+Ext.swift */; };
 		0DCF8CAB242E2E9400DC9AAC /* SortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF8CAA242E2E9400DC9AAC /* SortType.swift */; };
 		0DCF8CAD242E555400DC9AAC /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF8CAC242E555400DC9AAC /* CustomUIView.swift */; };
+		0DDD6BE82432B9CE00F029FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDD6BE62432B9CE00F029FF /* Main.storyboard */; };
+		0DDD6BED2432BB3700F029FF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DDD6BEF2432BB3700F029FF /* Localizable.strings */; };
+		0DDD6BFB2432C57700F029FF /* LocalizedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD6BFA2432C57700F029FF /* LocalizedStringKey.swift */; };
 		0DE587D6242ADF4800C57716 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE587D5242ADF4800C57716 /* Notification.Name.swift */; };
 		0DE6CB08242C072E00EEC063 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 0DE6CB07242C072E00EEC063 /* SwiftSoup */; };
 		0DE6CB0C242C544300EEC063 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6CB0B242C544300EEC063 /* AppIcon.swift */; };
@@ -51,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		0D14C5552427168B00034ED2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		0D303648243E3E250091BE04 /* UDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDService.swift; sourceTree = "<group>"; };
+		0D30364C243E68030091BE04 /* VerticalAlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalAlignLabel.swift; sourceTree = "<group>"; };
 		0D45C7E324252ED9000B9E09 /* CoronaCases.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronaCases.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D45C7E624252ED9000B9E09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D45C7E824252ED9000B9E09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +73,6 @@
 		0D45C80F24252F2D000B9E09 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		0D45C81824252F33000B9E09 /* country-codes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "country-codes.json"; sourceTree = "<group>"; };
 		0D45C81A24252F40000B9E09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0D45C81C24252FB2000B9E09 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0D45C81E242532B4000B9E09 /* CoronaCases.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoronaCases.entitlements; sourceTree = "<group>"; };
 		0D45C8422426CBB3000B9E09 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		0D45C8442426DA47000B9E09 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
@@ -79,6 +84,13 @@
 		0DCF8CA8242E2E0C00DC9AAC /* CountriesArray+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountriesArray+Ext.swift"; sourceTree = "<group>"; };
 		0DCF8CAA242E2E9400DC9AAC /* SortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortType.swift; sourceTree = "<group>"; };
 		0DCF8CAC242E555400DC9AAC /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
+		0DDD6BE72432B9CE00F029FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0DDD6BE92432BA8800F029FF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		0DDD6BEA2432BA8800F029FF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0DDD6BEE2432BB3700F029FF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0DDD6BF32432BEEC00F029FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0DDD6BF92432C08200F029FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		0DDD6BFA2432C57700F029FF /* LocalizedStringKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringKey.swift; sourceTree = "<group>"; };
 		0DE587D5242ADF4800C57716 /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
 		0DE6CB0B242C544300EEC063 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		0DE6CB0D242C581800EEC063 /* JSONDecoder+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Ext.swift"; sourceTree = "<group>"; };
@@ -142,11 +154,12 @@
 				0D45C80E24252F2D000B9E09 /* Model */,
 				0D45C80724252F2D000B9E09 /* View */,
 				0D45C80A24252F2D000B9E09 /* Controller */,
-				0D45C81824252F33000B9E09 /* country-codes.json */,
-				0D45C81C24252FB2000B9E09 /* Main.storyboard */,
+				0DDD6BE62432B9CE00F029FF /* Main.storyboard */,
+				0DDD6BEF2432BB3700F029FF /* Localizable.strings */,
 				0D45C81A24252F40000B9E09 /* Assets.xcassets */,
 				0D45C7F124252EDB000B9E09 /* LaunchScreen.storyboard */,
 				0D45C7F424252EDB000B9E09 /* Info.plist */,
+				0D45C81824252F33000B9E09 /* country-codes.json */,
 				0DE6CB0F242C5B5A00EEC063 /* AppIcons */,
 			);
 			path = CoronaCases;
@@ -178,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				0D45C80624252F2D000B9E09 /* APIService.swift */,
+				0D303648243E3E250091BE04 /* UDService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -188,6 +202,7 @@
 				0D90BA852426E7A6009E5740 /* CoronaStatisticsDetailCell.swift */,
 				0D45C80924252F2D000B9E09 /* CoronaStatisticsCell.swift */,
 				0DCF8CAC242E555400DC9AAC /* CustomUIView.swift */,
+				0D30364C243E68030091BE04 /* VerticalAlignLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +234,7 @@
 				0DB828E6242AE94E0033FB35 /* UDKeys.swift */,
 				0DE6CB0B242C544300EEC063 /* AppIcon.swift */,
 				0DCF8CAA242E2E9400DC9AAC /* SortType.swift */,
+				0DDD6BFA2432C57700F029FF /* LocalizedStringKey.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -311,6 +327,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 0D45C7DA24252ED9000B9E09;
 			packageReferences = (
@@ -333,15 +350,16 @@
 				0DEAD1B1242EF4B100BBBC98 /* AppIcon1st@2x.png in Resources */,
 				0D45C7F324252EDB000B9E09 /* LaunchScreen.storyboard in Resources */,
 				0DEAD1AF242EF4B100BBBC98 /* AppIcon1st@3x.png in Resources */,
+				0DDD6BED2432BB3700F029FF /* Localizable.strings in Resources */,
 				0D45C81924252F33000B9E09 /* country-codes.json in Resources */,
 				0D45C81B24252F41000B9E09 /* Assets.xcassets in Resources */,
 				0DE6CB13242C5BA200EEC063 /* AppIcon3rd@2x.png in Resources */,
 				0DEAD1AB242EF47700BBBC98 /* AppIcon2nd@2x.png in Resources */,
+				0DDD6BE82432B9CE00F029FF /* Main.storyboard in Resources */,
 				0DEAD1AA242EF47700BBBC98 /* AppIcon2nd@3x.png in Resources */,
 				0DE6CB14242C5BA200EEC063 /* AppIcon3rd@1x.png in Resources */,
 				0DE6CB15242C5BA200EEC063 /* AppIcon3rd@3x.png in Resources */,
 				0DEAD1B0242EF4B100BBBC98 /* AppIcon1st@1x.png in Resources */,
-				0D45C81D24252FB2000B9E09 /* Main.storyboard in Resources */,
 				0DE6CB1D242C5C1D00EEC063 /* AppIcon2nd@1x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,10 +408,13 @@
 				0D45C8452426DA47000B9E09 /* Date+Ext.swift in Sources */,
 				0D45C80024252F1D000B9E09 /* Locale+Ext.swift in Sources */,
 				0D45C81424252F2D000B9E09 /* CoronaCasesVC.swift in Sources */,
+				0D30364D243E68030091BE04 /* VerticalAlignLabel.swift in Sources */,
 				0D90BA862426E7A6009E5740 /* CoronaStatisticsDetailCell.swift in Sources */,
 				0DE587D6242ADF4800C57716 /* Notification.Name.swift in Sources */,
 				0D662203242E892100521BAB /* SortByVC.swift in Sources */,
 				0D45C81324252F2D000B9E09 /* CoronaStatisticsCell.swift in Sources */,
+				0D303649243E3E250091BE04 /* UDService.swift in Sources */,
+				0DDD6BFB2432C57700F029FF /* LocalizedStringKey.swift in Sources */,
 				0D45C80224252F1D000B9E09 /* UIView+Ext.swift in Sources */,
 				0DCF8CA9242E2E0C00DC9AAC /* CountriesArray+Ext.swift in Sources */,
 				0D45C7E924252ED9000B9E09 /* SceneDelegate.swift in Sources */,
@@ -413,8 +434,28 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D45C7F224252EDB000B9E09 /* Base */,
+				0DDD6BEA2432BA8800F029FF /* de */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0DDD6BE62432B9CE00F029FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DDD6BE72432B9CE00F029FF /* Base */,
+				0DDD6BE92432BA8800F029FF /* de */,
+				0DDD6BF92432C08200F029FF /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0DDD6BEF2432BB3700F029FF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DDD6BEE2432BB3700F029FF /* de */,
+				0DDD6BF32432BEEC00F029FF /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -424,6 +465,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -484,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -541,15 +584,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon1st;
 				CODE_SIGN_ENTITLEMENTS = CoronaCases/CoronaCases.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SGY87CDCW8;
 				INFOPLIST_FILE = CoronaCases/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftiSwift.CoronaCases;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -565,15 +609,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon1st;
 				CODE_SIGN_ENTITLEMENTS = CoronaCases/CoronaCases.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SGY87CDCW8;
 				INFOPLIST_FILE = CoronaCases/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwiftiSwift.CoronaCases;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

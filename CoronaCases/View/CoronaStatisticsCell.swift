@@ -23,9 +23,10 @@ class CoronaStatisticsCell: UITableViewCell {
     }
     
     func configure(country: Country) {
-        self.countryLbl.text = country.country
-        self.confirmedCasesStatisticLbl.text = country.cases?.thousandSeparator() ?? "No Data"
-        self.totalDeathsStatisticLbl.text = country.deaths?.thousandSeparator() ?? "No Data"
-        self.totalRecoveredStatisticLbl.text = country.recovered?.thousandSeparator() ?? "No Data"
+        let localizedCountryName = country.getLocalizedCountryName
+        self.countryLbl.text = localizedCountryName.lowercased() == "world" ? loc(.world_name) : localizedCountryName
+        self.confirmedCasesStatisticLbl.text = country.cases?.thousandSeparator() ?? loc(.noData)
+        self.totalDeathsStatisticLbl.text = country.deaths?.thousandSeparator() ?? loc(.noData)
+        self.totalRecoveredStatisticLbl.text = country.recovered?.thousandSeparator() ?? loc(.noData)
     }
 }

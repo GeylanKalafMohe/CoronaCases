@@ -9,16 +9,21 @@
 import Foundation
 
 extension Locale {
-    var countryNameInEnglish: String? {
+    var countryCode: String? {
         guard let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String else { return nil }
+        return countryCode
+    }
+    
+    var localizedCountryName: String? {
+        guard
+            let countryCode = countryCode,
+            let currentCountryName = getLocalizedCountryName(forCountryCode: countryCode)
+        else { return nil }
 
-        guard let currentCountryName = Self.countryNameInEnglish(countryCode: countryCode) else { return nil}
-        
         return currentCountryName
     }
     
-    static func countryNameInEnglish(countryCode: String) -> String? {
-        let current = Locale(identifier: "en_US")
-        return current.localizedString(forRegionCode: countryCode)
+    func getLocalizedCountryName(forCountryCode countryCode: String) -> String? {
+        return self.localizedString(forRegionCode: countryCode)
     }
 }

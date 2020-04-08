@@ -18,6 +18,6 @@ extension Date {
         formatter.dateFormat = "HH:mm:ss"
         let timeString = formatter.string(from: self)
         
-        return dateString + " at " + timeString
+        return dateString + " \(loc(.at)) " + timeString
     }
 }

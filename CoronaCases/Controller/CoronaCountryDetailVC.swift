@@ -22,13 +22,12 @@ class CoronaCountryDetailVC: UIViewController {
     
     // MARK: - Variables
     var country: Country!
-    var lastRefresh: Date!
 
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "COVID-19 statistics for"
+        title = loc(.covid_19_statistics_for)
         navigationItem.largeTitleDisplayMode = .never
         
         configureLbls()
@@ -47,14 +46,16 @@ class CoronaCountryDetailVC: UIViewController {
     
     // MARK: - Configuring
     func configureLbls() {
-        self.countryLbl.text = country.country
-        self.confirmedCasesStatisticsLbl.text = country.cases?.thousandSeparator() ?? "No Data"
-        self.totalDeathStatisticslbl.text = country.deaths?.thousandSeparator() ?? "No Data"
-        self.totalRecoveredStatisticsLbl.text = country.recovered?.thousandSeparator() ?? "No Data"
-        self.todayCasesStatisticsLbl.text = country.todayCases?.thousandSeparator() ?? "No Data"
-        self.todayDeathsStatisticsLbl.text = country.todayDeaths?.thousandSeparator() ?? "No Data"
-        self.criticalCasesStatisticsLbl.text = country.critical?.thousandSeparator() ?? "No Data"
-        self.lastUpdateLbl.text = "Last Update: " + self.lastRefresh.getFormattedToString(monthInText: true)
+        self.countryLbl.text = country.getLocalizedCountryName
+        self.confirmedCasesStatisticsLbl.text = country.cases?.thousandSeparator() ?? loc(.noData)
+        self.totalDeathStatisticslbl.text = country.deaths?.thousandSeparator() ?? loc(.noData)
+        self.totalRecoveredStatisticsLbl.text = country.recovered?.thousandSeparator() ?? loc(.noData)
+        self.todayCasesStatisticsLbl.text = country.todayCases?.thousandSeparator() ?? loc(.noData)
+        self.todayDeathsStatisticsLbl.text = country.todayDeaths?.thousandSeparator() ?? loc(.noData)
+        self.criticalCasesStatisticsLbl.text = country.critical?.thousandSeparator() ?? loc(.noData)
+        
+        let date = country.getUpdatedDate?.getFormattedToString(monthInText: true) ?? Date().getFormattedToString(monthInText: true)
+        self.lastUpdateLbl.text = loc(.lastUpdate) + date
     }
 }
 
@@ -71,7 +72,7 @@ extension CoronaCountryDetailVC {
                 switch result {
                 case .success(let country):
                     self.country = country
-                    self.lastRefresh = Date()
+
                     self.configureLbls()
                     print("GOT GetCountry")
                 case .failure(let error):

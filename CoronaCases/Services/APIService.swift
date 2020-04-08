@@ -32,10 +32,37 @@ class APIService {
 
             guard let data = data, !data.isEmpty else { print("Could'nt get Data"); completion(.failure(.apiNotAvailable)); return }
             
-            guard let countries = JSONDecoder().safeDecode([Country].self, from: data) else {
+            guard var countries = JSONDecoder().safeDecode([Country].self, from: data) else {
                 completion(.failure(APIError.unkown))
                 return
             }
+            
+            var totalCases = 0
+            var todayCases = 0
+            var totalDeaths = 0
+            var todayDeaths = 0
+            var totalRecovered = 0
+            var criticalCases = 0
+
+            for country in countries {
+                totalCases += country.cases ?? 0
+                todayCases += country.todayCases ?? 0
+                totalDeaths += country.deaths ?? 0
+                todayDeaths += country.todayDeaths ?? 0
+                totalRecovered += country.recovered ?? 0
+                criticalCases += country.critical ?? 0
+            }
+            
+            let world = Country(country: "World",
+                                cases: totalCases,
+                                todayCases: todayCases,
+                                deaths: totalDeaths,
+                                todayDeaths: todayDeaths,
+                                recovered: totalRecovered,
+                                critical: criticalCases,
+                                countryInfo: nil,
+                                updated: countries.first?.updated ?? Date().timeIntervalSinceNow)
+            countries.insert(world, at: 0)
             completion(.success(countries))
         }
         .resume()

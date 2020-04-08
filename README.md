@@ -1,6 +1,6 @@
 # CoronaCases(COVID-19)
 ![Platform](https://img.shields.io/badge/platforms-iOS%20%7C%20iPadOS%20%7C%20macOS-orange)
-![Version](https://img.shields.io/badge/version-1.1.3-blue)
+![Version](https://img.shields.io/badge/version-1.2-blue)
 
 Watch the latest Corona Virus cases in your country and in the world!
 
@@ -15,8 +15,8 @@ Try it out!
 
 ## Supported Devices
 
-- **iPhones** & **iPads**
-- **Macs** that supports **MacOS 10.15**
+- **iPhone** & **iPad**
+- **Mac** (macOS 10.15 and up)
 
 Do you use a **Windows computer** or does **not have Xcode** installed?<br />
 **No problem!** Visit the releases tab and download the `.ipa` file for **iOS** or **iPadOS** devices or the `.dmg` file for **macOS**

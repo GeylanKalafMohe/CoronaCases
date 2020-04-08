@@ -10,23 +10,23 @@ import UIKit
 import SafariServices
 
 enum Alert {
-    static func showReload(forError error: APIError, title: String? = "Whoops", onVC vc: UIViewController, function: @escaping () -> ()) {
+    static func showReload(forError error: APIError, title: String? = loc(.whoops_title), onVC vc: UIViewController, function: @escaping () -> ()) {
         var message: String!
         
         switch error {
         case .apiNotAvailable:
-            message = "The servers are currently not available!\nPlease try again later."
+            message = loc(.serversNotAvailable_message)
         case .unkown:
-            message = "An unkown error occured.\nPlease try again later."
+            message = loc(.unkownError_message)
         case .noInternet:
-            message = "You're Offline.\nTurn off Airplane Mode or connect to Wi-Fi or Cellular Data."
+            message = loc(.noInternet_message)
         }
         
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Reload", style: .default) { (_) in
+        let action = UIAlertAction(title: loc(.reload_btn), style: .default) { (_) in
             function()
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: loc(.cancel_btn), style: .cancel, handler: nil)
         
         controller.addAction(cancel)
         controller.addAction(action)
@@ -35,13 +35,13 @@ enum Alert {
     }
     
     static func showUpdate(hasUpdate: Bool, onVC vc: UIViewController) {
-        let title = hasUpdate ? "New Update is available!" : "You are up to date ✌️"
-        let message = hasUpdate ? "A new update for CoronaCases have been released!\nCheck GitHub now!" : nil
+        let title = hasUpdate ? loc(.newUpdateAvailable_title) : loc(.upToDate_title)
+        let message = hasUpdate ? loc(.newUpdateAvailable_message) : nil
         
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let updateAct = UIAlertAction(title: "Update", style: .default) { (_) in
+        let updateAct = UIAlertAction(title: loc(.update), style: .default) { (_) in
             func show() {
-                Alert.showReload(forError: .unkown, title: "Error sesarching for an update", onVC: vc, function: {
+                Alert.showReload(forError: .unkown, title: loc(.errorSearchingForUpdate), onVC: vc, function: {
                     showUpdate(hasUpdate: hasUpdate, onVC: vc)
                 })
             }
@@ -58,7 +58,7 @@ enum Alert {
             })
         }
         let okAct = UIAlertAction(title: "OK", style: .default, handler: nil)
-        let laterAct = UIAlertAction(title: "Later", style: .cancel, handler: nil)
+        let laterAct = UIAlertAction(title: loc(.later_btn), style: .cancel, handler: nil)
         
         if hasUpdate {
             controller.addAction(laterAct)
@@ -80,10 +80,9 @@ enum Alert {
     }
     
     static func cantUpdateAppIcon(onVC vc: UIViewController) {
-        let title = "Unable to change Icon"
-        let message = "An error occured. Could not change App Icon.\nPlease try again."
+        let title = loc(.unableToChangeIcon_title)
+        let message = loc(.unableToChangeIcon_message)
         
         Self.basicAlert(title: title, message: message, onVC: vc)
     }
-
 }

@@ -17,7 +17,12 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var newUpdateIndicator: UIImageView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var darkModeSwitch: UISwitch!
+    @IBOutlet weak var useDeviceUIStyleInstructions: VerticalAlignLabel!
+    @IBOutlet weak var useDeviceUIStyleSwitch: UISwitch!
     
+    lazy var vcStyleIsDark = self.traitCollection.userInterfaceStyle == .dark ? true : false
+
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,7 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
         }
         appNameLbl.text = DeviceInfo.appName
         versionNumberLbl.text = DeviceInfo.appVersion
+        changeSwitchesToUDSettings()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +73,7 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
     }
     
     func shareBtnTapped() {
-        let text = "Hey! Check out CoronaCases on GitHub.\nIt is a Coronavirus Tracker for iOS, iPadOS & macOS:\n\n" + URLs.GITHUB_README
+        let text = loc(.share_text) + URLs.GITHUB_README
         let shareSheet = UIActivityViewController(activityItems: [text, UIImage(named: "Light-HomeScreen")], applicationActivities: nil)
         self.present(shareSheet, animated: true, completion: nil)
     }
@@ -125,13 +131,16 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
     
     func setAlternateIconName(_ alternateIconName: AppIcon) {
         #if targetEnvironment(macCatalyst)
-            Alert.basicAlert(title: "macOS not supported", message: "Changing the App Icon is currently not supported on macOS", onVC: self)
+        Alert.basicAlert(title: loc(.macOS_not_supported_title), message: loc(.macOS_not_supported_message), onVC: self)
             setSavedAppIcon()
             return
         #endif
         
         guard UIApplication.shared.supportsAlternateIcons else {
-            Alert.basicAlert(title: "Your platform is not supported", message: "Changing the App Icon is currently not available. Please inform the developer.", onVC: self)
+            Alert.basicAlert(
+                title: loc(.platform_not_supported_title),
+                message: loc(.platform_not_supported_message),
+                onVC: self)
             setSavedAppIcon()
             print("not supporting alternative app icons")
             return
@@ -169,19 +178,19 @@ extension SettingsVC: MFMailComposeViewControllerDelegate {
         mailComposer.setToRecipients([developerEmail])
         
         //Set the subject
-        mailComposer.setSubject("Feedback/Support about \(DeviceInfo.appName)")
+        mailComposer.setSubject("Feedback/Support \(loc(.about)) \(DeviceInfo.appName)")
 
         //Set mail body
         mailComposer.setMessageBody(
         """
-            Hey Developer,</br></br>
+            Hey \(loc(.developer)),</br></br>
 
-            My Feedback/Support: </br></br>
+            Feedback/Support: </br></br>
 
             App: \(DeviceInfo.appName)</br>
             Version: \(DeviceInfo.appVersion)</br>
             \(DeviceInfo.osName) Version: \(DeviceInfo.osVersion)</br>
-            Device: \(DeviceInfo.deviceModel)
+            \(loc(.device)): \(DeviceInfo.deviceModel)
         """, isHTML: true)
         
         self.present(mailComposer, animated: true, completion: nil)
@@ -197,16 +206,51 @@ extension SettingsVC {
         tableView.deselectRow(at: indexPath, animated: true)
         
         switch indexPath {
-        case .init(row: 1, section: 1):
-            viaTwitterTapped()
-        case .init(row: 2, section: 1):
-            viaEmailTapped()
-        case .init(row: 0, section: 2):
-            shareBtnTapped()
-        case .init(row: 0, section: 4):
+        case .init(row: 0, section: 1):
             checkForUpdateBtnTapped()
+        case .init(row: 1, section: 2):
+            viaTwitterTapped()
+        case .init(row: 2, section: 2):
+            viaEmailTapped()
+        case .init(row: 0, section: 4):
+            shareBtnTapped()
         default:
             break
         }
+    }
+    
+    func switchUIStyle(to style: UIUserInterfaceStyle) {
+        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+        
+        sceneDelegate.changeUIStyle(to: style)
+    }
+    
+    func changeSwitchesToUDSettings() {
+        let useDeviceUIStyleSwitchOn = UDService.instance.useDeviceUIStyleSwitch
+        darkModeSwitch.isOn = UDService.instance.darkModeSwitch
+        useDeviceUIStyleSwitch.isOn = useDeviceUIStyleSwitchOn
+
+        darkModeSwitch.isEnabled = !useDeviceUIStyleSwitchOn
+    }
+    
+    @IBAction func darkModeSwitchTapped(_ sender: UISwitch) {
+        UDService.instance.darkModeSwitch = sender.isOn
+        switchUIStyle(to: sender.isOn ? .dark : .light)
+    }
+    
+    @IBAction func useDeviceUIStyleTapped(_ sender: UISwitch) {
+        if sender.isOn {
+            UDService.instance.useDeviceUIStyleSwitch = true
+            self.darkModeSwitch.isEnabled = false
+            switchUIStyle(to: .unspecified)
+            UDService.instance.darkModeSwitch = vcStyleIsDark
+        } else {
+            self.darkModeSwitch.isEnabled = true
+            UDService.instance.useDeviceUIStyleSwitch = false
+            
+            darkModeSwitchTapped(self.darkModeSwitch)
+        }
+
+        self.darkModeSwitch.setOn(vcStyleIsDark, animated: true)
     }
 }
