@@ -44,4 +44,6 @@ enum LocalizedStringKey: String {
     case device
     case world_name
     case search
+    case yesterday
+    case today
 }

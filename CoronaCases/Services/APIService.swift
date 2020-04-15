@@ -10,7 +10,7 @@ import Foundation
 import SwiftSoup
 
 enum APIError: Error {
-    case unkown
+    case unknown
     case apiNotAvailable
     case noInternet
 }
@@ -18,8 +18,8 @@ enum APIError: Error {
 class APIService {
     static let instance = APIService()
     
-    func getAllCountries(completion: @escaping (_ countries: Result<[Country], APIError>) -> ()) {
-        guard let requestURL = URL(string: URLs.GET_ALL_COUNTRIES) else {
+    func getAllCountries(yesterday: Bool, completion: @escaping (_ countries: Result<[Country], APIError>) -> ()) {
+        guard let requestURL = URL(string: URLs.GET_ALL_COUNTRIES(forYesterday: yesterday)) else {
             print("Wrong URL", #file, #function, #line)
             return
         }
@@ -33,7 +33,7 @@ class APIService {
             guard let data = data, !data.isEmpty else { print("Could'nt get Data"); completion(.failure(.apiNotAvailable)); return }
             
             guard var countries = JSONDecoder().safeDecode([Country].self, from: data) else {
-                completion(.failure(APIError.unkown))
+                completion(.failure(APIError.unknown))
                 return
             }
             
@@ -68,16 +68,16 @@ class APIService {
         .resume()
     }
     
-    func getCountry(forName name: String, completion: @escaping (_ country: Result<Country, APIError>) -> ()) {
+    func getCountry(forName name: String, forYesterday yesterday: Bool, completion: @escaping (_ country: Result<Country, APIError>) -> ()) {
         guard let countryName = name.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
             print("No url percentage", #file, #function, #line)
-            completion(.failure(.unkown))
+            completion(.failure(.unknown))
             return
         }
         
-        guard let requestURL = URL(string: URLs.GET_COUNTRY(forName: countryName)) else {
+        guard let requestURL = URL(string: URLs.GET_COUNTRY(forName: countryName, forYesterday: yesterday)) else {
             print("Wrong URL", #file, #function, #line)
-            completion(.failure(.unkown))
+            completion(.failure(.unknown))
             return
         }
         
@@ -90,7 +90,7 @@ class APIService {
             guard let data = data, !data.isEmpty else { print("Could'nt get Data"); completion(.failure(.apiNotAvailable)); return }
 
             guard let country = JSONDecoder().safeDecode(Country.self, from: data) else {
-                completion(.failure(APIError.unkown))
+                completion(.failure(APIError.unknown))
                 return
             }
             completion(.success(country))
@@ -105,7 +105,7 @@ class APIService {
 
         if let error = error {
             print(error.localizedDescription)
-            return .unkown
+            return .unknown
         }
         
         if let error = self.checkForBadStatusCode(forResponse: response) {
@@ -139,10 +139,10 @@ class APIService {
         return nil
     }
     
-    func checkForUpdate(completion: @escaping (_ result: Result<Bool, APIError>) -> ()) {
-        guard let myURL = URL(string: URLs.GITHUB_RELEASES) else {
+    func checkForUpdate(completion: @escaping (_ result: Result<UpdateInfo, APIError>) -> ()) {
+        guard let myURL = URL(string: URLs.GITHUB_API_LATEST_RELEASE) else {
             print("URL doesn't seem to be a valid URL")
-            completion(.failure(.unkown))
+            completion(.failure(.unknown))
             return
         }
 
@@ -152,35 +152,33 @@ class APIService {
                 return
             }
             
-            guard let data = data else { completion(.failure(.unkown)); return }
-            guard let htmlString = String(data: data, encoding: .ascii) else { completion(.failure(.unkown)); return }
+            guard let data = data else { completion(.failure(.unknown)); return }
             
             do {
-                // parses the version out of the html
-                let doc: Document = try SwiftSoup.parse(htmlString)
-                guard var version = try doc.select("body").first()?
-                                            .select("div").array()
-                                            .first(where: { try $0.attr("class") == "application-main "})?
-                                            .select("div").select("main").select("div").array()
-                                            .first(where: { try $0.attr("class") == "container-lg clearfix new-discussion-timeline  p-responsive"})?
-                                            .attr("class", "repository-content ")
-                                            .attr("class", "position-relative border-top clearfix")
-                                            .attr("class", "position-relative border-top clearfix")
-                                            .children().array().first?.child(2).children().first()?
-                                            .children().array().first?.children().array().first?.child(1)
-                                            .children().array().first?.children().first()?.child(1)
-                                            .ownText() else { return }
+                let jsonResponse = try JSONSerialization.jsonObject(with: data)
                 
+                guard let jsonDict = jsonResponse as? [String: Any],
+                      var version = jsonDict["tag_name"] as? String,
+                      let changelog = jsonDict["body"] as? String
+                else { print("error getting update"); completion(.failure(.unknown)); return }
+
                 // Removes the "v" from version num
                 version.remove(at: version.startIndex)
                 
                 let hasNewVersion = version > DeviceInfo.appVersion
-                completion(.success(hasNewVersion))
-            } catch let error {
-                print("Error: \(error)")
-                completion(.failure(.unkown))
+
+                let updateInfo = UpdateInfo(updateAvailable: hasNewVersion, changelog: changelog)
+                completion(.success(updateInfo))
+            } catch let parsingError {
+                print("Error", parsingError)
+                completion(.failure(.unknown))
             }
         }
         .resume()
     }
+}
+
+struct UpdateInfo {
+    let updateAvailable: Bool
+    let changelog: String
 }

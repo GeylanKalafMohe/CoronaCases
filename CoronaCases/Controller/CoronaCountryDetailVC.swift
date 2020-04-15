@@ -13,7 +13,7 @@ class CoronaCountryDetailVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var countryLbl: UILabel!
     @IBOutlet weak var confirmedCasesStatisticsLbl: UILabel!
-    @IBOutlet weak var totalDeathStatisticslbl: UILabel!
+    @IBOutlet weak var totalDeathStatisticsLbl: UILabel!
     @IBOutlet weak var totalRecoveredStatisticsLbl: UILabel!
     @IBOutlet weak var todayCasesStatisticsLbl: UILabel!
     @IBOutlet weak var todayDeathsStatisticsLbl: UILabel!
@@ -22,6 +22,8 @@ class CoronaCountryDetailVC: UIViewController {
     
     // MARK: - Variables
     var country: Country!
+    var selectedSegment: Int!
+    lazy var fetchForYesterday = selectedSegment == 1 ? true : false
 
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -46,16 +48,19 @@ class CoronaCountryDetailVC: UIViewController {
     
     // MARK: - Configuring
     func configureLbls() {
-        self.countryLbl.text = country.getLocalizedCountryName
+        let localizedCountryName = country.getLocalizedCountryName
+        self.countryLbl.text = localizedCountryName.lowercased() == "world" ? loc(.world_name) + " 🌎" : localizedCountryName
         self.confirmedCasesStatisticsLbl.text = country.cases?.thousandSeparator() ?? loc(.noData)
-        self.totalDeathStatisticslbl.text = country.deaths?.thousandSeparator() ?? loc(.noData)
+        self.totalDeathStatisticsLbl.text = country.deaths?.thousandSeparator() ?? loc(.noData)
         self.totalRecoveredStatisticsLbl.text = country.recovered?.thousandSeparator() ?? loc(.noData)
         self.todayCasesStatisticsLbl.text = country.todayCases?.thousandSeparator() ?? loc(.noData)
         self.todayDeathsStatisticsLbl.text = country.todayDeaths?.thousandSeparator() ?? loc(.noData)
         self.criticalCasesStatisticsLbl.text = country.critical?.thousandSeparator() ?? loc(.noData)
         
-        let date = country.getUpdatedDate?.getFormattedToString(monthInText: true) ?? Date().getFormattedToString(monthInText: true)
-        self.lastUpdateLbl.text = loc(.lastUpdate) + date
+        let yesterdaySelected = selectedSegment == 1 ? true : false
+
+        let latestDate = country.getUpdatedDate?.getString(monthInText: true) ?? Date().getString(monthInText: true)
+        self.lastUpdateLbl.text = loc(.lastUpdate) + (yesterdaySelected ? loc(.yesterday) : latestDate)
     }
 }
 
@@ -65,7 +70,8 @@ extension CoronaCountryDetailVC {
     @objc
     func getCountryData() {
         print("REQUEST GetCountry")
-        APIService.instance.getCountry(forName: country.country) { [weak self] (result) in
+        guard country.getLocalizedCountryName.lowercased() != "world" else { return }
+        APIService.instance.getCountry(forName: country.country, forYesterday: fetchForYesterday) { [weak self] (result) in
             guard let self = self else { return }
             
             DispatchQueue.main.async {

@@ -46,7 +46,7 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(errorSearchingUpdate_reloadTapped), name: NSNotification.Name.ERROR_SEARCHING_UPDATE_RELOAD_TAPPED, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stopLoading), name: NSNotification.Name.SUCCESS_SEARCHING_FOR_UPDATE, object: nil)
         
-        setSavedAppIcon()
+        setSegmentedControlAppIconIndex()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,20 +56,13 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
     }
 
     // MARK: - Cell Actions
-    func viaTwitterTapped() {
-        showTwitter()
-    }
     
-    func showTwitter() {
+    func viaTwitterTapped() {
         guard let twitterURL = URL(string: developerTwitterURL) else { return }
         UIApplication.shared.open(twitterURL) { (success) in
             guard !success else { return }
-            Alert.showReload(forError: .unkown, onVC: self, function: self.showTwitter)
+            Alert.showReload(forError: .unknown, onVC: self, function: self.viaTwitterTapped)
         }
-    }
-    
-    func viaEmailTapped() {
-        showEmailVC()
     }
     
     func shareBtnTapped() {
@@ -115,7 +108,7 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
         }
     }
     
-    func setSavedAppIcon() {
+    func setSegmentedControlAppIconIndex() {
         switch UIApplication.shared.alternateIconName {
         case nil:
             segmentedControl.selectedSegmentIndex = 0
@@ -132,7 +125,7 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
     func setAlternateIconName(_ alternateIconName: AppIcon) {
         #if targetEnvironment(macCatalyst)
         Alert.basicAlert(title: loc(.macOS_not_supported_title), message: loc(.macOS_not_supported_message), onVC: self)
-            setSavedAppIcon()
+            setSegmentedControlAppIconIndex()
             return
         #endif
         
@@ -141,7 +134,7 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
                 title: loc(.platform_not_supported_title),
                 message: loc(.platform_not_supported_message),
                 onVC: self)
-            setSavedAppIcon()
+            setSegmentedControlAppIconIndex()
             print("not supporting alternative app icons")
             return
         }
@@ -158,7 +151,7 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
                         if let error = error {
                             Alert.cantUpdateAppIcon(onVC: self)
                             print(error.localizedDescription)
-                            self.setSavedAppIcon()
+                            self.setSegmentedControlAppIconIndex()
                             return
                         }
                     }
@@ -170,7 +163,7 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
 
 // MARK: - MailComposer
 extension SettingsVC: MFMailComposeViewControllerDelegate {
-    func showEmailVC() {
+    func viaEmailTapped() {
         let mailComposer = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
         
@@ -243,14 +236,12 @@ extension SettingsVC {
             UDService.instance.useDeviceUIStyleSwitch = true
             self.darkModeSwitch.isEnabled = false
             switchUIStyle(to: .unspecified)
-            UDService.instance.darkModeSwitch = vcStyleIsDark
+
         } else {
             self.darkModeSwitch.isEnabled = true
             UDService.instance.useDeviceUIStyleSwitch = false
             
             darkModeSwitchTapped(self.darkModeSwitch)
         }
-
-        self.darkModeSwitch.setOn(vcStyleIsDark, animated: true)
     }
 }

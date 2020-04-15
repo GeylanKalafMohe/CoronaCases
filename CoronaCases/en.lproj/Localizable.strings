@@ -45,6 +45,8 @@
 "covid_19_statistics_for" = "COVID-19 statistics for";
 "world_name" = "Worldwide";
 "search" = "Search";
+"yesterday" = "Yesterday";
+"today" = "Today";
 
 // MARK: - SettingsVC file
 "share_text" = "Hey! Check out CoronaCases on GitHub.\nIt is a Coronavirus Tracker for iOS, iPadOS & macOS:\n\n";

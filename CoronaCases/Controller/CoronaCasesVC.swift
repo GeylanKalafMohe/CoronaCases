@@ -13,6 +13,7 @@ class CoronaCasesVC: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var changeFetchTimeSegmentControl: UISegmentedControl!
     
     // MARK: - Variables
     let coronaDetailCellID = String(describing: CoronaStatisticsDetailCell.self)
@@ -35,9 +36,9 @@ class CoronaCasesVC: UIViewController {
 
         guard let countryCode = Locale.current.countryCode else { return [sec2] }
 
-        guard let localCountryData = self.countries.first(where: { $0.countryInfo?.iso2 == countryCode }) else { return [sec2] }
+        let localCountryData = self.countries.first(where: { $0.countryInfo?.iso2 == countryCode })
         
-        let sec1 = SectionData(title: loc(.yourCountry), data: [localCountryData])
+        let sec1 = SectionData(title: loc(.yourCountry), data: localCountryData == nil ? [] : [localCountryData!])
         
         return [sec1, sec2]
     }
@@ -63,9 +64,9 @@ class CoronaCasesVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(makeBecomeActiveNotif), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(getAllCountries), name: Notification.Name.ERROR_SEARCHING_UPDATE_RELOAD_TAPPED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshCountries), name: Notification.Name.ERROR_SEARCHING_UPDATE_RELOAD_TAPPED, object: nil)
         
-        getAllCountries()
+        getAllCountries(forYesterday: changeFetchTimeSegmentControl.selectedSegmentIndex == 1 ? true : false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,7 +79,7 @@ class CoronaCasesVC: UIViewController {
     @objc
     func makeBecomeActiveNotif() {
         NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.getAllCountries), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshCountries), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     // MARK: - Setup
@@ -101,7 +102,13 @@ extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
     
     func addRefresh() {
         refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(getAllCountries), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(refreshCountries), for: .valueChanged)
+    }
+    
+    @objc
+    func refreshCountries() {
+        self.changeFetchTimeSegmentControl.selectedSegmentIndex = 0
+        self.getAllCountries(forYesterday: false)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -144,6 +151,7 @@ extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
         guard let vc = storyboard.instantiateViewController(withIdentifier: vcID) as? CoronaCountryDetailVC else { return }
         
         vc.country = selectedCountry
+        vc.selectedSegment = changeFetchTimeSegmentControl.selectedSegmentIndex
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -157,15 +165,17 @@ extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        countries.first?.getUpdatedDate?.getFormattedToString()
+        countries.first?.getUpdatedDate?.getString()
     }
     
     func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textAlignment = NSTextAlignment.right
         
-        let lastUpdate = self.countries.first?.getUpdatedDate?.getFormattedToString() ?? Date().getFormattedToString()
-        header.textLabel?.text = loc(.lastUpdate) + lastUpdate
+        let yesterdaySelected = changeFetchTimeSegmentControl.selectedSegmentIndex == 1 ? true : false
+
+        let latestUpdate = self.countries.first?.getUpdatedDate?.getString() ?? Date().getString()
+        header.textLabel?.text = loc(.lastUpdate) + (yesterdaySelected ? loc(.yesterday) : latestUpdate)
     }
 }
 
@@ -235,10 +245,11 @@ extension CoronaCasesVC: UITabBarControllerDelegate {
 extension CoronaCasesVC {
     
     @objc
-    func getAllCountries() {
+    func getAllCountries(forYesterday yesterday: Bool) {
         print("REQUEST GetAllCountries")
         self.refreshControl.beginRefreshing()
-        APIService.instance.getAllCountries { [weak self] (result) in
+
+        APIService.instance.getAllCountries(yesterday: yesterday) { [weak self] (result) in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
@@ -250,14 +261,26 @@ extension CoronaCasesVC {
 
                     print("GOT Countries")
                 case .failure(let error):
+                    self.countries.removeAll()
                     guard self.presentedViewController == nil else { return }
-                    if error == .unkown {
+                    if error == .unknown {
                         guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
                         sceneDelegate.checkForUpdate(showPopupWhenUpToDate: false)
                     }
-                    Alert.showReload(forError: error, onVC: self, function: self.getAllCountries)
+                    Alert.showReload(forError: error, onVC: self, function: { self.getAllCountries(forYesterday: yesterday) })
                 }
             }
+        }
+    }
+    
+    @IBAction func changedFetchTime(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            getAllCountries(forYesterday: false)
+        case 1:
+            getAllCountries(forYesterday: true)
+        default:
+            getAllCountries(forYesterday: false)
         }
     }
 }

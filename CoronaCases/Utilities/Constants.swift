@@ -12,15 +12,19 @@ var updateIsAvailable = false
 
 struct URLs {
     private static let BASE_URL = "https://api.caw.sh/"
-    static let GET_ALL_COUNTRIES = Self.BASE_URL + "countries"
-    
-    static func GET_COUNTRY(forName name: String) -> String {
-        Self.BASE_URL + "countries/" + name
+
+    static func GET_ALL_COUNTRIES(forYesterday yesterday: Bool) -> String {
+        return Self.BASE_URL + "v2/countries?yesterday=" + "\(yesterday)"
+    }
+
+    static func GET_COUNTRY(forName name: String, forYesterday yesterday: Bool) -> String {
+        Self.BASE_URL + "v2/countries/" + name + "/?yesterday=" + "\(yesterday)"
     }
     
     static let GITHUB_RELEASES = "https://github.com/SwiftiSwift/CoronaCases/releases/"
     static let GITHUB_MAIN = "https://github.com/SwiftiSwift/CoronaCases/"
     static let GITHUB_README = "https://github.com/SwiftiSwift/CoronaCases/blob/master/README.md"
+    static let GITHUB_API_LATEST_RELEASE = "https://api.github.com/repos/swiftiswift/coronacases/releases/latest"
 }
 
 let developerEmail = "unnotige.sachen@web.de"

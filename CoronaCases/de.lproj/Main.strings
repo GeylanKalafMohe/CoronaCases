@@ -52,7 +52,7 @@
 "Ns0-wK-JlJ.text" = "Geräteeinstellungen verwenden";
 
 /* Class = "UILabel"; text = "Set Dark Mode to use the light or Dark selection located in your device Display & Brightness settings"; ObjectID = "RvK-2W-F7A"; */
-"RvK-2W-F7A.text" = "Stelle den Dunklmodus ein, um die Auswahl von Hell und Dunkel in den Einstellungen deines Geräts für Anzeige und Helligkeit zu verwenden.";
+"RvK-2W-F7A.text" = "Stelle den Dunkelmodus ein, um die Auswahl von Hell und Dunkel in den Einstellungen deines Geräts für Anzeige und Helligkeit zu verwenden.";
 
 // -------
 
@@ -187,3 +187,10 @@
 
 /* Class = "UILabel"; text = "Version:"; ObjectID = "yah-YF-kFP"; */
 "yah-YF-kFP.text" = "Version:";
+
+// -----------------------------------------
+/* Class = "UISegmentedControl"; urF-YB-7Z1.segmentTitles[0] = "Today"; ObjectID = "1zH-dV-Eaa"; */
+"1zH-dV-Eaa.segmentTitles[0]" = "Heute";
+
+/* Class = "UISegmentedControl"; urF-YB-7Z1.segmentTitles[1] = "Yesterday"; ObjectID = "1zH-dV-Eaa"; */
+"1zH-dV-Eaa.segmentTitles[1]" = "Gestern";

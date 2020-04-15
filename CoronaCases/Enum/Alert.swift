@@ -16,7 +16,7 @@ enum Alert {
         switch error {
         case .apiNotAvailable:
             message = loc(.serversNotAvailable_message)
-        case .unkown:
+        case .unknown:
             message = loc(.unkownError_message)
         case .noInternet:
             message = loc(.noInternet_message)
@@ -34,15 +34,15 @@ enum Alert {
         vc.present(controller, animated: true, completion: nil)
     }
     
-    static func showUpdate(hasUpdate: Bool, onVC vc: UIViewController) {
+    static func showUpdate(changelog: String, hasUpdate: Bool, onVC vc: UIViewController) {
         let title = hasUpdate ? loc(.newUpdateAvailable_title) : loc(.upToDate_title)
-        let message = hasUpdate ? loc(.newUpdateAvailable_message) : nil
+        let message = hasUpdate ? (loc(.newUpdateAvailable_message) + "\n\n" + changelog) : nil
         
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let updateAct = UIAlertAction(title: loc(.update), style: .default) { (_) in
             func show() {
-                Alert.showReload(forError: .unkown, title: loc(.errorSearchingForUpdate), onVC: vc, function: {
-                    showUpdate(hasUpdate: hasUpdate, onVC: vc)
+                Alert.showReload(forError: .unknown, title: loc(.errorSearchingForUpdate), onVC: vc, function: {
+                    showUpdate(changelog: changelog, hasUpdate: hasUpdate, onVC: vc)
                 })
             }
             
