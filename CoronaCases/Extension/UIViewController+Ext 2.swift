@@ -2,8 +2,8 @@
 //  UIViewController+Ext.swift
 //  CoronaCases
 //
-//  Created by SwiftiSwift on 27.04.20.
-//  Copyright © 2020 SwiftiSwift. All rights reserved.
+//  Created by Geylan Kalaf Mohe on 27.04.20.
+//  Copyright © 2020 Geylan Kalaf Mohe. All rights reserved.
 //
 
 import UIKit

@@ -1,0 +1,66 @@
+/* 
+  Localizable.strings
+  CoronaCases
+
+  Created by SwiftiSwift on 31.03.20.
+  Copyright © 2020 SwiftiSwift. All rights reserved.
+*/
+
+// MARK: - Alert file
+"newUpdateAvailable_title" = "Neues Update ist verfügbar!";
+"newUpdateAvailable_message" = "Ein neues Update für CoronaCases wurde veröffentlicht!\nSchaue jetzt auf GitHub!";
+
+"upToDate_title" = "Du bist auf dem neuesten Stand ✌️";
+"later_btn" = "Später";
+
+"unableToChangeIcon_title" = "Icon konnte nicht geändert werden";
+"unableToChangeIcon_message" = "Ein Fehler ist aufgetreten. App Icon konnte nicht geändert werden.\nBitte versuche es erneut.";
+
+"errorSearchingForUpdate" = "Fehler bei der Suche nach einem Update";
+"update" = "Aktualisieren";
+"noInternet_message" = "Du bist Offline.\nSchalte den Flugmodus aus oder verbinde dich mit einem WLAN oder Mobile Daten.";
+"unkownError_message" = "Ein unbekannter Fehler ist aufgetreten.\nBitte versuche es später erneut.";
+"serversNotAvailable_message" = "Die Server sind derzeit nicht erreichbar! Bitte versuche es später erneut.";
+"reload_btn" = "Neu laden";
+"cancel_btn" = "Abbrechen";
+"whoops_title" = "Oops";
+
+// MARK: - SortType file
+"confirmedCases" = "Bestätigte Fälle";
+"totalDeaths" = "Gesamte Todesfälle";
+"totalRecovered" = "Gesamte Genesene";
+
+// MARK: - Date+Ext file
+"at" = "um";
+
+// MARK: - CoronaStatisticsDetailCell & CoronaStatisticsCell file
+"noData" = "Keine Daten";
+
+// MARK: - CoronaCasesVC file
+"current_infections_by_countries" = "Aktuelle Infektionen nach Ländern";
+"yourCountry" = "Dein Land";
+"covid_19_cases" = "COVID-19 Fälle";
+"lastUpdate" = "Stand: ";
+"searchResults" = "Suchergebnisse";
+"covid_19_statistics_for" = "COVID-19 Statistik für";
+"world_name" = "Weltweit 🌎";
+"search" = "Suchen";
+"yesterday" = "Gestern";
+"today" = "Heute";
+"casesYesterday" = "Fälle\ngestern";
+"deathsYesterday" = "Todesfälle\ngestern";
+"casesToday" = "Fälle\nheute";
+"deathsToday" = "Todesfälle\nheute";
+
+// MARK: - SettingsVC file
+"share_text" = "Hey! Schau dir mal CoronaCases auf GitHub an.\nEs ist ein Coronavirus Tracker für iOS, iPadOS & macOS:\n\n";
+"macOS_not_supported_title" = "macOS wird nicht unterstützt";
+"macOS_not_supported_message" = "Das Ändern des App Icons wird derzeit unter macOS nicht unterstützt";
+"platform_not_supported_title" = "Deine Platform wird nicht unterstützt";
+"platform_not_supported_message" = "Das Ändern des App Icons ist derzeit nicht verfügbar. Bitte informiere den Entwickler.";
+    // E-Mail
+"about" = "über";
+"developer" = "Entwickler";
+"device" = "Gerät";
+
+

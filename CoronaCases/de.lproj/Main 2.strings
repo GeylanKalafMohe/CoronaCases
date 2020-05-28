@@ -1,0 +1,203 @@
+
+/* Class = "UITableViewSection"; headerTitle = "updates"; ObjectID = "0a6-11-f50"; */
+"0a6-11-f50.headerTitle" = "Aktualisierungen";
+
+/* Class = "UILabel"; text = "2136"; ObjectID = "1K4-wk-EvA"; */
+"1K4-wk-EvA.text" = "2136";
+
+/* Class = "UILabel"; text = "Last Update: 25.March.2020 at 03:18:19"; ObjectID = "5h9-57-GOW"; */
+"5h9-57-GOW.text" = "Last Update: 25.March.2020 at 03:18:19";
+
+/* Class = "UILabel"; text = "via Twitter"; ObjectID = "7I7-9v-X6c"; */
+"7I7-9v-X6c.text" = "über Twitter";
+
+/* Class = "UILabel"; text = "Feedback & Support"; ObjectID = "BLD-qW-zxW"; */
+"BLD-qW-zxW.text" = "Feedback & Support";
+
+/* Class = "UILabel"; text = "Deaths today"; ObjectID = "p8u-c8-LbT"; */
+"p8u-c8-LbT.text" = "Todesfälle\nheute";
+
+/* Class = "UILabel"; text = "1.2.5"; ObjectID = "9KJ-MH-hqc"; */
+"9KJ-MH-hqc.text" = "1.2.5";
+
+/* Class = "UIBarButtonItem"; title = "All"; ObjectID = "Aet-bu-qem"; */
+"Aet-bu-qem.title" = "Alle";
+
+/* Class = "UILabel"; text = "100000"; ObjectID = "BYg-38-1Fp"; */
+"BYg-38-1Fp.text" = "100000";
+
+/* Class = "UILabel"; text = "Check for update"; ObjectID = "DDp-SA-bWz"; */
+"DDp-SA-bWz.text" = "Nach Updates prüfen";
+
+/* Class = "UILabel"; text = "CoronaCases"; ObjectID = "Dh2-fI-p7o"; */
+"Dh2-fI-p7o.text" = "CoronaCases";
+
+/* Class = "UILabel"; text = "Deaths today"; ObjectID = "F9M-eB-Ss5"; */
+"F9M-eB-Ss5.text" = "Todesfälle\nheute";
+
+/* Class = "UILabel"; text = "10000000000"; ObjectID = "GKr-gb-HXR"; */
+"GKr-gb-HXR.text" = "10000000000";
+
+/* Class = "UITableViewSection"; headerTitle = "Contact"; ObjectID = "aBI-pc-p91"; */
+"aBI-pc-p91.headerTitle" = "Kontakt";
+
+// MARK: - Options
+/* Class = "UITableViewSection"; headerTitle = "Contact"; ObjectID = "Gkk-MX-WOX"; */
+"Gkk-MX-WOX.headerTitle" = "Optionen";
+
+/* Class = "UILabel"; text = "Dark Mode"; ObjectID = "7wd-Mm-Taa"; */
+"7wd-Mm-Taa.text" = "Dunkelmodus";
+
+/* Class = "UILabel"; text = "Use device settings"; ObjectID = "Ns0-wK-JlJ"; */
+"Ns0-wK-JlJ.text" = "Geräteeinstellungen verwenden";
+
+/* Class = "UILabel"; text = "Set Dark Mode to use the light or Dark selection located in your device Display & Brightness settings"; ObjectID = "RvK-2W-F7A"; */
+"RvK-2W-F7A.text" = "Stelle den Dunkelmodus ein, um die Auswahl von Hell und Dunkel in den Einstellungen deines Geräts für Anzeige und Helligkeit zu verwenden.";
+
+// -------
+
+/* Class = "UILabel"; text = "Virus icon icon by Icons8\nhttps://icons8.de/icons/set/virus"; ObjectID = "JW6-OM-ia8"; */
+"JW6-OM-ia8.text" = "Virus icon icon by Icons8\nhttps://icons8.de/icons/set/virus";
+
+/* Class = "UILabel"; text = "Total\nrecovered"; ObjectID = "qxb-0i-k2n"; */
+"qxb-0i-k2n.text" = "Gesamte\nGenesene";
+
+/* Class = "UILabel"; text = "via E-Mail"; ObjectID = "Lf0-zy-v6W"; */
+"Lf0-zy-v6W.text" = "über E-Mail";
+
+/* Class = "UITabBarItem"; title = "COVID-19 Cases"; ObjectID = "OSW-Va-UK7"; */
+"OSW-Va-UK7.title" = "COVID-19 Cases";
+
+/* Class = "UILabel"; text = "Confirmed\ncases"; ObjectID = "mJJ-hU-OaG"; */
+"mJJ-hU-OaG.text" = "Bestätigte\nFälle";
+
+/* Class = "UILabel"; text = "Total\ndeaths"; ObjectID = "kR7-eh-MK1"; */
+"kR7-eh-MK1.text" = "Gesamte\nTodesfälle";
+
+/* Class = "UILabel"; text = "40000"; ObjectID = "P7t-71-pDq"; */
+"P7t-71-pDq.text" = "40000";
+
+/* Class = "UITableViewSection"; headerTitle = "App Icon"; ObjectID = "Pq9-X9-zug"; */
+"Pq9-X9-zug.headerTitle" = "App Icon";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "QGF-iL-1qv"; */
+"QGF-iL-1qv.title" = "Einstellungen";
+
+/* Class = "UIButton"; normalTitle = "Credits"; ObjectID = "R8L-Ds-XFK"; */
+"R8L-Ds-XFK.normalTitle" = "Credits";
+
+/* Class = "UILabel"; text = "China"; ObjectID = "VEw-dC-S6X"; */
+"VEw-dC-S6X.text" = "China";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "VYy-Wo-mko"; */
+"VYy-Wo-mko.title" = "Einstellungen";
+
+/* Class = "UITableViewSection"; headerTitle = "Share"; ObjectID = "Val-9x-6ZP"; */
+"Val-9x-6ZP.headerTitle" = "Teilen";
+
+/* Class = "UILabel"; text = "Cases today"; ObjectID = "Xe4-pZ-vI4"; */
+"Xe4-pZ-vI4.text" = "Fälle\nheute";
+
+/* Class = "UILabel"; text = "Cases today"; ObjectID = "NQe-Ni-SLl"; */
+"NQe-Ni-SLl.text" = "Fälle\nheute";
+
+/* Class = "UILabel"; text = "44"; ObjectID = "eWA-Ln-gvA"; */
+"eWA-Ln-gvA.text" = "44";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "fAh-ff-sVk"; */
+"fAh-ff-sVk.title" = "";
+
+/* Class = "UILabel"; text = "China"; ObjectID = "fYb-vr-4Dn"; */
+"fYb-vr-4Dn.text" = "China";
+
+/* Class = "UILabel"; text = "44"; ObjectID = "fdK-qI-jXm"; */
+"fdK-qI-jXm.text" = "44";
+
+/* Class = "UILabel"; text = "43043403"; ObjectID = "fqH-68-Ble"; */
+"fqH-68-Ble.text" = "43043403";
+
+/* Class = "UILabel"; text = "Total\ndeaths"; ObjectID = "frh-YJ-agu"; */
+"frh-YJ-agu.text" = "Gesamte\nTodesfälle";
+
+/* Class = "UITableViewSection"; headerTitle = "App Info"; ObjectID = "hmG-xh-VMs"; */
+"hmG-xh-VMs.headerTitle" = "App Informationen";
+
+/* Class = "UILabel"; text = "100000"; ObjectID = "iHy-ih-EiY"; */
+"iHy-ih-EiY.text" = "100000";
+
+/* Class = "UILabel"; text = "700"; ObjectID = "ire-cc-FMn"; */
+"ire-cc-FMn.text" = "700";
+
+/* Class = "UILabel"; text = "700"; ObjectID = "iyA-WC-uJ5"; */
+"iyA-WC-uJ5.text" = "700";
+
+/* Class = "UILabel"; text = "Total\nrecovered"; ObjectID = "j7X-eN-opW"; */
+"j7X-eN-opW.text" = "Gesamte\nGenesene";
+
+/* Class = "UILabel"; text = "Confirmed\ncases"; ObjectID = "jhf-m2-Fic"; */
+"jhf-m2-Fic.text" = "Bestätigte\nFälle";
+
+/* Class = "UISegmentedControl"; kEc-QX-Bkb.segmentTitles[0] = "1"; ObjectID = "kEc-QX-Bkb"; */
+"kEc-QX-Bkb.segmentTitles[0]" = "1";
+
+/* Class = "UISegmentedControl"; kEc-QX-Bkb.segmentTitles[1] = "2"; ObjectID = "kEc-QX-Bkb"; */
+"kEc-QX-Bkb.segmentTitles[1]" = "2";
+
+/* Class = "UISegmentedControl"; kEc-QX-Bkb.segmentTitles[2] = "3"; ObjectID = "kEc-QX-Bkb"; */
+"kEc-QX-Bkb.segmentTitles[2]" = "3";
+
+/* Class = "UILabel"; text = "2136"; ObjectID = "lVa-mc-Fkx"; */
+"lVa-mc-Fkx.text" = "2136";
+
+/* Class = "UILabel"; text = "32610"; ObjectID = "n6A-5T-U9s"; */
+"n6A-5T-U9s.text" = "32610";
+
+/* Class = "UILabel"; text = "Total\ndeaths"; ObjectID = "oMi-J0-NY4"; */
+"oMi-J0-NY4.text" = "Gesamte\nTodesfälle";
+
+/* Class = "UILabel"; text = "Critical cases"; ObjectID = "qFt-oL-uHx"; */
+"qFt-oL-uHx.text" = "Kritische\nFälle";
+
+/* Class = "UILabel"; text = "Total\nrecovered"; ObjectID = "r1v-5E-WRG"; */
+"r1v-5E-WRG.text" = "Gesamte\nGenesene";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "rWp-bG-2yJ"; */
+"rWp-bG-2yJ.title" = "Einstellungen";
+
+/* Class = "UILabel"; text = "Sort countries by"; ObjectID = "rvP-zG-3Sp"; */
+"rvP-zG-3Sp.text" = "Länder sortieren nach";
+
+/* Class = "UILabel"; text = "100000"; ObjectID = "sjX-ns-o7e"; */
+"sjX-ns-o7e.text" = "100000";
+
+/* Class = "UILabel"; text = "700"; ObjectID = "t3e-92-irk"; */
+"t3e-92-irk.text" = "700";
+
+/* Class = "UILabel"; text = "China"; ObjectID = "tXc-ir-Ksl"; */
+"tXc-ir-Ksl.text" = "China";
+
+/* Class = "UILabel"; text = "Critical cases"; ObjectID = "WxW-yF-sNo"; */
+"WxW-yF-sNo.text" = "Kritische\nFälle";
+
+/* Class = "UILabel"; text = "10.0350"; ObjectID = "up8-KF-rNR"; */
+"up8-KF-rNR.text" = "10.0350";
+
+/* Class = "UILabel"; text = "Confirmed\ncases"; ObjectID = "vO3-qX-JwB"; */
+"vO3-qX-JwB.text" = "Bestätigte\nFälle";
+
+/* Class = "UILabel"; text = "Version:"; ObjectID = "yah-YF-kFP"; */
+"yah-YF-kFP.text" = "Version:";
+
+// -----------------------------------------
+/* Class = "UISegmentedControl"; urF-YB-7Z1.segmentTitles[0] = "Today"; ObjectID = "1zH-dV-Eaa"; */
+"1zH-dV-Eaa.segmentTitles[0]" = "Heute";
+
+/* Class = "UISegmentedControl"; urF-YB-7Z1.segmentTitles[1] = "Yesterday"; ObjectID = "1zH-dV-Eaa"; */
+"1zH-dV-Eaa.segmentTitles[1]" = "Gestern";
+
+// -----------------------------------------
+/* Class = "UISegmentedControl"; urF-YB-7Z1.segmentTitles[0] = "Today"; ObjectID = "Bd6-lL-g7b"; */
+"Bd6-lL-g7b.segmentTitles[0]" = "Heute";
+
+/* Class = "UISegmentedControl"; urF-YB-7Z1.segmentTitles[1] = "Yesterday"; ObjectID = "Bd6-lL-g7b"; */
+"Bd6-lL-g7b.segmentTitles[1]" = "Gestern";
