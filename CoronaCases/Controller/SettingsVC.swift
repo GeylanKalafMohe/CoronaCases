@@ -61,7 +61,7 @@ class SettingsVC: UITableViewController, UITabBarControllerDelegate {
         guard let twitterURL = URL(string: developerTwitterURL) else { return }
         UIApplication.shared.open(twitterURL) { (success) in
             guard !success else { return }
-            Alert.showReload(forError: .unknown, onVC: self, function: self.viaTwitterTapped)
+            Alert.showReload(forError: .unknown, onVC: self, reloadTapped: self.viaTwitterTapped)
         }
     }
     

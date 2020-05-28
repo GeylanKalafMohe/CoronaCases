@@ -43,10 +43,14 @@
 "lastUpdate" = "As of: ";
 "searchResults" = "Search Results";
 "covid_19_statistics_for" = "COVID-19 statistics for";
-"world_name" = "Worldwide";
+"world_name" = "Worldwide 🌎";
 "search" = "Search";
 "yesterday" = "Yesterday";
 "today" = "Today";
+"casesYesterday" = "Cases\nyesterday";
+"deathsYesterday" = "Deaths\nyesterday";
+"casesToday" = "Cases\ntoday";
+"deathsToday" = "Deaths\ntoday";
 
 // MARK: - SettingsVC file
 "share_text" = "Hey! Check out CoronaCases on GitHub.\nIt is a Coronavirus Tracker for iOS, iPadOS & macOS:\n\n";

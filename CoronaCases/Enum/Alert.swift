@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 
 enum Alert {
-    static func showReload(forError error: APIError, title: String? = loc(.whoops_title), onVC vc: UIViewController, function: @escaping () -> ()) {
+    static func showReload(forError error: APIError, title: String? = loc(.whoops_title), onVC vc: UIViewController, cancelTapped: (() -> ())? = nil, reloadTapped: @escaping () -> ()) {
         var message: String!
         
         switch error {
@@ -20,13 +20,17 @@ enum Alert {
             message = loc(.unkownError_message)
         case .noInternet:
             message = loc(.noInternet_message)
+        case .cancelled:
+            return
         }
         
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: loc(.reload_btn), style: .default) { (_) in
-            function()
+        let action = UIAlertAction(title: loc(.reload_btn), style: .default) { _ in
+            reloadTapped()
         }
-        let cancel = UIAlertAction(title: loc(.cancel_btn), style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: loc(.cancel_btn), style: .cancel) { _ in
+            cancelTapped?()
+        }
         
         controller.addAction(cancel)
         controller.addAction(action)
@@ -41,7 +45,7 @@ enum Alert {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let updateAct = UIAlertAction(title: loc(.update), style: .default) { (_) in
             func show() {
-                Alert.showReload(forError: .unknown, title: loc(.errorSearchingForUpdate), onVC: vc, function: {
+                Alert.showReload(forError: .unknown, title: loc(.errorSearchingForUpdate), onVC: vc, reloadTapped: {
                     showUpdate(changelog: changelog, hasUpdate: hasUpdate, onVC: vc)
                 })
             }
@@ -67,7 +71,8 @@ enum Alert {
             controller.addAction(okAct)
         }
         
-        vc.present(controller, animated: true, completion: nil)
+        controller.dismissTopAlert()
+        controller.presentOnMostTop()
     }
     
     static func basicAlert(title: String?, message: String?, onVC vc: UIViewController) {        

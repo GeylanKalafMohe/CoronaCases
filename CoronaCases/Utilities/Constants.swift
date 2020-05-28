@@ -12,7 +12,11 @@ var updateIsAvailable = false
 
 struct URLs {
     private static let BASE_URL = "https://api.caw.sh/"
-
+    
+    static func GET_WORLD(forYesterday yesterday: Bool) -> String {
+        return Self.BASE_URL + "v2/all?yesterday=" + "\(yesterday)"
+    }
+    
     static func GET_ALL_COUNTRIES(forYesterday yesterday: Bool) -> String {
         return Self.BASE_URL + "v2/countries?yesterday=" + "\(yesterday)"
     }

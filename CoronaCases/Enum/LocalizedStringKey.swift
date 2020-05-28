@@ -46,4 +46,8 @@ enum LocalizedStringKey: String {
     case search
     case yesterday
     case today
+    case casesYesterday
+    case deathsYesterday
+    case casesToday
+    case deathsToday
 }

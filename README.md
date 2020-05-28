@@ -2,11 +2,11 @@
 ![Platform](https://img.shields.io/badge/platforms-iOS%20%7C%20iPadOS%20%7C%20macOS-orange)
 ![Version](https://img.shields.io/badge/version-1.3-blue)
 
-Watch the latest Corona Virus cases in your country and in the world!
+Watch the latest Coronavirus cases in your country and in the world!
 
 Don't waste your time searching in the internet for the latest cases.
 
-With CoronaCases you can **easily**, **practically** and at **every time watch** the **current Corona Virus state** in **your country** and in the **world**!
+With CoronaCases you can **easily**, **practically** and **every time** watch the **current Coronavirus state** in **your country** and in the **world**!
 
 On the top you can see the country you're currently in with all important informations. 
 Tap on one country and see more details on it.

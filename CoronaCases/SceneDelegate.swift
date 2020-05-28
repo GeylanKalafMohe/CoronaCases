@@ -53,7 +53,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
                     NotificationCenter.default.post(name: NSNotification.Name.SUCCESS_SEARCHING_FOR_UPDATE, object: nil)
 
-                    if (hasUpdate || showPopupWhenUpToDate) && tabBarController.presentedViewController == nil {
+                    if (hasUpdate || showPopupWhenUpToDate){
                         Alert.showUpdate(changelog: updateInfo.changelog, hasUpdate: hasUpdate, onVC: tabBarController)
                     }
                     guard hasUpdate else { return }
@@ -61,13 +61,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     tabBarController.viewControllers?.last?.tabBarItem.badgeValue = "1"
 
                 case .failure(let error):
-                    guard tabBarController.presentedViewController == nil else { return }
                     NotificationCenter.default.post(name: NSNotification.Name.ERROR_SEARCHING_UPDATE, object: nil)
                     Alert.showReload(
                         forError: error,
                         title: loc(.errorSearchingForUpdate),
-                        onVC: tabBarController,
-                        function: {
+                        onVC: tabBarController.mostTopVC,
+                        reloadTapped: {
                             NotificationCenter.default.post(name: NSNotification.Name.ERROR_SEARCHING_UPDATE_RELOAD_TAPPED, object: nil)
                             self.checkForUpdate(showPopupWhenUpToDate: showPopupWhenUpToDate)
                         })

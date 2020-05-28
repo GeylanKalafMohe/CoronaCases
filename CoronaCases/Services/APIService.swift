@@ -13,10 +13,13 @@ enum APIError: Error {
     case unknown
     case apiNotAvailable
     case noInternet
+    case cancelled
 }
 
 class APIService {
     static let instance = APIService()
+    
+    var task: URLSessionDataTask? = nil
     
     func getAllCountries(yesterday: Bool, completion: @escaping (_ countries: Result<[Country], APIError>) -> ()) {
         guard let requestURL = URL(string: URLs.GET_ALL_COUNTRIES(forYesterday: yesterday)) else {
@@ -24,8 +27,8 @@ class APIService {
             return
         }
         
-        URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
-            if let error = self.checkErrors(error, andResponse: response) {
+        task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
+            if let error = ErrorChecker.instance.checkErrors(error, andResponse: response) {
                 completion(.failure(error))
                 return
             }
@@ -53,7 +56,7 @@ class APIService {
                 criticalCases += country.critical ?? 0
             }
             
-            let world = Country(country: "World",
+            let world = Country(country: nil,
                                 cases: totalCases,
                                 todayCases: todayCases,
                                 deaths: totalDeaths,
@@ -65,7 +68,8 @@ class APIService {
             countries.insert(world, at: 0)
             completion(.success(countries))
         }
-        .resume()
+        
+        task?.resume()
     }
     
     func getCountry(forName name: String, forYesterday yesterday: Bool, completion: @escaping (_ country: Result<Country, APIError>) -> ()) {
@@ -81,8 +85,8 @@ class APIService {
             return
         }
         
-        URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
-            if let error = self.checkErrors(error, andResponse: response) {
+        task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
+            if let error = ErrorChecker.instance.checkErrors(error, andResponse: response) {
                 completion(.failure(error))
                 return
             }
@@ -95,48 +99,33 @@ class APIService {
             }
             completion(.success(country))
         }
-        .resume()
+        
+        task?.resume()
     }
     
-    private func checkErrors(_ error: Error?, andResponse response: URLResponse?) -> APIError? {
-        if let error = self.checkForInternet(forError: error) {
-            return error
-        }
-
-        if let error = error {
-            print(error.localizedDescription)
-            return .unknown
+    func getWorld(yesterday: Bool, completion: @escaping (_ countries: Result<Country, APIError>) -> ()) {
+        guard let requestURL = URL(string: URLs.GET_WORLD(forYesterday: yesterday)) else {
+            print("Wrong URL", #file, #function, #line)
+            return
         }
         
-        if let error = self.checkForBadStatusCode(forResponse: response) {
-            return error
-        }
-        
-        return nil
-    }
-    
-    private func checkForInternet(forError error: Error?) -> APIError? {
-        // No internet errorCode: -1009
-        if let urlError = error as? URLError, urlError.code == .notConnectedToInternet {
-            print("no internet")
-            return APIError.noInternet
-        }
-        
-        return nil
-    }
-    
-    private func checkForBadStatusCode(forResponse response: URLResponse?) -> APIError? {
-        if let httpResponse = response as? HTTPURLResponse {
-            let statusCode = httpResponse.statusCode
-            switch statusCode {
-            case 200...201: break
-            default:
-                print("API is not available! StatusCode:", statusCode)
-                return APIError.apiNotAvailable
+        task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
+            if let error = ErrorChecker.instance.checkErrors(error, andResponse: response) {
+                completion(.failure(error))
+                return
             }
+
+            guard let data = data, !data.isEmpty else { print("Could'nt get Data"); completion(.failure(.apiNotAvailable)); return }
+            
+            guard let world = JSONDecoder().safeDecode(Country.self, from: data) else {
+                completion(.failure(APIError.unknown))
+                return
+            }
+            
+            completion(.success(world))
         }
         
-        return nil
+        task?.resume()
     }
     
     func checkForUpdate(completion: @escaping (_ result: Result<UpdateInfo, APIError>) -> ()) {
@@ -147,7 +136,7 @@ class APIService {
         }
 
         URLSession.shared.dataTask(with: myURL) { (data, response, error) in
-            if let error = self.checkErrors(error, andResponse: response) {
+            if let error = ErrorChecker.instance.checkErrors(error, andResponse: response) {
                 completion(.failure(error))
                 return
             }
@@ -176,9 +165,8 @@ class APIService {
         }
         .resume()
     }
-}
-
-struct UpdateInfo {
-    let updateAvailable: Bool
-    let changelog: String
+    
+    func stopCurrentRequest() {
+        self.task?.cancel()
+    }
 }

@@ -20,7 +20,9 @@ class CoronaStatisticsDetailCell: UITableViewCell {
     @IBOutlet weak var criticalCasesStatisticLbl: UILabel!
     @IBOutlet weak var topSV: UIStackView!
     @IBOutlet weak var bottomSV: UIStackView!
-
+    @IBOutlet weak var todayCasesLbl: UILabel!
+    @IBOutlet weak var todayDeathsLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         preservesSuperviewLayoutMargins = false
@@ -28,9 +30,12 @@ class CoronaStatisticsDetailCell: UITableViewCell {
         layoutMargins = UIEdgeInsets.zero
     }
     
-    func configure(country: Country) {
+    func configure(country: Country, yesterday: Bool) {
+        self.todayCasesLbl.text = yesterday ? loc(.casesYesterday) : loc(.casesToday)
+        self.todayDeathsLbl.text = yesterday ? loc(.deathsYesterday) : loc(.deathsToday)
+        
         let localizedCountryName = country.getLocalizedCountryName
-        self.countryLbl.text = localizedCountryName.lowercased() == "world" ? loc(.world_name) + " 🌎" : localizedCountryName
+        self.countryLbl.text = localizedCountryName == nil ? loc(.world_name) : localizedCountryName
         self.confirmedCasesStatisticLbl.text = country.cases?.thousandSeparator() ?? loc(.noData)
         self.totalDeathsStatisticLbl.text = country.deaths?.thousandSeparator() ?? loc(.noData)
         self.totalRecoveredStatisticLbl.text = country.recovered?.thousandSeparator() ?? loc(.noData)

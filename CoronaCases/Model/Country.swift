@@ -9,7 +9,7 @@
 import Foundation
 
 struct Country: Codable, Equatable {
-    private(set) public var country: String
+    private(set) public var country: String?
     private(set) public var cases: Int?
     private(set) public var todayCases: Int?
     private(set) public var deaths: Int?
@@ -23,9 +23,10 @@ struct Country: Codable, Equatable {
         private(set) public var iso2: String?
     }
 
-    var getLocalizedCountryName: String {
-        guard let isoCode = countryInfo?.iso2 else { return country }
-        return Locale.current.getLocalizedCountryName(forCountryCode: isoCode) ?? country
+    var getLocalizedCountryName: String? {
+        guard country != nil else { return nil }
+        guard let isoCode = countryInfo?.iso2 else { return country! }
+        return Locale.current.getLocalizedCountryName(forCountryCode: isoCode) ?? country!
     }
     
     var getUpdatedDate: Date? {
@@ -36,7 +37,7 @@ struct Country: Codable, Equatable {
     }
         
     static func ==(lhs: Country, rhs: Country) -> Bool {
-        lhs.country == rhs.country
+        lhs.country == rhs.country || lhs.countryInfo?.iso2 == rhs.countryInfo?.iso2
     }
     
     #if DEBUG

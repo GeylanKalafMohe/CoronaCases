@@ -43,10 +43,14 @@
 "lastUpdate" = "Stand: ";
 "searchResults" = "Suchergebnisse";
 "covid_19_statistics_for" = "COVID-19 Statistik für";
-"world_name" = "Weltweit";
+"world_name" = "Weltweit 🌎";
 "search" = "Suchen";
 "yesterday" = "Gestern";
 "today" = "Heute";
+"casesYesterday" = "Fälle\ngestern";
+"deathsYesterday" = "Todesfälle\ngestern";
+"casesToday" = "Fälle\nheute";
+"deathsToday" = "Todesfälle\nheute";
 
 // MARK: - SettingsVC file
 "share_text" = "Hey! Schau dir mal CoronaCases auf GitHub an.\nEs ist ein Coronavirus Tracker für iOS, iPadOS & macOS:\n\n";

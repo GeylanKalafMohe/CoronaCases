@@ -19,11 +19,21 @@ class CoronaCountryDetailVC: UIViewController {
     @IBOutlet weak var todayDeathsStatisticsLbl: UILabel!
     @IBOutlet weak var criticalCasesStatisticsLbl: UILabel!
     @IBOutlet weak var lastUpdateLbl: UILabel!
+    @IBOutlet weak var todayCasesLbl: UILabel!
+    @IBOutlet weak var todayDeathsLbl: UILabel!
+    @IBOutlet weak var changeFetchTimeControl: UISegmentedControl!
+    @IBOutlet weak var reloadIndicator: UIActivityIndicatorView!
     
     // MARK: - Variables
     var country: Country!
     var selectedSegment: Int!
-    lazy var fetchForYesterday = selectedSegment == 1 ? true : false
+    var fetchForYesterday: Bool {
+        get {
+            selectedSegment == 1 ? true : false
+        }
+    }
+    
+    var reverseOnFailure = false
 
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -36,8 +46,15 @@ class CoronaCountryDetailVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        changeFetchTimeControl.selectedSegmentIndex = selectedSegment
         getCountryData()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.getCountryData), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.enteredAppAgain), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    @objc
+    func enteredAppAgain() {
+        self.reverseOnFailure = false
+        self.getCountryData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -49,7 +66,7 @@ class CoronaCountryDetailVC: UIViewController {
     // MARK: - Configuring
     func configureLbls() {
         let localizedCountryName = country.getLocalizedCountryName
-        self.countryLbl.text = localizedCountryName.lowercased() == "world" ? loc(.world_name) + " 🌎" : localizedCountryName
+        self.countryLbl.text = localizedCountryName == nil ? loc(.world_name) : localizedCountryName
         self.confirmedCasesStatisticsLbl.text = country.cases?.thousandSeparator() ?? loc(.noData)
         self.totalDeathStatisticsLbl.text = country.deaths?.thousandSeparator() ?? loc(.noData)
         self.totalRecoveredStatisticsLbl.text = country.recovered?.thousandSeparator() ?? loc(.noData)
@@ -57,10 +74,17 @@ class CoronaCountryDetailVC: UIViewController {
         self.todayDeathsStatisticsLbl.text = country.todayDeaths?.thousandSeparator() ?? loc(.noData)
         self.criticalCasesStatisticsLbl.text = country.critical?.thousandSeparator() ?? loc(.noData)
         
-        let yesterdaySelected = selectedSegment == 1 ? true : false
+        self.todayCasesLbl.text = fetchForYesterday ? loc(.casesYesterday) : loc(.casesToday)
+        self.todayDeathsLbl.text = fetchForYesterday ? loc(.deathsYesterday) : loc(.deathsToday)
 
         let latestDate = country.getUpdatedDate?.getString(monthInText: true) ?? Date().getString(monthInText: true)
-        self.lastUpdateLbl.text = loc(.lastUpdate) + (yesterdaySelected ? loc(.yesterday) : latestDate)
+        self.lastUpdateLbl.text = loc(.lastUpdate) + (fetchForYesterday ? loc(.yesterday) : latestDate)
+    }
+    
+    @IBAction func changedFetchTime(_ sender: UISegmentedControl) {
+        self.selectedSegment = sender.selectedSegmentIndex
+
+        getCountryData()
     }
 }
 
@@ -69,22 +93,71 @@ extension CoronaCountryDetailVC {
     
     @objc
     func getCountryData() {
+        APIService.instance.stopCurrentRequest()
+        self.reloadIndicator.startAnimating()
         print("REQUEST GetCountry")
-        guard country.getLocalizedCountryName.lowercased() != "world" else { return }
-        APIService.instance.getCountry(forName: country.country, forYesterday: fetchForYesterday) { [weak self] (result) in
+        guard let countryName = country.country else {
+            getWorld()
+            return
+        }
+        
+        APIService.instance.getCountry(forName: countryName, forYesterday: fetchForYesterday) { [weak self] (result) in
             guard let self = self else { return }
-            
+
             DispatchQueue.main.async {
+                self.reloadIndicator.stopAnimating()
+
                 switch result {
                 case .success(let country):
                     self.country = country
-
+                    
+                    self.reverseOnFailure = true
                     self.configureLbls()
                     print("GOT GetCountry")
                 case .failure(let error):
-                    Alert.showReload(forError: error, onVC: self, function: self.getCountryData)
+                    self.handleError(error)
                 }
             }
         }
+    }
+    
+    func reverseSegment() {
+        guard reverseOnFailure else { return }
+        let reversed = self.changeFetchTimeControl.selectedSegmentIndex == 1 ? 0 : 1
+        self.selectedSegment = reversed
+        self.changeFetchTimeControl.selectedSegmentIndex = reversed
+    }
+    
+    func getWorld() {
+        self.reloadIndicator.startAnimating()
+
+        APIService.instance.getWorld(yesterday: fetchForYesterday) { [weak self] (result) in
+            guard let self = self else { return }
+
+            DispatchQueue.main.async {
+                self.reloadIndicator.stopAnimating()
+
+                switch result {
+                case .success(let world):
+                    self.country = world
+                    
+                    self.reverseOnFailure = true
+                    self.configureLbls()
+                    print("GOT WORLD GetCountry")
+                case .failure(let error):
+                    self.handleError(error)
+                }
+            }
+        }
+    }
+    
+    func handleError(_ error: APIError) {
+        if error == .unknown || error == .apiNotAvailable {
+            guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+            sceneDelegate.checkForUpdate(showPopupWhenUpToDate: false)
+        }
+        Alert.showReload(forError: error, onVC: self,
+                         cancelTapped: self.reverseSegment,
+                         reloadTapped: self.getCountryData)
     }
 }

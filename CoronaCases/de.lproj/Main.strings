@@ -194,3 +194,10 @@
 
 /* Class = "UISegmentedControl"; urF-YB-7Z1.segmentTitles[1] = "Yesterday"; ObjectID = "1zH-dV-Eaa"; */
 "1zH-dV-Eaa.segmentTitles[1]" = "Gestern";
+
+// -----------------------------------------
+/* Class = "UISegmentedControl"; urF-YB-7Z1.segmentTitles[0] = "Today"; ObjectID = "Bd6-lL-g7b"; */
+"Bd6-lL-g7b.segmentTitles[0]" = "Heute";
+
+/* Class = "UISegmentedControl"; urF-YB-7Z1.segmentTitles[1] = "Yesterday"; ObjectID = "Bd6-lL-g7b"; */
+"Bd6-lL-g7b.segmentTitles[1]" = "Gestern";

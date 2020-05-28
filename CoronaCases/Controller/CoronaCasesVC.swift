@@ -23,7 +23,8 @@ class CoronaCasesVC: UIViewController {
     var countriesSortedBy: SortType = .confirmedCases
     lazy var searchedCountries: SectionData? = nil
     var expandedCountry: Country? = nil
-    
+    var yesterdaySelected: Bool { changeFetchTimeSegmentControl.selectedSegmentIndex == 1 ? true : false }
+
     var countries: [Country] = [] {
         didSet {
             self.tableView.reloadData()
@@ -125,7 +126,7 @@ extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
             if let detailCell = tableView.dequeueReusableCell(withIdentifier: coronaDetailCellID, for: indexPath) as? CoronaStatisticsDetailCell {
                 
                 let currentCountry = searchedCountries == nil ? countrySections[indexPath.section][indexPath.row] : searchedCountries![indexPath.row]
-                detailCell.configure(country: currentCountry)
+                detailCell.configure(country: currentCountry, yesterday: yesterdaySelected)
                 detailCell.isUserInteractionEnabled = false
                 return detailCell
             }
@@ -172,8 +173,6 @@ extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textAlignment = NSTextAlignment.right
         
-        let yesterdaySelected = changeFetchTimeSegmentControl.selectedSegmentIndex == 1 ? true : false
-
         let latestUpdate = self.countries.first?.getUpdatedDate?.getString() ?? Date().getString()
         header.textLabel?.text = loc(.lastUpdate) + (yesterdaySelected ? loc(.yesterday) : latestUpdate)
     }
@@ -207,7 +206,10 @@ extension CoronaCasesVC: UISearchBarDelegate {
         guard searchText != "" else { endSearch(); return }
         let searchTextLowercased = searchText.lowercased()
         
-        let searchedCountryData = self.countries.filter { $0.getLocalizedCountryName.lowercased().hasPrefix(searchTextLowercased) }
+        let searchedCountryData = self.countries.filter {
+            let countryName = $0.getLocalizedCountryName ?? loc(.world_name)
+            return countryName.lowercased().hasPrefix(searchTextLowercased)
+        }
         
         self.searchedCountries = SectionData(title: loc(.searchResults), data: searchedCountryData)
         
@@ -246,6 +248,7 @@ extension CoronaCasesVC {
     
     @objc
     func getAllCountries(forYesterday yesterday: Bool) {
+        APIService.instance.stopCurrentRequest()
         print("REQUEST GetAllCountries")
         self.refreshControl.beginRefreshing()
 
@@ -261,13 +264,13 @@ extension CoronaCasesVC {
 
                     print("GOT Countries")
                 case .failure(let error):
-                    self.countries.removeAll()
+                    if error != .cancelled { self.countries.removeAll() }
                     guard self.presentedViewController == nil else { return }
-                    if error == .unknown {
+                    if error == .unknown || error == .apiNotAvailable {
                         guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
                         sceneDelegate.checkForUpdate(showPopupWhenUpToDate: false)
                     }
-                    Alert.showReload(forError: error, onVC: self, function: { self.getAllCountries(forYesterday: yesterday) })
+                    Alert.showReload(forError: error, onVC: self, reloadTapped: { self.getAllCountries(forYesterday: yesterday) })
                 }
             }
         }

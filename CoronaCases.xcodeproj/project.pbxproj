@@ -10,6 +10,7 @@
 		0D14C5562427168B00034ED2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14C5552427168B00034ED2 /* Alert.swift */; };
 		0D303649243E3E250091BE04 /* UDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D303648243E3E250091BE04 /* UDService.swift */; };
 		0D30364D243E68030091BE04 /* VerticalAlignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D30364C243E68030091BE04 /* VerticalAlignLabel.swift */; };
+		0D3747DF24572E840020EBCF /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3747DE24572E840020EBCF /* UIViewController+Ext.swift */; };
 		0D45C7E724252ED9000B9E09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C7E624252ED9000B9E09 /* AppDelegate.swift */; };
 		0D45C7E924252ED9000B9E09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C7E824252ED9000B9E09 /* SceneDelegate.swift */; };
 		0D45C7F324252EDB000B9E09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D45C7F124252EDB000B9E09 /* LaunchScreen.storyboard */; };
@@ -30,6 +31,8 @@
 		0D90BA862426E7A6009E5740 /* CoronaStatisticsDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90BA852426E7A6009E5740 /* CoronaStatisticsDetailCell.swift */; };
 		0DB828E7242AE94E0033FB35 /* UDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB828E6242AE94E0033FB35 /* UDKeys.swift */; };
 		0DB828EB242AEB070033FB35 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB828EA242AEB070033FB35 /* UIDevice+Ext.swift */; };
+		0DCE5E26244E0E830017F4CA /* ErrorChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE5E25244E0E820017F4CA /* ErrorChecker.swift */; };
+		0DCE5E28244E0EEC0017F4CA /* UpdateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCE5E27244E0EEC0017F4CA /* UpdateInfo.swift */; };
 		0DCF8CA9242E2E0C00DC9AAC /* CountriesArray+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF8CA8242E2E0C00DC9AAC /* CountriesArray+Ext.swift */; };
 		0DCF8CAB242E2E9400DC9AAC /* SortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF8CAA242E2E9400DC9AAC /* SortType.swift */; };
 		0DCF8CAD242E555400DC9AAC /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCF8CAC242E555400DC9AAC /* CustomUIView.swift */; };
@@ -57,6 +60,7 @@
 		0D14C5552427168B00034ED2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		0D303648243E3E250091BE04 /* UDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDService.swift; sourceTree = "<group>"; };
 		0D30364C243E68030091BE04 /* VerticalAlignLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalAlignLabel.swift; sourceTree = "<group>"; };
+		0D3747DE24572E840020EBCF /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		0D45C7E324252ED9000B9E09 /* CoronaCases.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronaCases.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D45C7E624252ED9000B9E09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D45C7E824252ED9000B9E09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		0DA81D98242810D00026765E /* IHKeyboardAvoiding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IHKeyboardAvoiding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB828E6242AE94E0033FB35 /* UDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDKeys.swift; sourceTree = "<group>"; };
 		0DB828EA242AEB070033FB35 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
+		0DCE5E25244E0E820017F4CA /* ErrorChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorChecker.swift; sourceTree = "<group>"; };
+		0DCE5E27244E0EEC0017F4CA /* UpdateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInfo.swift; sourceTree = "<group>"; };
 		0DCF8CA8242E2E0C00DC9AAC /* CountriesArray+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountriesArray+Ext.swift"; sourceTree = "<group>"; };
 		0DCF8CAA242E2E9400DC9AAC /* SortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortType.swift; sourceTree = "<group>"; };
 		0DCF8CAC242E555400DC9AAC /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 				0DB828EA242AEB070033FB35 /* UIDevice+Ext.swift */,
 				0DE6CB0D242C581800EEC063 /* JSONDecoder+Ext.swift */,
 				0DCF8CA8242E2E0C00DC9AAC /* CountriesArray+Ext.swift */,
+				0D3747DE24572E840020EBCF /* UIViewController+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 			children = (
 				0D45C80624252F2D000B9E09 /* APIService.swift */,
 				0D303648243E3E250091BE04 /* UDService.swift */,
+				0DCE5E25244E0E820017F4CA /* ErrorChecker.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				0D45C80F24252F2D000B9E09 /* Country.swift */,
+				0DCE5E27244E0EEC0017F4CA /* UpdateInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -399,6 +408,7 @@
 				0DE6CB0E242C581800EEC063 /* JSONDecoder+Ext.swift in Sources */,
 				0D45C81724252F2D000B9E09 /* Country.swift in Sources */,
 				0DB828EB242AEB070033FB35 /* UIDevice+Ext.swift in Sources */,
+				0D3747DF24572E840020EBCF /* UIViewController+Ext.swift in Sources */,
 				0D45C81524252F2D000B9E09 /* CoronaCountryDetailVC.swift in Sources */,
 				0D45C7E724252ED9000B9E09 /* AppDelegate.swift in Sources */,
 				0DCF8CAB242E2E9400DC9AAC /* SortType.swift in Sources */,
@@ -410,6 +420,7 @@
 				0D45C81424252F2D000B9E09 /* CoronaCasesVC.swift in Sources */,
 				0D30364D243E68030091BE04 /* VerticalAlignLabel.swift in Sources */,
 				0D90BA862426E7A6009E5740 /* CoronaStatisticsDetailCell.swift in Sources */,
+				0DCE5E26244E0E830017F4CA /* ErrorChecker.swift in Sources */,
 				0DE587D6242ADF4800C57716 /* Notification.Name.swift in Sources */,
 				0D662203242E892100521BAB /* SortByVC.swift in Sources */,
 				0D45C81324252F2D000B9E09 /* CoronaStatisticsCell.swift in Sources */,
@@ -419,6 +430,7 @@
 				0DCF8CA9242E2E0C00DC9AAC /* CountriesArray+Ext.swift in Sources */,
 				0D45C7E924252ED9000B9E09 /* SceneDelegate.swift in Sources */,
 				0D45C80124252F1D000B9E09 /* Int+Ext.swift in Sources */,
+				0DCE5E28244E0EEC0017F4CA /* UpdateInfo.swift in Sources */,
 				0DCF8CAD242E555400DC9AAC /* CustomUIView.swift in Sources */,
 				0D45C81124252F2D000B9E09 /* APIService.swift in Sources */,
 				0D45C81024252F2D000B9E09 /* Constants.swift in Sources */,
