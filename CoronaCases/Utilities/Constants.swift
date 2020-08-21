@@ -11,18 +11,18 @@ import UIKit
 var updateIsAvailable = false
 
 struct URLs {
-    private static let BASE_URL = "https://api.caw.sh/"
+    private static let BASE_URL = "https://disease.sh/v3/covid-19"
     
     static func GET_WORLD(forYesterday yesterday: Bool) -> String {
-        return Self.BASE_URL + "v2/all?yesterday=" + "\(yesterday)"
+        Self.BASE_URL + "/all?yesterday=" + "\(yesterday)"
     }
     
     static func GET_ALL_COUNTRIES(forYesterday yesterday: Bool) -> String {
-        return Self.BASE_URL + "v2/countries?yesterday=" + "\(yesterday)"
+        Self.BASE_URL + "/countries?yesterday=" + "\(yesterday)"
     }
 
     static func GET_COUNTRY(forName name: String, forYesterday yesterday: Bool) -> String {
-        Self.BASE_URL + "v2/countries/" + name + "/?yesterday=" + "\(yesterday)"
+        Self.BASE_URL + "/countries/" + name + "/?yesterday=" + "\(yesterday)"
     }
     
     static let GITHUB_RELEASES = "https://github.com/SwiftiSwift/CoronaCases/releases/"

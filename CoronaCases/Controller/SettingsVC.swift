@@ -186,7 +186,11 @@ extension SettingsVC: MFMailComposeViewControllerDelegate {
             \(loc(.device)): \(DeviceInfo.deviceModel)
         """, isHTML: true)
         
-        self.present(mailComposer, animated: true, completion: nil)
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposer, animated: true, completion: nil)
+        } else {
+            Alert.basicAlert(title: loc(.nicht_eingerichtet), message: loc(.nicht_eingerichtet_message), onVC: self)
+        }
     }
         
     func mailComposeController(_ didFinishWithcontroller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {

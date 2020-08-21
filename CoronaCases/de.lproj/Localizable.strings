@@ -62,5 +62,6 @@
 "about" = "über";
 "developer" = "Entwickler";
 "device" = "Gerät";
-
+"nicht_eingerichtet" = "Nicht eingerichtet";
+"nicht_eingerichtet_message" = "Der E-Mail Entwurf konnte nicht geöffnet werden, da kein E-Mail Account in den Einstellungen deines Gerätes eingerichtet wurde.";
 

@@ -14,12 +14,12 @@
 "later_btn" = "Later";
 
 "unableToChangeIcon_title" = "Unable to change Icon";
-"unableToChangeIcon_message" = "An error occured. Could not change App Icon.\nPlease try again.";
+"unableToChangeIcon_message" = "An error occurred. Could not change App Icon.\nPlease try again.";
 
-"errorSearchingForUpdate" = "Error sesarching for an update";
+"errorSearchingForUpdate" = "Error searching for an update";
 "update" = "Update";
 "noInternet_message" = "You're Offline.\nTurn off Airplane Mode or connect to Wi-Fi or Cellular Data.";
-"unkownError_message" = "An unkown error occured.\nPlease try again later.";
+"unkownError_message" = "An unknown error occurred.\nPlease try again later.";
 "serversNotAvailable_message" = "The servers are currently not available!\nPlease try again later.";
 "reload_btn" = "Reload";
 "cancel_btn" = "Cancel";
@@ -62,3 +62,5 @@
 "about" = "über";
 "developer" = "Developer";
 "device" = "Device";
+"nicht_eingerichtet" = "Not configured";
+"nicht_eingerichtet_message" = "The email draft could not be opened because there was no email account configured in your device settings.";

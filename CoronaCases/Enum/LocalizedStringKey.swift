@@ -50,4 +50,6 @@ enum LocalizedStringKey: String {
     case deathsYesterday
     case casesToday
     case deathsToday
+    case nicht_eingerichtet
+    case nicht_eingerichtet_message
 }
