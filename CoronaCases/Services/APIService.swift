@@ -21,11 +21,34 @@ class APIService {
     
     var task: URLSessionDataTask? = nil
     
+    func clearCache() {
+        let cacheURL =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let fileManager = FileManager.default
+        do {
+            // Get the directory contents urls (including subfolders urls)
+            let directoryContents = try FileManager.default.contentsOfDirectory( at: cacheURL, includingPropertiesForKeys: nil, options: [])
+            for file in directoryContents {
+                do {
+                    try fileManager.removeItem(at: file)
+                }
+                catch let error as NSError {
+                    debugPrint("Ooops! Something went wrong while clearing cache: \(error)")
+                }
+
+            }
+            
+            print("Cache Cleared!")
+        } catch let error as NSError {
+            print("Error clearing cache: ", error.localizedDescription)
+        }
+    }
+    
     func getAllCountries(yesterday: Bool, completion: @escaping (_ countries: Result<[Country], APIError>) -> ()) {
         guard let requestURL = URL(string: URLs.GET_ALL_COUNTRIES(forYesterday: yesterday)) else {
             print("Wrong URL", #file, #function, #line)
             return
         }
+        clearCache()
         
         task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
             if let error = ErrorChecker.instance.checkErrors(error, andResponse: response) {
@@ -40,33 +63,17 @@ class APIService {
                 return
             }
             
-            var totalCases = 0
-            var todayCases = 0
-            var totalDeaths = 0
-            var todayDeaths = 0
-            var totalRecovered = 0
-            var criticalCases = 0
+            self.getWorld(yesterday: yesterday) { (result) in
+                switch result {
+                case .success(let country):
+                    countries.insert(country, at: 0)
+                    completion(.success(countries))
 
-            for country in countries {
-                totalCases += country.cases ?? 0
-                todayCases += country.todayCases ?? 0
-                totalDeaths += country.deaths ?? 0
-                todayDeaths += country.todayDeaths ?? 0
-                totalRecovered += country.recovered ?? 0
-                criticalCases += country.critical ?? 0
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
             
-            let world = Country(country: nil,
-                                cases: totalCases,
-                                todayCases: todayCases,
-                                deaths: totalDeaths,
-                                todayDeaths: todayDeaths,
-                                recovered: totalRecovered,
-                                critical: criticalCases,
-                                countryInfo: nil,
-                                updated: countries.first?.updated ?? Date().timeIntervalSinceNow)
-            countries.insert(world, at: 0)
-            completion(.success(countries))
         }
         
         task?.resume()
@@ -84,6 +91,8 @@ class APIService {
             completion(.failure(.unknown))
             return
         }
+        
+        clearCache()
         
         task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
             if let error = ErrorChecker.instance.checkErrors(error, andResponse: response) {
@@ -109,6 +118,8 @@ class APIService {
             return
         }
         
+        clearCache()
+
         task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
             if let error = ErrorChecker.instance.checkErrors(error, andResponse: response) {
                 completion(.failure(error))

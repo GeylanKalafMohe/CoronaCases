@@ -1,6 +1,1 @@
-module IHKeyboardAvoiding {
-  umbrella header "IHKeyboardAvoiding-umbrella.h"
-
-  export *
-  module * { export * }
-}
+../../../Target Support Files/IHKeyboardAvoiding/IHKeyboardAvoiding.modulemap

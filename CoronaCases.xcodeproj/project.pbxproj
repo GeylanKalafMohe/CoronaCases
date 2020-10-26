@@ -27,6 +27,7 @@
 		0D45C81B24252F41000B9E09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D45C81A24252F40000B9E09 /* Assets.xcassets */; };
 		0D45C8432426CBB3000B9E09 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C8422426CBB3000B9E09 /* SettingsVC.swift */; };
 		0D45C8452426DA47000B9E09 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C8442426DA47000B9E09 /* Date+Ext.swift */; };
+		0D4634E4254751CF005EB3CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D4634E3254751CF005EB3CB /* GoogleService-Info.plist */; };
 		0D662203242E892100521BAB /* SortByVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D662202242E892100521BAB /* SortByVC.swift */; };
 		0D90BA862426E7A6009E5740 /* CoronaStatisticsDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90BA852426E7A6009E5740 /* CoronaStatisticsDetailCell.swift */; };
 		0DB828E7242AE94E0033FB35 /* UDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB828E6242AE94E0033FB35 /* UDKeys.swift */; };
@@ -80,6 +81,7 @@
 		0D45C81E242532B4000B9E09 /* CoronaCases.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoronaCases.entitlements; sourceTree = "<group>"; };
 		0D45C8422426CBB3000B9E09 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		0D45C8442426DA47000B9E09 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		0D4634E3254751CF005EB3CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D662202242E892100521BAB /* SortByVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByVC.swift; sourceTree = "<group>"; };
 		0D90BA852426E7A6009E5740 /* CoronaStatisticsDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatisticsDetailCell.swift; sourceTree = "<group>"; };
 		0DA81D98242810D00026765E /* IHKeyboardAvoiding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IHKeyboardAvoiding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 				0D45C81A24252F40000B9E09 /* Assets.xcassets */,
 				0D45C7F124252EDB000B9E09 /* LaunchScreen.storyboard */,
 				0D45C7F424252EDB000B9E09 /* Info.plist */,
+				0D4634E3254751CF005EB3CB /* GoogleService-Info.plist */,
 				0D45C81824252F33000B9E09 /* country-codes.json */,
 				0DE6CB0F242C5B5A00EEC063 /* AppIcons */,
 			);
@@ -358,6 +361,7 @@
 			files = (
 				0DEAD1B1242EF4B100BBBC98 /* AppIcon1st@2x.png in Resources */,
 				0D45C7F324252EDB000B9E09 /* LaunchScreen.storyboard in Resources */,
+				0D4634E4254751CF005EB3CB /* GoogleService-Info.plist in Resources */,
 				0DEAD1AF242EF4B100BBBC98 /* AppIcon1st@3x.png in Resources */,
 				0DDD6BED2432BB3700F029FF /* Localizable.strings in Resources */,
 				0D45C81924252F33000B9E09 /* country-codes.json in Resources */,
