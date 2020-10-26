@@ -246,11 +246,34 @@ extension CoronaCasesVC: UITabBarControllerDelegate {
 // MARK: - API Requests
 extension CoronaCasesVC {
     
+    func clearCache(){
+        let cacheURL =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let fileManager = FileManager.default
+        do {
+            // Get the directory contents urls (including subfolders urls)
+            let directoryContents = try FileManager.default.contentsOfDirectory( at: cacheURL, includingPropertiesForKeys: nil, options: [])
+            for file in directoryContents {
+                do {
+                    try fileManager.removeItem(at: file)
+                }
+                catch let error as NSError {
+                    debugPrint("Ooops! Something went wrong while clearing cache: \(error)")
+                }
+
+            }
+            
+            print("Cache Cleared!")
+        } catch let error as NSError {
+            print("Error clearing cache: ", error.localizedDescription)
+        }
+    }
+    
     @objc
     func getAllCountries(forYesterday yesterday: Bool) {
+        clearCache()
+        self.refreshControl.beginRefreshing()
         APIService.instance.stopCurrentRequest()
         print("REQUEST GetAllCountries")
-        self.refreshControl.beginRefreshing()
 
         APIService.instance.getAllCountries(yesterday: yesterday) { [weak self] (result) in
             guard let self = self else { return }

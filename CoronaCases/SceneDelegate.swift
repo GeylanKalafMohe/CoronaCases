@@ -69,7 +69,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         reloadTapped: {
                             NotificationCenter.default.post(name: NSNotification.Name.ERROR_SEARCHING_UPDATE_RELOAD_TAPPED, object: nil)
                             self.checkForUpdate(showPopupWhenUpToDate: showPopupWhenUpToDate)
-                        })
+                        }
+                    )
                 }
             }
         }
