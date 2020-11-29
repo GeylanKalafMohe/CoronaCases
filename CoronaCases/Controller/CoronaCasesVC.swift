@@ -87,6 +87,7 @@ class CoronaCasesVC: UIViewController {
     func addSearchBar() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
+        searchController.searchBar.autocapitalizationType = .none
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.obscuresBackgroundDuringPresentation = false;
         navigationItem.searchController = searchController
@@ -208,7 +209,7 @@ extension CoronaCasesVC: UISearchBarDelegate {
         
         let searchedCountryData = self.countries.filter {
             let countryName = $0.getLocalizedCountryName ?? loc(.world_name)
-            return countryName.lowercased().hasPrefix(searchTextLowercased)
+            return countryName.lowercased().contains(searchTextLowercased)
         }
         
         self.searchedCountries = SectionData(title: loc(.searchResults), data: searchedCountryData)
