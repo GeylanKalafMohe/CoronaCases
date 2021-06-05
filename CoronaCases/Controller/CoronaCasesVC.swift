@@ -25,11 +25,7 @@ class CoronaCasesVC: UIViewController {
     var expandedCountry: Country? = nil
     var yesterdaySelected: Bool { changeFetchTimeSegmentControl.selectedSegmentIndex == 1 ? true : false }
 
-    var countries: [Country] = [] {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+    var countries: [Country] = []
         
     var countrySections: [SectionData] {
         let sec2 = SectionData(title: loc(.current_infections_by_countries),
@@ -159,11 +155,11 @@ extension CoronaCasesVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard (indexPath.section == 0 && countrySections.count == 1) || (indexPath.section == 1 && countrySections.count > 1) || searchedCountries != nil else { return 270 }
-        return 150
+        return 145
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return searchedCountries == nil ? countrySections[section].title : searchedCountries!.title
+        searchedCountries == nil ? countrySections[section].title : searchedCountries!.title
     }
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
@@ -207,12 +203,19 @@ extension CoronaCasesVC: UISearchBarDelegate {
         guard searchText != "" else { endSearch(); return }
         let searchTextLowercased = searchText.lowercased()
         
-        let searchedCountryData = self.countries.filter {
-            let countryName = $0.getLocalizedCountryName ?? loc(.world_name)
-            return countryName.lowercased().contains(searchTextLowercased)
+        let countryName: (_ country: Country) -> String = { country in
+            country.getLocalizedCountryName ?? loc(.world_name)
         }
         
-        self.searchedCountries = SectionData(title: loc(.searchResults), data: searchedCountryData)
+        let startsWithSearchedCountry = self.countries.filter {
+            return countryName($0).lowercased().starts(with: searchTextLowercased)
+        }
+        
+        let containsSearchedCountry = self.countries.filter {
+            return countryName($0).lowercased().contains(searchTextLowercased) && !(countryName($0).lowercased().starts(with: searchTextLowercased))
+        }
+        
+        self.searchedCountries = SectionData(title: loc(.searchResults), data: startsWithSearchedCountry + containsSearchedCountry)
         
         tableView.reloadData()
         scrollToTop()
@@ -262,6 +265,7 @@ extension CoronaCasesVC {
                 switch result {
                 case .success(let countries):
                     self.countries = countries
+                    self.tableView.reloadData()
 
                     print("GOT Countries")
                 case .failure(let error):

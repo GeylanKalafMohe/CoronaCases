@@ -23,13 +23,6 @@ class CoronaStatisticsDetailCell: UITableViewCell {
     @IBOutlet weak var todayCasesLbl: UILabel!
     @IBOutlet weak var todayDeathsLbl: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        preservesSuperviewLayoutMargins = false
-        separatorInset = UIEdgeInsets.zero
-        layoutMargins = UIEdgeInsets.zero
-    }
-    
     func configure(country: Country, yesterday: Bool) {
         self.todayCasesLbl.text = yesterday ? loc(.casesYesterday) : loc(.casesToday)
         self.todayDeathsLbl.text = yesterday ? loc(.deathsYesterday) : loc(.deathsToday)

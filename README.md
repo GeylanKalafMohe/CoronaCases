@@ -1,6 +1,6 @@
 # CoronaCases(COVID-19)
 ![Platform](https://img.shields.io/badge/platforms-iOS%20%7C%20iPadOS%20%7C%20macOS-orange)
-![Version](https://img.shields.io/badge/version-1.5-blue)
+![Version](https://img.shields.io/badge/version-1.6-blue)
 
 Watch the latest Coronavirus cases in your country and in the world!
 

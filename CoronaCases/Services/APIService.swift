@@ -21,34 +21,11 @@ class APIService {
     
     var task: URLSessionDataTask? = nil
     
-    func clearCache() {
-        let cacheURL =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-        let fileManager = FileManager.default
-        do {
-            // Get the directory contents urls (including subfolders urls)
-            let directoryContents = try FileManager.default.contentsOfDirectory( at: cacheURL, includingPropertiesForKeys: nil, options: [])
-            for file in directoryContents {
-                do {
-                    try fileManager.removeItem(at: file)
-                }
-                catch let error as NSError {
-                    debugPrint("Ooops! Something went wrong while clearing cache: \(error)")
-                }
-
-            }
-            
-            print("Cache Cleared!")
-        } catch let error as NSError {
-            print("Error clearing cache: ", error.localizedDescription)
-        }
-    }
-    
     func getAllCountries(yesterday: Bool, completion: @escaping (_ countries: Result<[Country], APIError>) -> ()) {
         guard let requestURL = URL(string: URLs.GET_ALL_COUNTRIES(forYesterday: yesterday)) else {
             print("Wrong URL", #file, #function, #line)
             return
         }
-        clearCache()
         
         task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
             if let error = ErrorChecker.instance.checkErrors(error, andResponse: response) {
@@ -91,9 +68,7 @@ class APIService {
             completion(.failure(.unknown))
             return
         }
-        
-        clearCache()
-        
+                
         task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
             if let error = ErrorChecker.instance.checkErrors(error, andResponse: response) {
                 completion(.failure(error))
@@ -118,8 +93,6 @@ class APIService {
             return
         }
         
-        clearCache()
-
         task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
             if let error = ErrorChecker.instance.checkErrors(error, andResponse: response) {
                 completion(.failure(error))

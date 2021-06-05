@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CountriesSortByDelegate: class {
+protocol CountriesSortByDelegate: AnyObject {
     func selectedNewSorting(_ sortType: SortType)
 }

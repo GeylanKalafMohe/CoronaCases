@@ -14,19 +14,12 @@ class CoronaStatisticsCell: UITableViewCell {
     @IBOutlet weak var confirmedCasesStatisticLbl: UILabel!
     @IBOutlet weak var totalDeathsStatisticLbl: UILabel!
     @IBOutlet weak var totalRecoveredStatisticLbl: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        preservesSuperviewLayoutMargins = false
-        separatorInset = UIEdgeInsets.zero
-        layoutMargins = UIEdgeInsets.zero
-    }
-    
+
     func configure(country: Country) {
         let localizedCountryName = country.getLocalizedCountryName
-        self.countryLbl.text = localizedCountryName == nil ? loc(.world_name) : localizedCountryName
-        self.confirmedCasesStatisticLbl.text = country.cases?.thousandSeparator() ?? loc(.noData)
-        self.totalDeathsStatisticLbl.text = country.deaths?.thousandSeparator() ?? loc(.noData)
-        self.totalRecoveredStatisticLbl.text = country.recovered?.thousandSeparator() ?? loc(.noData)
+        countryLbl.text = localizedCountryName == nil ? loc(.world_name) : localizedCountryName
+        confirmedCasesStatisticLbl.text = country.cases?.thousandSeparator() ?? loc(.noData)
+        totalDeathsStatisticLbl.text = country.deaths?.thousandSeparator() ?? loc(.noData)
+        totalRecoveredStatisticLbl.text = country.recovered?.thousandSeparator() ?? loc(.noData)
     }
 }
