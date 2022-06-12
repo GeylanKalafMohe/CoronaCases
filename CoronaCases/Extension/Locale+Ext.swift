@@ -9,14 +9,9 @@
 import Foundation
 
 extension Locale {
-    var countryCode: String? {
-        guard let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String else { return nil }
-        return countryCode
-    }
-    
     var localizedCountryName: String? {
         guard
-            let countryCode = countryCode,
+            let countryCode = regionCode,
             let currentCountryName = getLocalizedCountryName(forCountryCode: countryCode)
         else { return nil }
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LCx-To-nI1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LCx-To-nI1">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -415,7 +415,7 @@ https://icons8.de/icons/set/virus</string>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="CoronaStatisticsDetailCell" rowHeight="293" id="H2v-QN-RDC" customClass="CoronaStatisticsDetailCell" customModule="CoronaCases" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49" width="374" height="293"/>
+                                        <rect key="frame" x="20" y="31.666666030883789" width="374" height="293"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H2v-QN-RDC" id="Zfo-eH-mzc">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="293"/>
@@ -439,7 +439,7 @@ https://icons8.de/icons/set/virus</string>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="e3a-SA-QT4">
                                                                     <rect key="frame" x="0.0" y="4.6666666666666643" width="103" height="74"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO3-qX-JwB">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vO3-qX-JwB">
                                                                             <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="49.333333333333336"/>
                                                                             <string key="text">Confirmed
 cases</string>
@@ -447,7 +447,7 @@ cases</string>
                                                                             <color key="textColor" systemColor="systemOrangeColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="100000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjX-ns-o7e">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sjX-ns-o7e">
                                                                             <rect key="frame" x="0.0" y="49.333333333333336" width="103" height="24.666666666666664"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                                                             <nil key="textColor"/>
@@ -461,7 +461,7 @@ cases</string>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gWb-ih-GZd">
                                                                     <rect key="frame" x="113" y="4.6666666666666643" width="103" height="74"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frh-YJ-agu">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="frh-YJ-agu">
                                                                             <rect key="frame" x="22" y="0.0" width="59" height="49.333333333333336"/>
                                                                             <string key="text">Total
 deaths</string>
@@ -469,7 +469,7 @@ deaths</string>
                                                                             <color key="textColor" systemColor="systemRedColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="32610" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6A-5T-U9s">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="32610" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n6A-5T-U9s">
                                                                             <rect key="frame" x="0.0" y="49.333333333333336" width="103" height="24.666666666666664"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                                                             <nil key="textColor"/>
@@ -483,7 +483,7 @@ deaths</string>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="L1Q-T3-up6">
                                                                     <rect key="frame" x="226" y="4.6666666666666643" width="103" height="74"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7X-eN-opW">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j7X-eN-opW">
                                                                             <rect key="frame" x="14.666666666666686" y="0.0" width="88.333333333333329" height="49.333333333333336"/>
                                                                             <string key="text">Total
 recovered</string>
@@ -491,7 +491,7 @@ recovered</string>
                                                                             <color key="textColor" systemColor="systemGreenColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="700" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyA-WC-uJ5">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="700" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iyA-WC-uJ5">
                                                                             <rect key="frame" x="14.666666666666686" y="49.333333333333336" width="88.333333333333329" height="24.666666666666664"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                                                             <nil key="textColor"/>
@@ -511,7 +511,7 @@ recovered</string>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="xDi-3R-DBK">
                                                                     <rect key="frame" x="0.0" y="0.0" width="109.66666666666667" height="74"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xe4-pZ-vI4">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xe4-pZ-vI4">
                                                                             <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="49.333333333333336"/>
                                                                             <string key="text">Cases
 today</string>
@@ -519,7 +519,7 @@ today</string>
                                                                             <color key="textColor" red="0.76032221499999997" green="0.48224789099999998" blue="0.1726860167" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="17.000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7t-71-pDq">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="17.000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P7t-71-pDq">
                                                                             <rect key="frame" x="0.0" y="49.333333333333343" width="109.66666666666667" height="24.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                                                             <nil key="textColor"/>
@@ -533,7 +533,7 @@ today</string>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="20i-zR-iQC">
                                                                     <rect key="frame" x="109.66666666666666" y="0.0" width="109.66666666666666" height="74"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFt-oL-uHx">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qFt-oL-uHx">
                                                                             <rect key="frame" x="23.999999999999996" y="0.0" width="61.666666666666657" height="49.333333333333336"/>
                                                                             <string key="text">Critical
 cases</string>
@@ -541,7 +541,7 @@ cases</string>
                                                                             <color key="textColor" systemColor="systemPinkColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2136" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1K4-wk-EvA">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2136" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1K4-wk-EvA">
                                                                             <rect key="frame" x="0.0" y="49.333333333333343" width="109.66666666666667" height="24.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                                                             <nil key="textColor"/>
@@ -555,7 +555,7 @@ cases</string>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="4da-pp-tPU">
                                                                     <rect key="frame" x="219.33333333333334" y="0.0" width="109.66666666666666" height="74"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9M-eB-Ss5">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F9M-eB-Ss5">
                                                                             <rect key="frame" x="48.666666666666657" y="0.0" width="61" height="49.333333333333336"/>
                                                                             <string key="text">Deaths
 today</string>
@@ -563,7 +563,7 @@ today</string>
                                                                             <color key="textColor" red="0.71877023959999997" green="0.2404715758" blue="0.18824939269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7800" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-qI-jXm">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7800" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-qI-jXm">
                                                                             <rect key="frame" x="62.999999999999972" y="49.333333333333343" width="46.666666666666657" height="24.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                                                             <nil key="textColor"/>
@@ -604,7 +604,7 @@ today</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="CoronaStatisticsCell" rowHeight="166" id="WYd-39-Rmr" customClass="CoronaStatisticsCell" customModule="CoronaCases" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="342" width="374" height="166"/>
+                                        <rect key="frame" x="20" y="324.66666603088379" width="374" height="166"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WYd-39-Rmr" id="BvR-FX-j1q">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="166"/>
@@ -625,7 +625,7 @@ today</string>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="QMf-Ps-fxK">
                                                             <rect key="frame" x="0.0" y="0.0" width="95" height="71.333333333333329"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhf-m2-Fic">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jhf-m2-Fic">
                                                                     <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="49.333333333333336"/>
                                                                     <string key="text">Confirmed
 cases</string>
@@ -648,7 +648,7 @@ cases</string>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="EwK-XS-lcF">
                                                             <rect key="frame" x="129.66666666666666" y="0.0" width="75" height="71.333333333333329"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMi-J0-NY4">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oMi-J0-NY4">
                                                                     <rect key="frame" x="0.0" y="0.0" width="59" height="49.333333333333336"/>
                                                                     <string key="text">Total
 deaths</string>
@@ -670,7 +670,7 @@ deaths</string>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="vvR-aK-cAS">
                                                             <rect key="frame" x="239" y="0.0" width="90" height="71.333333333333329"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1v-5E-WRG">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r1v-5E-WRG">
                                                                     <rect key="frame" x="0.0" y="0.0" width="88.333333333333329" height="49.333333333333336"/>
                                                                     <string key="text">Total
 recovered</string>
@@ -757,7 +757,7 @@ recovered</string>
             <objects>
                 <tableViewController storyboardIdentifier="SettingsVC" id="PLE-wU-LwD" customClass="SettingsVC" customModule="CoronaCases" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Gr0-dF-8ZD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
                             <tableViewSection headerTitle="App Info" id="hmG-xh-VMs">
@@ -781,13 +781,13 @@ recovered</string>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wDS-BH-GYq">
                                                             <rect key="frame" x="16.666666666666657" y="32.333333333333336" width="93" height="19.333333333333336"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yah-YF-kFP">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Version:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yah-YF-kFP">
                                                                     <rect key="frame" x="0.0" y="0.0" width="56.666666666666664" height="19.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.2.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KJ-MH-hqc">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1.2.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KJ-MH-hqc">
                                                                     <rect key="frame" x="61.666666666666693" y="0.0" width="31.333333333333336" height="19.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                                     <nil key="textColor"/>
@@ -891,7 +891,7 @@ recovered</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="via Twitter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMa-qH-vrt">
-                                                    <rect key="frame" x="147.66666666666666" y="9" width="79" height="23"/>
+                                                    <rect key="frame" x="147.66666666666666" y="8.9999999999999982" width="78.666666666666657" height="23.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemBlueColor"/>
                                                     <nil key="highlightedColor"/>
@@ -912,7 +912,7 @@ recovered</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="via E-Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcw-3d-P2S">
-                                                    <rect key="frame" x="149" y="10.666666666666664" width="76" height="23"/>
+                                                    <rect key="frame" x="149.33333333333334" y="10.333333333333334" width="75.666666666666657" height="23.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemBlueColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1102,6 +1102,7 @@ recovered</string>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" selectedImage="gear" catalog="system" id="rWp-bG-2yJ"/>
                     <navigationItem key="navigationItem" title="Settings" id="VYy-Wo-mko"/>
+                    <size key="freeformSize" width="414" height="1300"/>
                     <connections>
                         <outlet property="appNameLbl" destination="Dh2-fI-p7o" id="g41-B7-a44"/>
                         <outlet property="darkModeSwitch" destination="506-FO-LpO" id="5ot-hm-sra"/>

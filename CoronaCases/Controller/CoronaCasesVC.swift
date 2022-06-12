@@ -31,7 +31,8 @@ class CoronaCasesVC: UIViewController {
         let sec2 = SectionData(title: loc(.current_infections_by_countries),
                                data: self.countries.sort(by: countriesSortedBy))
 
-        guard let countryCode = Locale.current.countryCode else { return [sec2] }
+        guard let countryCode = Locale.current.regionCode else { return [sec2] }
+//        guard let countryCode = Locale(identifier: "ar_sa").regionCode else { return [sec2] } // For country Saudi Arabia
 
         let localCountryData = self.countries.first(where: { $0.countryInfo?.iso2 == countryCode })
         

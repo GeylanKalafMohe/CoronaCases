@@ -9,15 +9,15 @@
 import Foundation
 
 struct Country: Codable, Equatable {
-    private(set) public var country: String?
-    private(set) public var cases: Int?
-    private(set) public var todayCases: Int?
-    private(set) public var deaths: Int?
-    private(set) public var todayDeaths: Int?
-    private(set) public var recovered: Int?
-    private(set) public var critical: Int?
-    private(set) public var countryInfo: CountryInfo?
-    private(set) public var updated: Double?
+    let country: String?
+    let cases: Int?
+    let todayCases: Int?
+    let deaths: Int?
+    let todayDeaths: Int?
+    let recovered: Int?
+    let critical: Int?
+    let countryInfo: CountryInfo?
+    let updated: Double?
 
     struct CountryInfo: Codable {
         private(set) public var iso2: String?
